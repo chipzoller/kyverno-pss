@@ -8,7 +8,7 @@ The PSS policies are arguably the most important ones to Kyverno and so we need 
 
 ### Ephemeral Containers
 
-Ephemeral containers are on by default in Kubernetes 1.23, but prior to that a feature gate is needed. Many of these folders contain either/or a YAML and JSON manifest of ephemeral containers used to test the policies. See the KEP note [here](https://github.com/kubernetes/enhancements/blob/master/keps/sig-node/277-ephemeral-containers/README.md) for technical details. The command was used to test:
+Ephemeral containers are on by default in Kubernetes 1.23, but prior to that a feature gate is needed. Many of these folders contain a YAML and/or JSON manifest of ephemeral containers used to test the policies. See the KEP note [here](https://github.com/kubernetes/enhancements/blob/master/keps/sig-node/277-ephemeral-containers/README.md) for technical details. The command was used to test:
 
 ```sh
 kubectl replace --raw /api/v1/namespaces/default/pods/testpod/ephemeralcontainers -f ./ephemeralcontainer.json
@@ -16,7 +16,7 @@ kubectl replace --raw /api/v1/namespaces/default/pods/testpod/ephemeralcontainer
 
 This will do a `patch` op on the `testpod/ephemeralcontainers` subresource. `testpod` must first exist. A `kubectl debug` command cannot be used to attach an ephemeral container with customized fields, nor can ephemeral containers be created upon initial pod creation.
 
-Kyverno needs to add `pods/ephemeralcontainers` as a subresource to the `validatingwebhookconfiguration` in order for AdmissionReview requests to hit Kyverno. When testing, each time a policy is deleted and another created, this change must be made to the dynamic configuration of the webhooks.
+Kyverno needs to add `pods/ephemeralcontainers` as a subresource to the `validatingwebhookconfiguration` in order for AdmissionReview requests to hit Kyverno. When testing, each time a policy is deleted and another created, this change must be made to the webhook.
 
 ### Version Support
 
@@ -37,7 +37,7 @@ Because some of these policies use a JMESPath expression to group all ephemeralC
 
 ### Tests
 
-Pending item is to re-write the test resources and greatly expand upon them to include higher-level Pod controller manifests like Deployments and Jobs. We shouldn't just include testing against Pod resources and call it quits.
+Pending item is to re-write the test resources and greatly expand upon them to include higher-level Pod controller manifests like Deployments and Jobs. We shouldn't just include tests against Pod resources and call it quits. This is something I plan on working on over the holiday break.
 
 ### Enforce Mode
 
@@ -64,7 +64,7 @@ This repo will most likely be deleted when the redesigned PSS policies are merge
 
 I'm using mostly K3d to rapidly build Kubernetes clusters of different versions, configurations, and Kyverno versions. The reduced resource consumption means you can run more concurrently on fewer resources and the OCI images are far smaller than KinD.
 
-The EphemeralContainers feature gate can be enabled with either a CLI flag or a config manifest like that shown below. There is currently no K3s image built for Kubernetes v1.23. This was what I used when also building the Windows hostProcess policy as the API server will reject any windowsOptions fields unless the WindowsHostProcessContainers feature gate is enabled. It matters not that the node image is Linux for testing purposes.
+The `EphemeralContainers` feature gate can be enabled with either a CLI flag or a config manifest like that shown below. There is currently no K3s image built for Kubernetes v1.23. This was what I used when also building the Windows hostProcess policy as the API server will reject any windowsOptions fields unless the `WindowsHostProcessContainers` feature gate is enabled. It matters not that the node image is Linux since this is for testing purposes.
 
 ```yaml
 apiVersion: k3d.io/v1alpha3
@@ -83,4 +83,4 @@ options:
     - arg: --kubelet-arg=feature-gates=EphemeralContainers=true
       nodeFilters:
         - agent:*
-  ```
+```
