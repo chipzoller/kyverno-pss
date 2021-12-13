@@ -84,3 +84,13 @@ options:
       nodeFilters:
         - agent:*
 ```
+
+## Questions/To-Do
+
+### Non-Root Groups
+
+The "non-root groups" control is listed as optional without an explanation on the [Restricted page](https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted). Would like to understand this rationale.
+
+Also, on this same control, the present policy on the `runAsGroup` control, if read correctly, suggests a non-zero value is mandatory which I think represents a change.
+
+The supplementalGroups field is an array and each value must be checked to be non-zero.

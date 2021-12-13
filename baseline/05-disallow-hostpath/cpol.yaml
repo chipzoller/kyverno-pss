@@ -23,7 +23,7 @@ spec:
             - Pod
       validate:
         message: >-
-          HostPath volumes are forbidden. The fields spec.volumes[*].hostPath must not be set.
+          HostPath volumes are forbidden. The field spec.volumes[*].hostPath must be unset.
         pattern:
           spec:
             =(volumes):
