@@ -11,12 +11,12 @@ The PSS policies are arguably the most important ones to Kyverno and so we need 
 Ephemeral containers are on by default in Kubernetes 1.23, but prior to that a feature gate is needed. Many of these folders contain either/or a YAML and JSON manifest of ephemeral containers used to test the policies. See the KEP note [here](https://github.com/kubernetes/enhancements/blob/master/keps/sig-node/277-ephemeral-containers/README.md) for technical details. The command was used to test:
 
 ```sh
-k replace --raw /api/v1/namespaces/default/pods/testpod/ephemeralcontainers -f ./ephemeralcontainer.json
+kubectl replace --raw /api/v1/namespaces/default/pods/testpod/ephemeralcontainers -f ./ephemeralcontainer.json
 ```
 
 This will do a `patch` op on the `<pod_name>/ephemeralcontainers` subresource. A `kubectl debug` command cannot be used to attach an ephemeral container with customized fields.
 
-Kyverno needs to add `pods/ephemeralcontainers` as a subresource to the validatingwebhookconfiguration in order for AdmissionReview requests to hit Kyverno. When testing, each time a policy is deleted and another created, this change must be made each type due to the dynamic configuration of the webhooks.
+Kyverno needs to add `pods/ephemeralcontainers` as a subresource to the `validatingwebhookconfiguration` in order for AdmissionReview requests to hit Kyverno. When testing, each time a policy is deleted and another created, this change must be made each time due to the dynamic configuration of the webhooks.
 
 ### Version Support
 
@@ -48,3 +48,7 @@ kyverno.io/kubernetes-version: "1.22"
 ```
 
 Cases where the `AnyNotIn` operator is used have been tagged, initially, for 1.6.0 because that's the corresponding milestone. It can obviously be changed. And all these were built and tested on Kubernetes 1.22 hence that value. We need to be careful not to change these values unless _the version(s) being added were actually and successfully tested_. There shouldn't be any guessing on our part as to the operability of these policies on earlier or later versions of either Kyverno or Kubernetes; if it wasn't explicitly tested and verified, it shouldn't be listed.
+
+### Lifespan
+
+This repo will most likely be deleted when the redesigned PSS policies are merged into kyverno/policies. Fair warning.
