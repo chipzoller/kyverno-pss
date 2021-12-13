@@ -4,7 +4,7 @@ This repo contains the latest Kubernetes [Pod Security Standards](https://kubern
 
 The PSS policies are arguably the most important ones to Kyverno and so we need to ensure these, above all else, are extremely polished and accurate.
 
-## Notes
+## General Notes
 
 ### Ephemeral Containers
 
@@ -16,7 +16,7 @@ kubectl replace --raw /api/v1/namespaces/default/pods/testpod/ephemeralcontainer
 
 This will do a `patch` op on the `testpod/ephemeralcontainers` subresource. `testpod` must first exist. A `kubectl debug` command cannot be used to attach an ephemeral container with customized fields, nor can ephemeral containers be created upon initial pod creation.
 
-Kyverno needs to add `pods/ephemeralcontainers` as a subresource to the `validatingwebhookconfiguration` in order for AdmissionReview requests to hit Kyverno. When testing, each time a policy is deleted and another created, this change must be made each time due to the dynamic configuration of the webhooks.
+Kyverno needs to add `pods/ephemeralcontainers` as a subresource to the `validatingwebhookconfiguration` in order for AdmissionReview requests to hit Kyverno. When testing, each time a policy is deleted and another created, this change must be made to the dynamic configuration of the webhooks.
 
 ### Version Support
 
@@ -54,6 +54,33 @@ kyverno.io/kubernetes-version: "1.22"
 
 Cases where the `AnyNotIn` operator is used have been tagged, initially, for 1.6.0 because that's the corresponding milestone. It can obviously be changed. And all these were built and tested on Kubernetes 1.22 hence that value. We need to be careful not to change these values unless _the version(s) being added were actually and successfully tested_. There shouldn't be any guessing on our part as to the operability of these policies on earlier or later versions of either Kyverno or Kubernetes; if it wasn't explicitly tested and verified, it shouldn't be listed.
 
-### Lifespan
+### Life Expectancy
 
 This repo will most likely be deleted when the redesigned PSS policies are merged into kyverno/policies. Fair warning.
+
+## Testing Notes
+
+### K3d
+
+I'm using mostly K3d to rapidly build Kubernetes clusters of different versions, configurations, and Kyverno versions. The reduced resource consumption means you can run more concurrently on fewer resources and the OCI images are far smaller than KinD.
+
+The EphemeralContainers feature gate can be enabled with either a CLI flag or a config manifest like that shown below. This was what I used when also building the Windows hostProcess policy as the API server will reject any windowsOptions fields unless the WindowsHostProcessContainers feature gate is enabled. It matters not that the node image is Linux for testing purposes.
+
+```yaml
+apiVersion: k3d.io/v1alpha3
+kind: Simple
+name: win-ephemeral
+image: rancher/k3s:v1.22.4-k3s1
+options:
+  k3s:
+    extraArgs:
+    - arg: --kube-apiserver-arg=feature-gates=EphemeralContainers=true,WindowsHostProcessContainers=true
+      nodeFilters:
+        - server:*
+    - arg: --kube-scheduler-arg=feature-gates=EphemeralContainers=true
+      nodeFilters:
+        - server:*
+    - arg: --kubelet-arg=feature-gates=EphemeralContainers=true
+      nodeFilters:
+        - agent:*
+  ```
