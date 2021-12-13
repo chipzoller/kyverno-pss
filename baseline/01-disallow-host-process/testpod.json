@@ -1,0 +1,177 @@
+{
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+        "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Pod\",\"metadata\":{\"annotations\":{},\"name\":\"testpod\",\"namespace\":\"default\"},\"spec\":{\"automountServiceAccountToken\":false,\"containers\":[{\"image\":\"asdfnothinghereasdf\",\"name\":\"junk\",\"securityContext\":{\"windowsOptions\":{\"hostProcess\":false}}}],\"hostNetwork\":true,\"initContainers\":[{\"image\":\"initasdfnothinghereasdf\",\"name\":\"initjunk\",\"securityContext\":{\"windowsOptions\":{\"hostProcess\":false}}}]}}\n"
+        },
+        "creationTimestamp": "2021-12-11T18:06:26Z",
+        "name": "testpod",
+        "namespace": "default",
+        "resourceVersion": "2236",
+        "uid": "011f70bf-28bb-48c2-aeff-b9d388255482"
+    },
+    "spec": {
+        "automountServiceAccountToken": false,
+        "containers": [
+            {
+                "image": "asdfnothinghereasdf",
+                "imagePullPolicy": "Always",
+                "name": "junk",
+                "resources": {},
+                "securityContext": {
+                    "windowsOptions": {
+                        "hostProcess": false
+                    }
+                },
+                "terminationMessagePath": "/dev/termination-log",
+                "terminationMessagePolicy": "File"
+            }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "enableServiceLinks": true,
+        "ephemeralContainers": [
+            {
+                "image": "busybox:1.28",
+                "imagePullPolicy": "IfNotPresent",
+                "name": "debugger-bpnvr",
+                "resources": {},
+                "stdin": true,
+                "terminationMessagePath": "/dev/termination-log",
+                "terminationMessagePolicy": "File",
+                "tty": true
+            }
+        ],
+        "hostNetwork": true,
+        "initContainers": [
+            {
+                "image": "initasdfnothinghereasdf",
+                "imagePullPolicy": "Always",
+                "name": "initjunk",
+                "resources": {},
+                "securityContext": {
+                    "windowsOptions": {
+                        "hostProcess": false
+                    }
+                },
+                "terminationMessagePath": "/dev/termination-log",
+                "terminationMessagePolicy": "File"
+            }
+        ],
+        "nodeName": "k3d-win-server-0",
+        "preemptionPolicy": "PreemptLowerPriority",
+        "priority": 0,
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {},
+        "serviceAccount": "default",
+        "serviceAccountName": "default",
+        "terminationGracePeriodSeconds": 30,
+        "tolerations": [
+            {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/not-ready",
+                "operator": "Exists",
+                "tolerationSeconds": 300
+            },
+            {
+                "effect": "NoExecute",
+                "key": "node.kubernetes.io/unreachable",
+                "operator": "Exists",
+                "tolerationSeconds": 300
+            }
+        ]
+    },
+    "status": {
+        "conditions": [
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2021-12-11T18:06:26Z",
+                "message": "containers with incomplete status: [initjunk]",
+                "reason": "ContainersNotInitialized",
+                "status": "False",
+                "type": "Initialized"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2021-12-11T18:06:26Z",
+                "message": "containers with unready status: [junk]",
+                "reason": "ContainersNotReady",
+                "status": "False",
+                "type": "Ready"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2021-12-11T18:06:26Z",
+                "message": "containers with unready status: [junk]",
+                "reason": "ContainersNotReady",
+                "status": "False",
+                "type": "ContainersReady"
+            },
+            {
+                "lastProbeTime": null,
+                "lastTransitionTime": "2021-12-11T18:06:26Z",
+                "status": "True",
+                "type": "PodScheduled"
+            }
+        ],
+        "containerStatuses": [
+            {
+                "image": "asdfnothinghereasdf",
+                "imageID": "",
+                "lastState": {},
+                "name": "junk",
+                "ready": false,
+                "restartCount": 0,
+                "started": false,
+                "state": {
+                    "waiting": {
+                        "reason": "PodInitializing"
+                    }
+                }
+            }
+        ],
+        "ephemeralContainerStatuses": [
+            {
+                "containerID": "containerd://0547c945d9ac1e2861c37c3cbc8dfe35e2fcf1e35d55b46c6d7603f1b4d6a623",
+                "image": "docker.io/library/busybox:1.28",
+                "imageID": "docker.io/library/busybox@sha256:141c253bc4c3fd0a201d32dc1f493bcf3fff003b6df416dea4f41046e0f37d47",
+                "lastState": {},
+                "name": "debugger-bpnvr",
+                "ready": false,
+                "restartCount": 0,
+                "state": {
+                    "running": {
+                        "startedAt": "2021-12-11T18:13:18Z"
+                    }
+                }
+            }
+        ],
+        "hostIP": "192.168.112.3",
+        "initContainerStatuses": [
+            {
+                "image": "initasdfnothinghereasdf",
+                "imageID": "",
+                "lastState": {},
+                "name": "initjunk",
+                "ready": false,
+                "restartCount": 0,
+                "state": {
+                    "waiting": {
+                        "message": "Back-off pulling image \"initasdfnothinghereasdf\"",
+                        "reason": "ImagePullBackOff"
+                    }
+                }
+            }
+        ],
+        "phase": "Pending",
+        "podIP": "192.168.112.3",
+        "podIPs": [
+            {
+                "ip": "192.168.112.3"
+            }
+        ],
+        "qosClass": "BestEffort",
+        "startTime": "2021-12-11T18:06:26Z"
+    }
+}

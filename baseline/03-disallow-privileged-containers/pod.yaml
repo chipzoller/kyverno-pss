@@ -1,0 +1,82 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: testpod
+spec:
+  hostNetwork: true
+  automountServiceAccountToken: false
+  # ephemeralContainers:
+  # - name: ephemjunk
+  #   image: ephemasdfnothinghereasdf
+  #   securityContext:
+  #     windowsOptions:
+  #       runAsUserName: foobar
+        # hostProcess: true
+  initContainers:
+  - name: initjunk
+    image: initasdfnothinghereasdf
+    securityContext:
+      privileged: false
+  containers:
+  - name: junk
+    image: busybox:1.28
+    args:
+    - sleep
+    - "9999"
+    securityContext:
+      privileged: false
+        # runAsUserName: foobar
+    # imagePullPolicy: Always
+    # securityContext:
+    #   capabilities:
+    #     drop:
+    #     - ALL
+  # - name: nginx
+  #   image: fasdafasfsa:latest
+  #   securityContext:
+  #     privileged: true
+  #     capabilities:
+  #       drop:
+  #       - NET_BIND_SERVICE
+  #   resources:
+  #     requests:
+  #       cpu: "100m"
+  #       memory: "50Mi"
+  #     limits:
+  #       cpu: "200m"
+  #       memory: "100Mi"
+  #   securityContext:
+  #     runAsNonRoot: true
+  # - name: liveness
+  #   image: k8s.gcr.io/liveness
+  #   args:
+  #   - /server
+    # livenessProbe:
+    #   tcpSocket:
+    #     port: 2990
+    #   httpGet:
+    #     path: /healthz
+    #     port: 8080
+    #     httpHeaders:
+    #     - name: Custom-Header
+    #       value: Awesome
+    #   initialDelaySeconds: 3
+    #   periodSeconds: 3
+    # readinessProbe:
+      # exec:
+      #   command:
+      #   - test
+      # tcpSocket:
+      #   port: 3000
+      # httpGet:
+      #   path: /healthz
+      #   port: 8080
+      #   httpHeaders:
+      #   - name: Custom-Header
+      #     value: Awesome
+      # initialDelaySeconds: 3
+      # periodSeconds: 3
+  # volumes:
+  # - name: socket
+  #   hostPath:
+  #     path: "/var/run/dockera.sock"
