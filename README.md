@@ -64,7 +64,7 @@ This repo will most likely be deleted when the redesigned PSS policies are merge
 
 I'm using mostly K3d to rapidly build Kubernetes clusters of different versions, configurations, and Kyverno versions. The reduced resource consumption means you can run more concurrently on fewer resources and the OCI images are far smaller than KinD.
 
-The EphemeralContainers feature gate can be enabled with either a CLI flag or a config manifest like that shown below. This was what I used when also building the Windows hostProcess policy as the API server will reject any windowsOptions fields unless the WindowsHostProcessContainers feature gate is enabled. It matters not that the node image is Linux for testing purposes.
+The EphemeralContainers feature gate can be enabled with either a CLI flag or a config manifest like that shown below. There is currently no K3s image built for Kubernetes v1.23. This was what I used when also building the Windows hostProcess policy as the API server will reject any windowsOptions fields unless the WindowsHostProcessContainers feature gate is enabled. It matters not that the node image is Linux for testing purposes.
 
 ```yaml
 apiVersion: k3d.io/v1alpha3
