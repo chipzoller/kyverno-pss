@@ -47,7 +47,7 @@ All these policies are set to `enforce` for ease of testing. They should be chan
 
 Need to start employing the new annotations that describe the version(s) of Kyverno where these were tested and the same for Kubernetes. These are:
 
-```
+```sh
 kyverno.io/kyverno-version: 1.6.0
 kyverno.io/kubernetes-version: "1.22"
 ```

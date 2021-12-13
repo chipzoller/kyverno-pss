@@ -24,12 +24,14 @@ spec:
       validate:
         message: >-
           Containers must drop `ALL` capabilities.
-        deny:
-          conditions:
-            any:
-            - key: "{{ request.object.spec.[ephemeralContainers, initContainers, containers][].securityContext.capabilities.drop[?contains(@, 'ALL')][] | length(@) }}"
-              operator: NotEquals
-              value: "{{ request.object.spec.[ephemeralContainers, initContainers, containers][] | length(@) }}"    
+        foreach:
+          - list: request.object.spec.[ephemeralContainers, initContainers, containers][]
+            deny:
+              conditions:
+                any:
+                - key: ALL
+                  operator: AnyNotIn
+                  value: "{{ element.securityContext.capabilities.drop }}"
     - name: disallow-adding-capabilities-strict
       match:
         resources:
