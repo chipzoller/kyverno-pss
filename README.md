@@ -14,7 +14,7 @@ Ephemeral containers are on by default in Kubernetes 1.23, but prior to that a f
 kubectl replace --raw /api/v1/namespaces/default/pods/testpod/ephemeralcontainers -f ./ephemeralcontainer.json
 ```
 
-This will do a `patch` op on the `<pod_name>/ephemeralcontainers` subresource. A `kubectl debug` command cannot be used to attach an ephemeral container with customized fields.
+This will do a `patch` op on the `testpod/ephemeralcontainers` subresource. `testpod` must first exist. A `kubectl debug` command cannot be used to attach an ephemeral container with customized fields, nor can ephemeral containers be created upon initial pod creation.
 
 Kyverno needs to add `pods/ephemeralcontainers` as a subresource to the `validatingwebhookconfiguration` in order for AdmissionReview requests to hit Kyverno. When testing, each time a policy is deleted and another created, this change must be made each time due to the dynamic configuration of the webhooks.
 
