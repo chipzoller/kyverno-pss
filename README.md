@@ -6,20 +6,20 @@ The PSS policies are arguably the most important ones to Kyverno and so we need 
 
 Table of Contents
 
-  - [General Notes](#general-notes)
-    - [Ephemeral Containers](#ephemeral-containers)
-    - [Version Support](#version-support)
-    - [Optional Policies and Rules](#optional-policies-and-rules)
-    - [CLI Support](#cli-support)
-    - [Tests](#tests)
-    - [Enforce Mode](#enforce-mode)
-    - [Background Scanning Limitations](#background-scanning-limitations)
-    - [Additional Annotations](#additional-annotations)
-    - [Life Expectancy](#life-expectancy)
-  - [Testing Notes](#testing-notes)
-    - [K3d](#k3d)
-  - [Questions/To-Do](#questionsto-do)
-    - [Non-Root Groups](#non-root-groups)
+- [General Notes](#general-notes)
+  - [Ephemeral Containers](#ephemeral-containers)
+  - [Version Support](#version-support)
+  - [Optional Policies and Rules](#optional-policies-and-rules)
+  - [CLI Support](#cli-support)
+  - [Tests](#tests)
+  - [Enforce Mode](#enforce-mode)
+  - [Background Scanning Limitations](#background-scanning-limitations)
+  - [Additional Annotations](#additional-annotations)
+  - [Life Expectancy](#life-expectancy)
+- [Testing Notes](#testing-notes)
+  - [K3d](#k3d)
+- [Questions/To-Do](#questionsto-do)
+  - [Non-Root Groups](#non-root-groups)
 
 ## General Notes
 
