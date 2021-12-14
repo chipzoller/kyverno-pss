@@ -39,10 +39,10 @@ Kyverno needs to add `pods/ephemeralcontainers` as a subresource to the `validat
 
 Kyverno needs the `AnyNotIn` operator to support some of these policies, specifically the baseline/04-disallow-capabilities, baseline/06-disallow-host-ports (commented rule), and restricted/07-disallow-capabilities-strict policies. Also in the baseline/06-disallow-host-ports (commented rule), if/when this is employed by users, it's highly likely they're going to want to set a range of allowed ports rather than a static list. For that, an additional capability in Kyverno that's needed is the range operator (PR [here](https://github.com/kyverno/kyverno/pull/2788)). Combined together, Kyverno needs these enhancements to fully support all these policies:
 
-* [Support for ephemeral containers out-of-the-box](https://github.com/kyverno/kyverno/issues/2821)
-* [Support for the `AnyNotIn` operator](https://github.com/kyverno/kyverno/issues/1837)
-* [Support for the range operator on integers](https://github.com/kyverno/kyverno/issues/2734)
-* [Support in the CLI for more JMESPath expression strings](https://github.com/kyverno/kyverno/issues/2442)
+- [Support for ephemeral containers out-of-the-box](https://github.com/kyverno/kyverno/issues/2821)
+- [Support for the `AnyNotIn` operator](https://github.com/kyverno/kyverno/issues/1837)
+- [Support for the range operator on integers](https://github.com/kyverno/kyverno/issues/2734)
+- [Support in the CLI for more JMESPath expression strings](https://github.com/kyverno/kyverno/issues/2442)
 
 ### Optional Policies and Rules
 
