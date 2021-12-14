@@ -43,6 +43,10 @@ Pending item is to re-write the test resources and greatly expand upon them to i
 
 All these policies are set to `enforce` for ease of testing. They should be changed back to `audit` before being released.
 
+### Background Scanning Limitations
+
+Because presently three of these policies (specifically the baseline/04-disallow-capabilities, baseline/06-disallow-host-ports (commented rule), and restricted/07-disallow-capabilities-strict policies) use JMESPath variables from AdmissionReview requests, this means they will not be operable in background mode per [the documentation](https://kyverno.io/docs/writing-policies/background/). This represents a departure from the present PSS policies so we need to either accept this or solve it.
+
 ### Additional Annotations
 
 Need to start employing the new annotations that describe the version(s) of Kyverno where these were tested and the same for Kubernetes. These are:
