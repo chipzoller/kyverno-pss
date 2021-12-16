@@ -27,12 +27,12 @@ spec:
           Running with root group IDs is disallowed. The fields
           spec.securityContext.runAsGroup, spec.containers[*].securityContext.runAsGroup,
           spec.initContainers[*].securityContext.runAsGroup, and
-          spec.ephemeralContainers[*].securityContext.runAsGroup must be unset
-          or set to a value greater than zero.
-        pattern:
-          spec:
-            =(securityContext):
-              =(runAsGroup): ">0"
+          spec.ephemeralContainers[*].securityContext.runAsGroup must be
+          set to a value greater than zero.
+        anyPattern:
+        - spec:
+            securityContext:
+              runAsGroup: ">0"
             =(ephemeralContainers):
               - =(securityContext):
                   =(runAsGroup): ">0"
@@ -42,6 +42,16 @@ spec:
             containers:
               - =(securityContext):
                   =(runAsGroup): ">0"
+        - spec:
+            =(ephemeralContainers):
+              - securityContext:
+                  runAsGroup: ">0"
+            =(initContainers):
+              - securityContext:
+                  runAsGroup: ">0"
+            containers:
+              - securityContext:
+                  runAsGroup: ">0"
     - name: check-supplementalGroups
       match:
         resources:
@@ -50,7 +60,7 @@ spec:
       validate:
         message: >-
           Containers cannot run with a root primary or supplementary GID. The field
-          spec.securityContext.supplementalGroups must not unset or
+          spec.securityContext.supplementalGroups must be unset or
           set to a value greater than zero.
         pattern:
           spec:
