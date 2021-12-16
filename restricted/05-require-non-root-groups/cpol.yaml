@@ -52,7 +52,7 @@ spec:
             containers:
               - securityContext:
                   runAsGroup: ">0"
-    - name: check-supplementalGroups
+    - name: check-supplementalgroups
       match:
         resources:
           kinds:
@@ -66,7 +66,7 @@ spec:
           spec:
             =(securityContext):
               =(supplementalGroups): ">0"
-    - name: check-fsGroup
+    - name: check-fsgroup
       match:
         resources:
           kinds:
