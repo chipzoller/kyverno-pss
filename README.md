@@ -108,3 +108,7 @@ options:
 The "non-root groups" control is listed as optional without an explanation on the [Restricted page](https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted). Would like to understand this rationale.
 
 Also, on this same control, the present policy on the `runAsGroup` control, if read correctly, suggests a non-zero value is mandatory which I think represents a change. This has been reflected in the current version of the policy.
+
+Although the control here doesn't list a note similar to those occurring in restricted/03-require-run-as-nonroot and restricted/06-restrict-seccomp-strict, it was assumed that the `.spec.*containers[].` level fields are permitted to be unset if the `.spec.` level field is set and vice versa. The `anyPattern` method was therefore employed for all three of these policies.
+
+> The container fields may be undefined/nil if the pod-level spec.securityContext.seccompProfile.type field is set appropriately. Conversely, the pod-level field may be undefined/nil if _all_ container- level fields are set.
