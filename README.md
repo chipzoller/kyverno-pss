@@ -17,6 +17,7 @@ Table of Contents
   - [Life Expectancy](#life-expectancy)
 - [Testing Notes](#testing-notes)
   - [K3d](#k3d)
+  - [Kyverno CLI `test` command](#kyverno-cli-test-command)
 - [Questions/To-Do](#questionsto-do)
   - [Non-Root Groups](#non-root-groups)
 
@@ -100,6 +101,10 @@ options:
       nodeFilters:
         - agent:*
 ```
+
+### Kyverno CLI `test` command
+
+I'm trying to start from the ground up and determine the most reasonably complete suite of tests that can be performed on each policy and have begun to work through these starting with the first Baseline policy. The tentative idea is to test for pass and fail scenarios in three main resource types: Pods, one of Deployment|DaemonSet|StatefulSet|Job, and CronJob as these cover the auto-gen capabilities well. Within each of these, most permutations of denied and allowed Pods should be tested. This approach may seem a bit overkill as it will involve a large number of resources, but it provides very strong coverage for future Kyverno development as all holes are plugged.
 
 ## Questions/To-Do
 
