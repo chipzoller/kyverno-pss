@@ -1,5 +1,4 @@
-###### Pods
-### Bad
+###### Pods - Bad
 ---
 apiVersion: v1
 kind: Pod
@@ -83,8 +82,8 @@ spec:
     securityContext:
       windowsOptions:
         hostProcess: true
-### Good
 ---
+###### Pods - Good
 apiVersion: v1
 kind: Pod
 metadata:
@@ -172,9 +171,8 @@ spec:
     securityContext:
       windowsOptions:
         hostProcess: false
-###### Deployments
-### Bad
 ---
+###### Deployments - Bad
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -302,12 +300,151 @@ spec:
         securityContext:
           windowsOptions:
             hostProcess: true
-### Good
 ---
-
-
-###### CronJobs
-### Bad
+###### Deployments - Good
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gooddeployment01
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      hostNetwork: true
+      containers:
+      - name: container01
+        image: dummyimagename
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gooddeployment02
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      hostNetwork: true
+      containers:
+      - name: container01
+        image: dummyimagename
+        securityContext:
+          windowsOptions:
+            hostProcess: false
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gooddeployment03
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      hostNetwork: true
+      containers:
+      - name: container01
+        image: dummyimagename
+      - name: container02
+        image: dummyimagename
+        securityContext:
+          windowsOptions:
+            hostProcess: false
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gooddeployment04
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      hostNetwork: true
+      initContainers:
+      - name: initcontainer01
+        image: dummyimagename
+      containers:
+      - name: container01
+        image: dummyimagename
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gooddeployment05
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      hostNetwork: true
+      initContainers:
+      - name: initcontainer01
+        image: dummyimagename
+        securityContext:
+          windowsOptions:
+            hostProcess: false
+      containers:
+      - name: container01
+        image: dummyimagename
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gooddeployment06
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      hostNetwork: true
+      initContainers:
+      - name: initcontainer01
+        image: dummyimagename
+        securityContext:
+          windowsOptions:
+            hostProcess: false
+      - name: initcontainer02
+        image: dummyimagename
+      containers:
+      - name: container01
+        image: dummyimagename
+        securityContext:
+          windowsOptions:
+            hostProcess: false
+---
+###### CronJobs - Bad
 apiVersion: batch/v1
 kind: CronJob
 metadata:
@@ -318,9 +455,219 @@ spec:
     spec:
       template:
         spec:
+          hostNetwork: true
           containers:
           - name: container01
             image: dummyimagename
             securityContext:
               windowsOptions:
                 hostProcess: true
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: badcronjob02
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          hostNetwork: true
+          containers:
+          - name: container01
+            image: dummyimagename
+          - name: container02
+            image: dummyimagename
+            securityContext:
+              windowsOptions:
+                hostProcess: true
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: badcronjob03
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          hostNetwork: true
+          initContainers:
+          - name: initcontainer01
+            image: dummyimagename
+            securityContext:
+              windowsOptions:
+                hostProcess: true
+          containers:
+          - name: container01
+            image: dummyimagename
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: badcronjob04
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          hostNetwork: true
+          initContainers:
+          - name: initcontainer01
+            image: dummyimagename
+          - name: initcontainer02
+            image: dummyimagename
+            securityContext:
+              windowsOptions:
+                hostProcess: true
+          containers:
+          - name: container01
+            image: dummyimagename
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: badcronjob05
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          hostNetwork: true
+          initContainers:
+          - name: initcontainer01
+            image: dummyimagename
+          - name: initcontainer02
+            image: dummyimagename
+            securityContext:
+              windowsOptions:
+                hostProcess: true
+          containers:
+          - name: container01
+            image: dummyimagename
+            securityContext:
+              windowsOptions:
+                hostProcess: true
+---
+###### CronJobs - Good
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: goodcronjob01
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          hostNetwork: true
+          containers:
+          - name: container01
+            image: dummyimagename
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: goodcronjob02
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          hostNetwork: true
+          containers:
+          - name: container01
+            image: dummyimagename
+            securityContext:
+              windowsOptions:
+                hostProcess: false
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: goodcronjob03
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          hostNetwork: true
+          containers:
+          - name: container01
+            image: dummyimagename
+          - name: container02
+            image: dummyimagename
+            securityContext:
+              windowsOptions:
+                hostProcess: false
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: goodcronjob04
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          hostNetwork: true
+          initContainers:
+          - name: initcontainer01
+            image: dummyimagename
+          containers:
+          - name: container01
+            image: dummyimagename
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: goodcronjob05
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          hostNetwork: true
+          initContainers:
+          - name: initcontainer01
+            image: dummyimagename
+            securityContext:
+              windowsOptions:
+                hostProcess: false
+          containers:
+          - name: container01
+            image: dummyimagename
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: goodcronjob06
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          hostNetwork: true
+          initContainers:
+          - name: initcontainer01
+            image: dummyimagename
+          - name: initcontainer02
+            image: dummyimagename
+            securityContext:
+              windowsOptions:
+                hostProcess: false
+          containers:
+          - name: container01
+            image: dummyimagename
+            securityContext:
+              windowsOptions:
+                hostProcess: false
