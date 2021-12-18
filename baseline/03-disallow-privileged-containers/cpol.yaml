@@ -23,7 +23,7 @@ spec:
       validate:
         message: >-
           Privileged mode is disallowed. The fields spec.containers[*].securityContext.privileged
-          and spec.initContainers[*].securityContext.privileged must not be set to true.
+          and spec.initContainers[*].securityContext.privileged must be unset or set to `false`.
         pattern:
           spec:
             =(ephemeralContainers):
