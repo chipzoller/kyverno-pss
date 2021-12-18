@@ -455,6 +455,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           hostNetwork: true
           containers:
           - name: container01
@@ -473,6 +474,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           hostNetwork: true
           containers:
           - name: container01
@@ -493,6 +495,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           hostNetwork: true
           initContainers:
           - name: initcontainer01
@@ -514,6 +517,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           hostNetwork: true
           initContainers:
           - name: initcontainer01
@@ -537,6 +541,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           hostNetwork: true
           initContainers:
           - name: initcontainer01
@@ -564,6 +569,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           hostNetwork: true
           containers:
           - name: container01
@@ -579,6 +585,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           hostNetwork: true
           containers:
           - name: container01
@@ -597,6 +604,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           hostNetwork: true
           containers:
           - name: container01
@@ -617,6 +625,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           hostNetwork: true
           initContainers:
           - name: initcontainer01
@@ -635,6 +644,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           hostNetwork: true
           initContainers:
           - name: initcontainer01
@@ -656,6 +666,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           hostNetwork: true
           initContainers:
           - name: initcontainer01

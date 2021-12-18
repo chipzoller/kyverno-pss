@@ -281,6 +281,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           hostPID: true
           containers:
           - name: container01
@@ -296,6 +297,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           hostIPC: true
           containers:
           - name: container01
@@ -311,6 +313,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           hostNetwork: true
           containers:
           - name: container01
@@ -326,6 +329,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           hostPID: true
           hostIPC: true
           hostNetwork: true
@@ -344,6 +348,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           containers:
           - name: container01
             image: dummyimagename
@@ -358,6 +363,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           hostPID: false
           containers:
           - name: container01
@@ -373,6 +379,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           hostIPC: false
           containers:
           - name: container01
@@ -388,6 +395,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           hostNetwork: false
           containers:
           - name: container01
@@ -403,6 +411,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           hostPID: false
           hostIPC: false
           hostNetwork: false

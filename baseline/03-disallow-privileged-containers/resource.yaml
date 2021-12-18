@@ -411,6 +411,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           containers:
           - name: container01
             image: dummyimagename
@@ -427,6 +428,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           containers:
           - name: container01
             image: dummyimagename
@@ -445,6 +447,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           initContainers:
           - name: initcontainer01
             image: dummyimagename
@@ -464,6 +467,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           initContainers:
           - name: initcontainer01
             image: dummyimagename
@@ -485,6 +489,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           initContainers:
           - name: initcontainer01
             image: dummyimagename
@@ -509,6 +514,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           containers:
           - name: container01
             image: dummyimagename
@@ -523,6 +529,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           containers:
           - name: container01
             image: dummyimagename
@@ -539,6 +546,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           containers:
           - name: container01
             image: dummyimagename
@@ -557,6 +565,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           initContainers:
           - name: initcontainer01
             image: dummyimagename
@@ -574,6 +583,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           initContainers:
           - name: initcontainer01
             image: dummyimagename
@@ -593,6 +603,7 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: OnFailure
           initContainers:
           - name: initcontainer01
             image: dummyimagename
