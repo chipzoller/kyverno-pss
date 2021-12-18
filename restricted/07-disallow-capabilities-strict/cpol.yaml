@@ -8,6 +8,7 @@ metadata:
     kyverno.io/kyverno-version: 1.6.0
     kyverno.io/kubernetes-version: "1.22"
     policies.kyverno.io/subject: Pod
+    pod-policies.kyverno.io/autogen-controllers: none
     policies.kyverno.io/description: >-
       Adding capabilities other than `NET_BIND_SERVICE` is disallowed. In addition,
       all containers must explicitly drop `ALL` capabilities. Needs
@@ -16,7 +17,7 @@ spec:
   validationFailureAction: enforce
   background: true
   rules:
-    - name: require-drop-all
+    - name: require-drop-all-pods
       match:
         resources:
           kinds:
@@ -32,7 +33,42 @@ spec:
                 - key: ALL
                   operator: AnyNotIn
                   value: "{{ element.securityContext.capabilities.drop }}"
-    - name: disallow-adding-capabilities-strict
+    - name: require-drop-all-controllers
+      match:
+        resources:
+          kinds:
+            - Deployment
+            - DaemonSet
+            - StatefulSet
+            - Job
+      validate:
+        message: >-
+          Containers must drop `ALL` capabilities.
+        foreach:
+          - list: request.object.spec.template.spec.[ephemeralContainers, initContainers, containers][]
+            deny:
+              conditions:
+                any:
+                - key: ALL
+                  operator: AnyNotIn
+                  value: "{{ element.securityContext.capabilities.drop }}"
+    - name: require-drop-all-cronjobs
+      match:
+        resources:
+          kinds:
+            - CronJob
+      validate:
+        message: >-
+          Containers must drop `ALL` capabilities.
+        foreach:
+          - list: request.object.spec.jobTemplate.spec.template.spec.[ephemeralContainers, initContainers, containers][]
+            deny:
+              conditions:
+                any:
+                - key: ALL
+                  operator: AnyNotIn
+                  value: "{{ element.securityContext.capabilities.drop }}"
+    - name: adding-capabilities-strict-pods
       match:
         resources:
           kinds:
@@ -44,6 +80,39 @@ spec:
           conditions:
             all:
             - key: "{{ request.object.spec.[ephemeralContainers, initContainers, containers][].securityContext.capabilities.add[] }}"
+              operator: AnyNotIn
+              value:
+              - NET_BIND_SERVICE
+    - name: adding-capabilities-strict-controllers
+      match:
+        resources:
+          kinds:
+            - Deployment
+            - DaemonSet
+            - StatefulSet
+            - Job
+      validate:
+        message: >-
+          Any capabilities added other than NET_BIND_SERVICE are disallowed.
+        deny:
+          conditions:
+            all:
+            - key: "{{ request.object.spec.template.spec.[ephemeralContainers, initContainers, containers][].securityContext.capabilities.add[] }}"
+              operator: AnyNotIn
+              value:
+              - NET_BIND_SERVICE
+    - name: adding-capabilities-strict-cronjobs
+      match:
+        resources:
+          kinds:
+            - CronJob
+      validate:
+        message: >-
+          Any capabilities added other than NET_BIND_SERVICE are disallowed.
+        deny:
+          conditions:
+            all:
+            - key: "{{ request.object.spec.jobTemplate.spec.template.spec.[ephemeralContainers, initContainers, containers][].securityContext.capabilities.add[] }}"
               operator: AnyNotIn
               value:
               - NET_BIND_SERVICE
