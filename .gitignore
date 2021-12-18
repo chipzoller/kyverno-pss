@@ -1,1 +1,2 @@
 baseline/01-disallow-host-process/baddeployment01.yaml
+baseline/04-disallow-capabilities/pod.yaml
