@@ -1,0 +1,14 @@
+### WARNING: Current testing not possible with Kyverno CLI. This is a placeholder.
+### See notes in README
+name: disallow-capabilities
+policies:
+  - cpol.yaml
+resources:
+  - resource.yaml
+results:
+###### Pods - Bad
+  - policy: disallow-capabilities
+    rule: adding-capabilities-pods
+    resource: badpod01
+    kind: Pod
+    result: fail

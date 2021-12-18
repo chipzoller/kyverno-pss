@@ -1,0 +1,17 @@
+### WARNING: Current testing not possible with Kyverno CLI. This is a placeholder.
+### See notes in README
+###### Pods - Bad
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: badpod01
+spec:
+  containers:
+  - name: container01
+    image: dummyimagename
+    securityContext:
+      capabilities:
+        add:
+        - FOO
+---
