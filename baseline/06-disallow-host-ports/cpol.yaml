@@ -37,7 +37,7 @@ spec:
             containers:
               - =(ports):
                   - =(hostPort): 0
-    # - name: host-port-list
+    # - name: host-port-list-pods
     #   match:
     #     resources:
     #       kinds:
@@ -49,6 +49,43 @@ spec:
     #       conditions:
     #         all:
     #         - key: "{{ request.object.spec.[ephemeralContainers, initContainers, containers][].ports[].hostPort }}"
+    #           operator: AnyNotIn
+    #           value:
+    #           - 2222
+    #           - 3333
+    #           - 4444
+    # - name: host-port-list-controllers
+    #   match:
+    #     resources:
+    #       kinds:
+    #         - Deployment
+    #         - DaemonSet
+    #         - StatefulSet
+    #         - Job
+    #   validate:
+    #     message: >-
+    #       Only permitted hostPorts are allowed: 2222, 3333, 4444.
+    #     deny:
+    #       conditions:
+    #         all:
+    #         - key: "{{ request.object.spec.template.spec.[ephemeralContainers, initContainers, containers][].ports[].hostPort }}"
+    #           operator: AnyNotIn
+    #           value:
+    #           - 2222
+    #           - 3333
+    #           - 4444
+    # - name: host-port-list-cronjobs
+    #   match:
+    #     resources:
+    #       kinds:
+    #         - CronJob
+    #   validate:
+    #     message: >-
+    #       Only permitted hostPorts are allowed: 2222, 3333, 4444.
+    #     deny:
+    #       conditions:
+    #         all:
+    #         - key: "{{ request.object.spec.jobTemplate.spec.template.spec.[ephemeralContainers, initContainers, containers][].ports[].hostPort }}"
     #           operator: AnyNotIn
     #           value:
     #           - 2222
