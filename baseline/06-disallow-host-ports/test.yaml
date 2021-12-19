@@ -1,0 +1,52 @@
+name: disallow-host-ports
+policies:
+  - cpol.yaml
+resources:
+  - resource.yaml
+results:
+###### Pods - Bad
+  - policy: disallow-host-ports
+    rule: host-ports
+    resource: badpod01
+    kind: Pod
+    result: fail
+  - policy: disallow-host-ports
+    rule: host-ports
+    resource: badpod02
+    kind: Pod
+    result: fail
+  - policy: disallow-host-ports
+    rule: host-ports
+    resource: badpod03
+    kind: Pod
+    result: fail
+  - policy: disallow-host-ports
+    rule: host-ports
+    resource: badpod04
+    kind: Pod
+    result: fail
+  - policy: disallow-host-ports
+    rule: host-ports
+    resource: badpod05
+    kind: Pod
+    result: fail
+  - policy: disallow-host-ports
+    rule: host-ports
+    resource: badpod06
+    kind: Pod
+    result: fail
+  - policy: disallow-host-ports
+    rule: host-ports
+    resource: badpod07
+    kind: Pod
+    result: fail
+  - policy: disallow-host-ports
+    rule: host-ports
+    resource: badpod08
+    kind: Pod
+    result: fail
+  - policy: disallow-host-ports
+    rule: host-ports
+    resource: badpod09
+    kind: Pod
+    result: fail
