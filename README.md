@@ -52,7 +52,7 @@ There are now some "optional" policies that we need to somehow account for, espe
 
 ### CLI Support
 
-Because some of these policies use a JMESPath expression to group all ephemeralContainers, initContainers, and containers into a single, flattened array, the Kyverno CLI is not going to be able to test against these policies presently. See [this issue](https://github.com/kyverno/kyverno/issues/2442) for reference.
+Because some of these policies use a JMESPath expression to group all ephemeralContainers, initContainers, and containers into a single, flattened array, the Kyverno CLI is not going to be able to test against these policies presently. See [this issue](https://github.com/kyverno/kyverno/issues/2442) for reference. There are also some bugs that need to be addressed. See the list containing them under [Version Support](#version-support).
 
 ### Tests
 
