@@ -17,7 +17,7 @@ spec:
   background: true
   validationFailureAction: enforce
   rules:
-  - name: restrict-seccomp
+  - name: check-seccomp
     match:
       resources:
         kinds:
@@ -29,7 +29,7 @@ spec:
         spec.containers[*].securityContext.seccompProfile.type,
         spec.initContainers[*].securityContext.seccompProfile.type, and
         spec.ephemeralContainers[*].securityContext.seccompProfile.type
-        must be unset, or set to `RuntimeDefault` or `Localhost`.
+        must be unset or set to `RuntimeDefault` or `Localhost`.
       pattern:
         spec:
           =(securityContext):
