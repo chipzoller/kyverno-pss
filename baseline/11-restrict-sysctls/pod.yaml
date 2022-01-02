@@ -9,7 +9,7 @@ spec:
     args:
     - sleep
     - "9999"
-  volumes:
-  - name: test
-    photonPersistentDisk:
-      pdID: foo
+  securityContext:
+    sysctls:
+    - name: kernel.shm_next_id
+      value: "4"
