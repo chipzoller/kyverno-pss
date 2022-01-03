@@ -6,102 +6,337 @@ resources:
 results:
 ###### Pods - Bad
   - policy: restrict-volume-types
-    rule: restricted-vol-gcePersistentDisk
+    rule: restricted-volumes-pods
     resource: badpod01
     kind: Pod
     result: fail
   - policy: restrict-volume-types
-    rule: restricted-vol-awsElasticBlockStore
+    rule: restricted-volumes-pods
     resource: badpod02
     kind: Pod
     result: fail
   - policy: restrict-volume-types
-    rule: restricted-vol-gitRepo
+    rule: restricted-volumes-pods
     resource: badpod03
     kind: Pod
     result: fail
   - policy: restrict-volume-types
-    rule: restricted-vol-nfs
+    rule: restricted-volumes-pods
     resource: badpod04
     kind: Pod
     result: fail
   - policy: restrict-volume-types
-    rule: restricted-vol-iscsi
+    rule: restricted-volumes-pods
     resource: badpod05
     kind: Pod
     result: fail
   - policy: restrict-volume-types
-    rule: restricted-vol-glusterfs
+    rule: restricted-volumes-pods
     resource: badpod06
     kind: Pod
     result: fail
   - policy: restrict-volume-types
-    rule: restricted-vol-rbd
+    rule: restricted-volumes-pods
     resource: badpod07
     kind: Pod
     result: fail
   - policy: restrict-volume-types
-    rule: restricted-vol-flexVolume
+    rule: restricted-volumes-pods
     resource: badpod08
     kind: Pod
     result: fail
   - policy: restrict-volume-types
-    rule: restricted-vol-cinder
+    rule: restricted-volumes-pods
     resource: badpod09
     kind: Pod
     result: fail
   - policy: restrict-volume-types
-    rule: restricted-vol-cephfs
+    rule: restricted-volumes-pods
     resource: badpod10
     kind: Pod
     result: fail
   - policy: restrict-volume-types
-    rule: restricted-vol-flocker
+    rule: restricted-volumes-pods
     resource: badpod11
     kind: Pod
     result: fail
   - policy: restrict-volume-types
-    rule: restricted-vol-fc
+    rule: restricted-volumes-pods
     resource: badpod12
     kind: Pod
     result: fail
   - policy: restrict-volume-types
-    rule: restricted-vol-azureFile
+    rule: restricted-volumes-pods
     resource: badpod13
     kind: Pod
     result: fail
   - policy: restrict-volume-types
-    rule: restricted-vol-vsphereVolume
+    rule: restricted-volumes-pods
     resource: badpod14
     kind: Pod
     result: fail
   - policy: restrict-volume-types
-    rule: restricted-vol-quobyte
+    rule: restricted-volumes-pods
     resource: badpod15
     kind: Pod
     result: fail
   - policy: restrict-volume-types
-    rule: restricted-vol-azureDisk
+    rule: restricted-volumes-pods
     resource: badpod16
     kind: Pod
     result: fail
   - policy: restrict-volume-types
-    rule: restricted-vol-portworxVolume
+    rule: restricted-volumes-pods
     resource: badpod17
     kind: Pod
     result: fail
   - policy: restrict-volume-types
-    rule: restricted-vol-scaleIO
+    rule: restricted-volumes-pods
     resource: badpod18
     kind: Pod
     result: fail
   - policy: restrict-volume-types
-    rule: restricted-vol-storageos
+    rule: restricted-volumes-pods
     resource: badpod19
     kind: Pod
     result: fail
   - policy: restrict-volume-types
-    rule: restricted-vol-photonpersistentdisk
+    rule: restricted-volumes-pods
     resource: badpod20
     kind: Pod
     result: fail
+###### Pods - Good
+  - policy: restrict-volume-types
+    rule: restricted-volumes-pods
+    resource: goodpod01
+    kind: Pod
+    result: pass
+  - policy: restrict-volume-types
+    rule: restricted-volumes-pods
+    resource: goodpod02
+    kind: Pod
+    result: pass
+###### Deployments - Bad
+  - policy: restrict-volume-types
+    rule: restricted-volumes-controllers
+    resource: baddeployment01
+    kind: Deployment
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-controllers
+    resource: baddeployment02
+    kind: Deployment
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-controllers
+    resource: baddeployment03
+    kind: Deployment
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-controllers
+    resource: baddeployment04
+    kind: Deployment
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-controllers
+    resource: baddeployment05
+    kind: Deployment
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-controllers
+    resource: baddeployment06
+    kind: Deployment
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-controllers
+    resource: baddeployment07
+    kind: Deployment
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-controllers
+    resource: baddeployment08
+    kind: Deployment
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-controllers
+    resource: baddeployment09
+    kind: Deployment
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-controllers
+    resource: baddeployment10
+    kind: Deployment
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-controllers
+    resource: baddeployment11
+    kind: Deployment
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-controllers
+    resource: baddeployment12
+    kind: Deployment
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-controllers
+    resource: baddeployment13
+    kind: Deployment
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-controllers
+    resource: baddeployment14
+    kind: Deployment
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-controllers
+    resource: baddeployment15
+    kind: Deployment
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-controllers
+    resource: baddeployment16
+    kind: Deployment
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-controllers
+    resource: baddeployment17
+    kind: Deployment
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-controllers
+    resource: baddeployment18
+    kind: Deployment
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-controllers
+    resource: baddeployment19
+    kind: Deployment
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-controllers
+    resource: baddeployment20
+    kind: Deployment
+    result: fail
+###### Deployments - Good
+  - policy: restrict-volume-types
+    rule: restricted-volumes-controllers
+    resource: gooddeployment01
+    kind: Deployment
+    result: pass
+  - policy: restrict-volume-types
+    rule: restricted-volumes-controllers
+    resource: gooddeployment02
+    kind: Deployment
+    result: pass
+###### CronJobs - Bad
+  - policy: restrict-volume-types
+    rule: restricted-volumes-cronjob
+    resource: badcronjob01
+    kind: CronJob
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-cronjob
+    resource: badcronjob02
+    kind: CronJob
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-cronjob
+    resource: badcronjob03
+    kind: CronJob
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-cronjob
+    resource: badcronjob04
+    kind: CronJob
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-cronjob
+    resource: badcronjob05
+    kind: CronJob
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-cronjob
+    resource: badcronjob06
+    kind: CronJob
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-cronjob
+    resource: badcronjob07
+    kind: CronJob
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-cronjob
+    resource: badcronjob08
+    kind: CronJob
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-cronjob
+    resource: badcronjob09
+    kind: CronJob
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-cronjob
+    resource: badcronjob10
+    kind: CronJob
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-cronjob
+    resource: badcronjob11
+    kind: CronJob
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-cronjob
+    resource: badcronjob12
+    kind: CronJob
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-cronjob
+    resource: badcronjob13
+    kind: CronJob
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-cronjob
+    resource: badcronjob14
+    kind: CronJob
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-cronjob
+    resource: badcronjob15
+    kind: CronJob
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-cronjob
+    resource: badcronjob16
+    kind: CronJob
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-cronjob
+    resource: badcronjob17
+    kind: CronJob
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-cronjob
+    resource: badcronjob18
+    kind: CronJob
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-cronjob
+    resource: badcronjob19
+    kind: CronJob
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-volumes-cronjob
+    resource: badcronjob20
+    kind: CronJob
+    result: fail
+###### CronJobs - Good
+  - policy: restrict-volume-types
+    rule: restricted-volumes-cronjob
+    resource: goodcronjob01
+    kind: CronJob
+    result: pass
+  - policy: restrict-volume-types
+    rule: restricted-volumes-cronjob
+    resource: goodcronjob02
+    kind: CronJob
+    result: pass
