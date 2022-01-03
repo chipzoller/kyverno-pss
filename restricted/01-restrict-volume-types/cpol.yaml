@@ -263,7 +263,7 @@ spec:
         spec:
           =(volumes):
           - X(storageos): "null"
-  - name: restricted-vol-csi
+  - name: restricted-vol-photonpersistentdisk
     match:
       resources:
         kinds:
