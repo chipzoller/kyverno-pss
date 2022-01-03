@@ -15,7 +15,7 @@ spec:
   validationFailureAction: enforce
   background: true
   rules:
-  - name: disallow-privilege-escalation
+  - name: privilege-escalation
     match:
       resources:
         kinds:
