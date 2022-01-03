@@ -1,6 +1,6 @@
 # About
 
-This repo contains the latest Kubernetes [Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/) written for Kyverno, which now number 18. They represent a "refresh" of the existing policies stored [here](https://github.com/kyverno/policies/tree/main/pod-security).
+This repo contains the latest Kubernetes [Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/) written for Kyverno, which now number 18. They represent a "refresh" of the existing policies stored [here](https://github.com/kyverno/policies/tree/main/pod-security). Many are new and most have either been entirely rewritten or fixed/optimized. In addition to making the policies current in alignment with the PSS, the other large focus of this refresh has been to create extensive tests to cover them.
 
 The PSS policies are arguably the most important ones to Kyverno and so we need to ensure these, above all else, are extremely polished and accurate.
 
