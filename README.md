@@ -58,7 +58,7 @@ Because some of these policies use a JMESPath expression to group all ephemeralC
 
 Tests are being given a significant amount of attention to ensure most permutations are covered as well as hitting some of the key high-level Pod controllers with one from each category: Deployment and CronJob.
 
-Three central premises being used to write tests: 1) Pods and at least two other higher-level controllers should be tested; 2) the resources written as tests should be valid in the absence of any Kyverno policies (i.e., the resource is accepted by the Kubernetes API server and not invalid); and 3) enough tests should be written to cover all rules and most permutations of each rule so as to make a reasonable assumption as to the quality of the policy and not allow obvious avenues for circumvention or exploitation.
+Three central premises being used to write tests: 1) Pods and at least two other higher-level controllers should be tested; 2) the resources written as tests should be valid in the absence of any Kyverno policies (i.e., the resource is accepted by the Kubernetes API server and not invalid); and 3) enough tests should be written to cover all rules, all portions of each rule (as possible), and most permutations of each rule so as to make a reasonable assumption as to the quality of the policy and not allow obvious avenues for circumvention or exploitation.
 
 ### Enforce Mode
 
