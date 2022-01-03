@@ -30,7 +30,7 @@ spec:
           - list: request.object.spec.[ephemeralContainers, initContainers, containers][]
             deny:
               conditions:
-                any:
+                all:
                 - key: ALL
                   operator: AnyNotIn
                   value: "{{ element.securityContext.capabilities.drop }}"
@@ -49,7 +49,7 @@ spec:
           - list: request.object.spec.template.spec.[ephemeralContainers, initContainers, containers][]
             deny:
               conditions:
-                any:
+                all:
                 - key: ALL
                   operator: AnyNotIn
                   value: "{{ element.securityContext.capabilities.drop }}"
@@ -65,7 +65,7 @@ spec:
           - list: request.object.spec.jobTemplate.spec.template.spec.[ephemeralContainers, initContainers, containers][]
             deny:
               conditions:
-                any:
+                all:
                 - key: ALL
                   operator: AnyNotIn
                   value: "{{ element.securityContext.capabilities.drop }}"
