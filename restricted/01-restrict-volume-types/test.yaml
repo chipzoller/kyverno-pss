@@ -1,0 +1,107 @@
+name: restrict-volume-types
+policies:
+  - cpol.yaml
+resources:
+  - resource.yaml
+results:
+###### Pods - Bad
+  - policy: restrict-volume-types
+    rule: restricted-vol-gcePersistentDisk
+    resource: badpod01
+    kind: Pod
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-vol-awsElasticBlockStore
+    resource: badpod02
+    kind: Pod
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-vol-gitRepo
+    resource: badpod03
+    kind: Pod
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-vol-nfs
+    resource: badpod04
+    kind: Pod
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-vol-iscsi
+    resource: badpod05
+    kind: Pod
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-vol-glusterfs
+    resource: badpod06
+    kind: Pod
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-vol-rbd
+    resource: badpod07
+    kind: Pod
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-vol-flexVolume
+    resource: badpod08
+    kind: Pod
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-vol-cinder
+    resource: badpod09
+    kind: Pod
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-vol-cephfs
+    resource: badpod10
+    kind: Pod
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-vol-flocker
+    resource: badpod11
+    kind: Pod
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-vol-fc
+    resource: badpod12
+    kind: Pod
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-vol-azureFile
+    resource: badpod13
+    kind: Pod
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-vol-vsphereVolume
+    resource: badpod14
+    kind: Pod
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-vol-quobyte
+    resource: badpod15
+    kind: Pod
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-vol-azureDisk
+    resource: badpod16
+    kind: Pod
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-vol-portworxVolume
+    resource: badpod17
+    kind: Pod
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-vol-scaleIO
+    resource: badpod18
+    kind: Pod
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-vol-storageos
+    resource: badpod19
+    kind: Pod
+    result: fail
+  - policy: restrict-volume-types
+    rule: restricted-vol-photonpersistentdisk
+    resource: badpod20
+    kind: Pod
+    result: fail
