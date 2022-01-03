@@ -37,10 +37,10 @@ Kyverno needs to add `pods/ephemeralcontainers` as a subresource to the `validat
 
 ### Version Support
 
-Kyverno needs the `AnyNotIn` operator to support some of these policies, specifically the baseline/04-disallow-capabilities, baseline/06-disallow-host-ports (commented rule), and restricted/07-disallow-capabilities-strict policies. Also in the baseline/06-disallow-host-ports (commented rule), if/when this is employed by users, it's highly likely they're going to want to set a range of allowed ports rather than a static list. For that, an additional capability in Kyverno that's needed is the range operator (PR [here](https://github.com/kyverno/kyverno/pull/2788)). Combined together, Kyverno needs these enhancements to fully support all these policies:
+Kyverno needs the `AnyNotIn` and `AnyIn` operators to support some of these policies, specifically the baseline/04-disallow-capabilities, baseline/06-disallow-host-ports (commented rule), restricted/01-restrict-volume-types, and restricted/07-disallow-capabilities-strict policies. Also in the baseline/06-disallow-host-ports (commented rule), if/when this is employed by users, it's highly likely they're going to want to set a range of allowed ports rather than a static list. For that, an additional capability in Kyverno that's needed is the range operator (PR [here](https://github.com/kyverno/kyverno/pull/2788)). Combined together, Kyverno needs these enhancements to fully support all these policies:
 
 - [Support for ephemeral containers out-of-the-box](https://github.com/kyverno/kyverno/issues/2821)
-- [Support for the `AnyNotIn` operator](https://github.com/kyverno/kyverno/issues/1837)
+- [Support for the `AnyNotIn` and `AnyIn` operators](https://github.com/kyverno/kyverno/issues/1837)
 - [Support for the range operator on integers](https://github.com/kyverno/kyverno/issues/2734)
 - [Support in the CLI for more JMESPath expression strings](https://github.com/kyverno/kyverno/issues/2442)
 - [Bug fix in the CLI for test coverage of the SELinux rules](https://github.com/kyverno/kyverno/issues/2877)
@@ -56,7 +56,7 @@ Because some of these policies use a JMESPath expression to group all ephemeralC
 
 ### Tests
 
-Pending item is to re-write the test resources and greatly expand upon them to include higher-level Pod controller manifests like Deployments and Jobs. We shouldn't just include tests against Pod resources and call it quits. This is something I plan on working on over the holiday break.
+Tests are being given a significant amount of attention to ensure most permutations are covered as well as hitting some of the key high-level Pod controllers with one from each category: Deployment and CronJob.
 
 ### Enforce Mode
 
@@ -71,7 +71,7 @@ kyverno.io/kyverno-version: 1.6.0
 kyverno.io/kubernetes-version: "1.22"
 ```
 
-Cases where the `AnyNotIn` operator is used have been tagged, initially, for 1.6.0 because that's the corresponding milestone. It can obviously be changed. And all these were built and tested on Kubernetes 1.22 hence that value. We need to be careful not to change these values unless _the version(s) being added were actually and successfully tested_. There shouldn't be any guessing on our part as to the operability of these policies on earlier or later versions of either Kyverno or Kubernetes; if it wasn't explicitly tested and verified, it shouldn't be listed.
+Cases where the `AnyNotIn` or `AnyIn` operators are used have been tagged, initially, for 1.6.0 because that's the corresponding milestone. It can obviously be changed. And all these were built and tested on Kubernetes 1.22 hence that value. We need to be careful not to change these values unless _the version(s) being added were actually and successfully tested_. There shouldn't be any guessing on our part as to the operability of these policies on earlier or later versions of either Kyverno or Kubernetes; if it wasn't explicitly tested and verified, it shouldn't be listed.
 
 ### Life Expectancy
 
