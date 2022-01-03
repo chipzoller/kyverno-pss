@@ -1,0 +1,12 @@
+name: disallow-privilege-escalation
+policies:
+  - cpol.yaml
+resources:
+  - resource.yaml
+results:
+###### Pods - Bad
+  - policy: disallow-privilege-escalation
+    rule: privilege-escalation
+    resource: badpod01
+    kind: Pod
+    result: fail
