@@ -127,3 +127,7 @@ From the restricted/03-require-run-as-nonroot control in the [PSS Restricted](ht
 From the restricted/06-restrict-seccomp-strict control in the [PSS Restricted](https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted) column:
 
 > The container fields may be undefined/`nil` if the pod-level `spec.securityContext.seccompProfile.type` field is set appropriately. Conversely, the pod-level field may be undefined/`nil` if _all_ container-level fields are set.
+
+### Rename test files
+
+Test manifest files should be renamed to `kyverno-test.yaml` in accordance with https://github.com/kyverno/kyverno/issues/2322.
