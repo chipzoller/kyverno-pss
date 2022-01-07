@@ -4,6 +4,8 @@ This repo contains the latest Kubernetes [Pod Security Standards](https://kubern
 
 The PSS policies are arguably the most important ones to Kyverno and so we need to ensure these, above all else, are extremely polished and accurate.
 
+This repo is a WIP and is subject to periodic change. It should be considered experimental until finalized.
+
 Table of Contents
 
 - [General Notes](#general-notes)
