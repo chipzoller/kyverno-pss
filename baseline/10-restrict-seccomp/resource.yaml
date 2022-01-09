@@ -140,6 +140,7 @@ spec:
   securityContext:
     seccompProfile:
       type: Localhost
+      localhostProfile: operator/default/profile1.json
 ---
 apiVersion: v1
 kind: Pod
@@ -164,6 +165,7 @@ spec:
     securityContext:
       seccompProfile:
         type: Localhost
+        localhostProfile: operator/default/profile1.json
 ---
 apiVersion: v1
 kind: Pod
@@ -195,6 +197,7 @@ spec:
     securityContext:
       seccompProfile:
         type: Localhost
+        localhostProfile: operator/default/profile1.json
 ---
 apiVersion: v1
 kind: Pod
@@ -222,6 +225,7 @@ spec:
     securityContext:
       seccompProfile:
         type: Localhost
+        localhostProfile: operator/default/profile1.json
   containers:
   - name: container01
     image: dummyimagename
@@ -254,6 +258,7 @@ spec:
     securityContext:
       seccompProfile:
         type: Localhost
+        localhostProfile: operator/default/profile1.json
   - name: initcontainer02
     image: dummyimagename
     securityContext:
@@ -494,6 +499,7 @@ spec:
       securityContext:
         seccompProfile:
           type: Localhost
+          localhostProfile: operator/default/profile1.json
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -536,6 +542,7 @@ spec:
         securityContext:
           seccompProfile:
             type: Localhost
+            localhostProfile: operator/default/profile1.json
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -580,6 +587,7 @@ spec:
         securityContext:
           seccompProfile:
             type: Localhost
+            localhostProfile: operator/default/profile1.json
       - name: container02
         image: dummyimagename
         securityContext:
@@ -630,6 +638,7 @@ spec:
         securityContext:
           seccompProfile:
             type: Localhost
+            localhostProfile: operator/default/profile1.json
       containers:
       - name: container01
         image: dummyimagename
@@ -680,6 +689,7 @@ spec:
         securityContext:
           seccompProfile:
             type: Localhost
+            localhostProfile: operator/default/profile1.json
       - name: initcontainer02
         image: dummyimagename
         securityContext:
@@ -890,6 +900,7 @@ spec:
           securityContext:
             seccompProfile:
               type: Localhost
+              localhostProfile: operator/default/profile1.json
 ---
 apiVersion: batch/v1
 kind: CronJob
@@ -926,6 +937,7 @@ spec:
             securityContext:
               seccompProfile:
                 type: Localhost
+                localhostProfile: operator/default/profile1.json
 ---
 apiVersion: batch/v1
 kind: CronJob
@@ -964,6 +976,7 @@ spec:
             securityContext:
               seccompProfile:
                 type: Localhost
+                localhostProfile: operator/default/profile1.json
           - name: container02
             image: dummyimagename
             securityContext:
@@ -1008,6 +1021,7 @@ spec:
             securityContext:
               seccompProfile:
                 type: Localhost
+                localhostProfile: operator/default/profile1.json
           containers:
           - name: container01
             image: dummyimagename
@@ -1052,6 +1066,7 @@ spec:
             securityContext:
               seccompProfile:
                 type: Localhost
+                localhostProfile: operator/default/profile1.json
           - name: initcontainer02
             image: dummyimagename
             securityContext:
