@@ -89,6 +89,14 @@ body:
       label: Kyverno logs
       description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks. For help on how to view Pod logs in Kubernetes, see [here](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-running-pod/#examine-pod-logs).
       render: shell
+  - type: input
+    id: slack
+    attributes:
+      label: Slack discussion
+      description: If this issue is the result of a discussion thread on Slack, please provide the link to the discussion for reference.
+      # placeholder: ex. email@example.com
+    validations:
+      required: false
   - type: checkboxes
     id: troubleshooting
     attributes:
