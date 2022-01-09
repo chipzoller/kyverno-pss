@@ -59,7 +59,7 @@ body:
     id: bug-reproduce-steps
     attributes:
       label: Steps to reproduce
-      description: What are the exact steps needed to reproduce the bug you experienced?
+      description: What are the exact steps needed to reproduce the bug you experienced? Please provide any and all manifests needed to reproduce your issue, including Kyverno policies and test Kubernetes resources.
       # placeholder: Tell us what you see!
       value: |-
         1. 
@@ -87,7 +87,7 @@ body:
     id: logs
     attributes:
       label: Kyverno logs
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks. For help on how to view Pod logs in Kubernetes, see [here](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-running-pod/#examine-pod-logs).
       render: shell
   - type: checkboxes
     id: troubleshooting
@@ -95,5 +95,5 @@ body:
       label: Troubleshooting
       description: By submitting this issue, you agree that you have read the [troubleshooting guide](https://kyverno.io/docs/troubleshooting/) first.
       options:
-        - label: I have exhausted all options in the troubleshooting guide.
+        - label: I have read and followed the troubleshooting guide.
           required: true
