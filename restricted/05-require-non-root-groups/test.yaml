@@ -472,3 +472,57 @@ results:
     resource: supgrp-goodcronjob03
     kind: CronJob
     result: pass
+#########################
+## Rule: check-fsgroup ##
+#########################
+###### Pods - Bad
+  - policy: require-non-root-groups
+    rule: check-fsgroup
+    resource: fsgrp-badpod01
+    kind: Pod
+    result: fail
+###### Pods - Good
+  - policy: require-non-root-groups
+    rule: check-fsgroup
+    resource: fsgrp-goodpod01
+    kind: Pod
+    result: pass
+  - policy: require-non-root-groups
+    rule: check-fsgroup
+    resource: fsgrp-goodpod02
+    kind: Pod
+    result: pass
+###### Deployments - Bad
+  - policy: require-non-root-groups
+    rule: check-fsgroup
+    resource: fsgrp-baddeployment01
+    kind: Deployment
+    result: fail
+###### Deployments - Good
+  - policy: require-non-root-groups
+    rule: check-fsgroup
+    resource: fsgrp-gooddeployment01
+    kind: Deployment
+    result: pass
+  - policy: require-non-root-groups
+    rule: check-fsgroup
+    resource: fsgrp-gooddeployment02
+    kind: Deployment
+    result: pass
+###### CronJobs - Bad
+  - policy: require-non-root-groups
+    rule: check-fsgroup
+    resource: fsgrp-badcronjob01
+    kind: CronJob
+    result: fail
+###### CronJobs - Good
+  - policy: require-non-root-groups
+    rule: check-fsgroup
+    resource: fsgrp-goodcronjob01
+    kind: CronJob
+    result: pass
+  - policy: require-non-root-groups
+    rule: check-fsgroup
+    resource: fsgrp-goodcronjob02
+    kind: CronJob
+    result: pass

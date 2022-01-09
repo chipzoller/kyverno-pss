@@ -1706,3 +1706,149 @@ spec:
           securityContext:
             supplementalGroups: [32,94]
 ---
+#########################
+## Rule: check-fsgroup ##
+#########################
+###### Pods - Bad
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fsgrp-badpod01
+spec:
+  containers:
+  - name: container01
+    image: dummyimagename
+  securityContext:
+    fsGroup: 0
+---
+###### Pods - Good
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fsgrp-goodpod01
+spec:
+  containers:
+  - name: container01
+    image: dummyimagename
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fsgrp-goodpod02
+spec:
+  containers:
+  - name: container01
+    image: dummyimagename
+  securityContext:
+    fsGroup: 32
+---
+###### Deployments - Bad
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fsgrp-baddeployment01
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: container01
+        image: dummyimagename
+      securityContext:
+        fsGroup: 0
+---
+###### Deployments - Good
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fsgrp-gooddeployment01
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: container01
+        image: dummyimagename
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fsgrp-gooddeployment02
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: container01
+        image: dummyimagename
+      securityContext:
+        fsGroup: 32
+---
+###### CronJobs - Bad
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: fsgrp-badcronjob01
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: container01
+            image: dummyimagename
+          securityContext:
+            fsGroup: 0
+---
+###### CronJobs - Good
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: fsgrp-goodcronjob01
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: container01
+            image: dummyimagename
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: fsgrp-goodcronjob02
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: container01
+            image: dummyimagename
+          securityContext:
+            fsGroup: 32
