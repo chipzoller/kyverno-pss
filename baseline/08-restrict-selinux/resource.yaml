@@ -1234,7 +1234,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: badpod01
+  name: selur-badpod01
 spec:
   containers:
   - name: container01
@@ -1246,7 +1246,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: badpod02
+  name: selur-badpod02
 spec:
   containers:
   - name: container01
@@ -1258,7 +1258,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: badpod03
+  name: selur-badpod03
 spec:
   containers:
   - name: container01
@@ -1271,7 +1271,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: badpod04
+  name: selur-badpod04
 spec:
   containers:
   - name: container01
@@ -1283,7 +1283,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: badpod05
+  name: selur-badpod05
 spec:
   containers:
   - name: container01
@@ -1295,7 +1295,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: badpod06
+  name: selur-badpod06
 spec:
   containers:
   - name: container01
@@ -1308,7 +1308,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: badpod07
+  name: selur-badpod07
 spec:
   containers:
   - name: container01
@@ -1322,7 +1322,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: badpod08
+  name: selur-badpod08
 spec:
   containers:
   - name: container01
@@ -1336,7 +1336,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: badpod09
+  name: selur-badpod09
 spec:
   containers:
   - name: container01
@@ -1351,7 +1351,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: badpod10
+  name: selur-badpod10
 spec:
   containers:
   - name: container01
@@ -1368,7 +1368,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: badpod11
+  name: selur-badpod11
 spec:
   initContainers:
   - name: initcontainer01
@@ -1383,7 +1383,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: badpod12
+  name: selur-badpod12
 spec:
   initContainers:
   - name: initcontainer01
@@ -1398,7 +1398,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: badpod13
+  name: selur-badpod13
 spec:
   initContainers:
   - name: initcontainer01
@@ -1414,7 +1414,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: badpod14
+  name: selur-badpod14
 spec:
   initContainers:
   - name: initcontainer02
@@ -1431,7 +1431,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: badpod15
+  name: selur-badpod15
 spec:
   initContainers:
   - name: initcontainer02
@@ -1448,7 +1448,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: badpod16
+  name: selur-badpod16
 spec:
   initContainers:
   - name: initcontainer02
@@ -1466,7 +1466,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: badpod17
+  name: selur-badpod17
 spec:
   initContainers:
   - name: initcontainer02
@@ -1487,7 +1487,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: goodpod01
+  name: selur-goodpod01
 spec:
   containers:
   - name: container01
@@ -1496,7 +1496,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: goodpod02
+  name: selur-goodpod02
 spec:
   containers:
   - name: container01
@@ -1508,7 +1508,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: goodpod03
+  name: selur-goodpod03
 spec:
   containers:
   - name: container01
@@ -1520,7 +1520,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: goodpod04
+  name: selur-goodpod04
 spec:
   containers:
   - name: container01
@@ -1533,7 +1533,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: goodpod05
+  name: selur-goodpod05
 spec:
   containers:
   - name: container01
@@ -1547,7 +1547,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: goodpod06
+  name: selur-goodpod06
 spec:
   containers:
   - name: container01
@@ -1564,7 +1564,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: goodpod07
+  name: selur-goodpod07
 spec:
   initContainers:
   - name: initcontainer01
@@ -1576,7 +1576,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: goodpod08
+  name: selur-goodpod08
 spec:
   initContainers:
   - name: initcontainer01
@@ -1591,7 +1591,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: goodpod09
+  name: selur-goodpod09
 spec:
   initContainers:
   - name: initcontainer01
@@ -1607,7 +1607,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: goodpod10
+  name: selur-goodpod10
 spec:
   initContainers:
   - name: initcontainer01
@@ -1624,7 +1624,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: goodpod11
+  name: selur-goodpod11
 spec:
   initContainers:
   - name: initcontainer01
@@ -1645,7 +1645,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: baddeployment01
+  name: selur-baddeployment01
 spec:
   replicas: 1
   selector:
@@ -1666,7 +1666,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: baddeployment02
+  name: selur-baddeployment02
 spec:
   replicas: 1
   selector:
@@ -1687,7 +1687,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: baddeployment03
+  name: selur-baddeployment03
 spec:
   replicas: 1
   selector:
@@ -1709,7 +1709,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: baddeployment04
+  name: selur-baddeployment04
 spec:
   replicas: 1
   selector:
@@ -1730,7 +1730,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: baddeployment05
+  name: selur-baddeployment05
 spec:
   replicas: 1
   selector:
@@ -1751,7 +1751,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: baddeployment06
+  name: selur-baddeployment06
 spec:
   replicas: 1
   selector:
@@ -1773,7 +1773,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: baddeployment07
+  name: selur-baddeployment07
 spec:
   replicas: 1
   selector:
@@ -1796,7 +1796,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: baddeployment08
+  name: selur-baddeployment08
 spec:
   replicas: 1
   selector:
@@ -1819,7 +1819,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: baddeployment09
+  name: selur-baddeployment09
 spec:
   replicas: 1
   selector:
@@ -1843,7 +1843,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: baddeployment10
+  name: selur-baddeployment10
 spec:
   replicas: 1
   selector:
@@ -1869,7 +1869,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: baddeployment11
+  name: selur-baddeployment11
 spec:
   replicas: 1
   selector:
@@ -1893,7 +1893,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: baddeployment12
+  name: selur-baddeployment12
 spec:
   replicas: 1
   selector:
@@ -1917,7 +1917,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: baddeployment13
+  name: selur-baddeployment13
 spec:
   replicas: 1
   selector:
@@ -1942,7 +1942,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: baddeployment14
+  name: selur-baddeployment14
 spec:
   replicas: 1
   selector:
@@ -1968,7 +1968,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: baddeployment15
+  name: selur-baddeployment15
 spec:
   replicas: 1
   selector:
@@ -1994,7 +1994,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: baddeployment16
+  name: selur-baddeployment16
 spec:
   replicas: 1
   selector:
@@ -2021,7 +2021,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: baddeployment17
+  name: selur-baddeployment17
 spec:
   replicas: 1
   selector:
@@ -2051,7 +2051,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gooddeployment01
+  name: selur-gooddeployment01
 spec:
   replicas: 1
   selector:
@@ -2069,7 +2069,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gooddeployment02
+  name: selur-gooddeployment02
 spec:
   replicas: 1
   selector:
@@ -2090,7 +2090,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gooddeployment03
+  name: selur-gooddeployment03
 spec:
   replicas: 1
   selector:
@@ -2111,7 +2111,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gooddeployment04
+  name: selur-gooddeployment04
 spec:
   replicas: 1
   selector:
@@ -2133,7 +2133,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gooddeployment05
+  name: selur-gooddeployment05
 spec:
   replicas: 1
   selector:
@@ -2156,7 +2156,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gooddeployment06
+  name: selur-gooddeployment06
 spec:
   replicas: 1
   selector:
@@ -2182,7 +2182,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gooddeployment07
+  name: selur-gooddeployment07
 spec:
   replicas: 1
   selector:
@@ -2203,7 +2203,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gooddeployment08
+  name: selur-gooddeployment08
 spec:
   replicas: 1
   selector:
@@ -2227,7 +2227,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gooddeployment09
+  name: selur-gooddeployment09
 spec:
   replicas: 1
   selector:
@@ -2252,7 +2252,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gooddeployment10
+  name: selur-gooddeployment10
 spec:
   replicas: 1
   selector:
@@ -2278,7 +2278,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gooddeployment11
+  name: selur-gooddeployment11
 spec:
   replicas: 1
   selector:
@@ -2308,7 +2308,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: badcronjob01
+  name: selur-badcronjob01
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2326,7 +2326,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: badcronjob02
+  name: selur-badcronjob02
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2344,7 +2344,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: badcronjob03
+  name: selur-badcronjob03
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2363,7 +2363,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: badcronjob04
+  name: selur-badcronjob04
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2381,7 +2381,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: badcronjob05
+  name: selur-badcronjob05
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2399,7 +2399,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: badcronjob06
+  name: selur-badcronjob06
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2418,7 +2418,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: badcronjob07
+  name: selur-badcronjob07
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2438,7 +2438,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: badcronjob08
+  name: selur-badcronjob08
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2458,7 +2458,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: badcronjob09
+  name: selur-badcronjob09
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2479,7 +2479,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: badcronjob10
+  name: selur-badcronjob10
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2502,7 +2502,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: badcronjob11
+  name: selur-badcronjob11
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2523,7 +2523,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: badcronjob12
+  name: selur-badcronjob12
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2544,7 +2544,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: badcronjob13
+  name: selur-badcronjob13
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2566,7 +2566,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: badcronjob14
+  name: selur-badcronjob14
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2589,7 +2589,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: badcronjob15
+  name: selur-badcronjob15
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2612,7 +2612,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: badcronjob16
+  name: selur-badcronjob16
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2636,7 +2636,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: badcronjob17
+  name: selur-badcronjob17
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2663,7 +2663,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: goodcronjob01
+  name: selur-goodcronjob01
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2678,7 +2678,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: goodcronjob02
+  name: selur-goodcronjob02
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2696,7 +2696,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: goodcronjob03
+  name: selur-goodcronjob03
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2714,7 +2714,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: goodcronjob04
+  name: selur-goodcronjob04
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2733,7 +2733,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: goodcronjob05
+  name: selur-goodcronjob05
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2753,7 +2753,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: goodcronjob06
+  name: selur-goodcronjob06
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2776,7 +2776,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: goodcronjob07
+  name: selur-goodcronjob07
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2794,7 +2794,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: goodcronjob08
+  name: selur-goodcronjob08
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2815,7 +2815,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: goodcronjob09
+  name: selur-goodcronjob09
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2837,7 +2837,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: goodcronjob10
+  name: selur-goodcronjob10
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -2860,7 +2860,7 @@ spec:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: goodcronjob11
+  name: selur-goodcronjob11
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:

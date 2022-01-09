@@ -334,426 +334,426 @@ results:
 ###### Pods - Bad
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badpod01
+    resource: selur-badpod01
     kind: Pod
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badpod02
+    resource: selur-badpod02
     kind: Pod
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badpod03
+    resource: selur-badpod03
     kind: Pod
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badpod04
+    resource: selur-badpod04
     kind: Pod
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badpod05
+    resource: selur-badpod05
     kind: Pod
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badpod06
+    resource: selur-badpod06
     kind: Pod
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badpod07
+    resource: selur-badpod07
     kind: Pod
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badpod08
+    resource: selur-badpod08
     kind: Pod
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badpod09
+    resource: selur-badpod09
     kind: Pod
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badpod10
+    resource: selur-badpod10
     kind: Pod
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badpod11
+    resource: selur-badpod11
     kind: Pod
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badpod12
+    resource: selur-badpod12
     kind: Pod
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badpod13
+    resource: selur-badpod13
     kind: Pod
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badpod14
+    resource: selur-badpod14
     kind: Pod
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badpod15
+    resource: selur-badpod15
     kind: Pod
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badpod16
+    resource: selur-badpod16
     kind: Pod
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badpod17
+    resource: selur-badpod17
     kind: Pod
     result: fail
 ###### Pods - Good
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: goodpod01
+    resource: selur-goodpod01
     kind: Pod
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: goodpod02
+    resource: selur-goodpod02
     kind: Pod
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: goodpod03
+    resource: selur-goodpod03
     kind: Pod
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: goodpod04
+    resource: selur-goodpod04
     kind: Pod
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: goodpod05
+    resource: selur-goodpod05
     kind: Pod
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: goodpod06
+    resource: selur-goodpod06
     kind: Pod
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: goodpod07
+    resource: selur-goodpod07
     kind: Pod
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: goodpod08
+    resource: selur-goodpod08
     kind: Pod
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: goodpod09
+    resource: selur-goodpod09
     kind: Pod
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: goodpod10
+    resource: selur-goodpod10
     kind: Pod
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: goodpod11
+    resource: selur-goodpod11
     kind: Pod
     result: pass
 ###### Deployments - Bad
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: baddeployment01
+    resource: selur-baddeployment01
     kind: Deployment
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: baddeployment02
+    resource: selur-baddeployment02
     kind: Deployment
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: baddeployment03
+    resource: selur-baddeployment03
     kind: Deployment
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: baddeployment04
+    resource: selur-baddeployment04
     kind: Deployment
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: baddeployment05
+    resource: selur-baddeployment05
     kind: Deployment
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: baddeployment06
+    resource: selur-baddeployment06
     kind: Deployment
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: baddeployment07
+    resource: selur-baddeployment07
     kind: Deployment
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: baddeployment08
+    resource: selur-baddeployment08
     kind: Deployment
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: baddeployment09
+    resource: selur-baddeployment09
     kind: Deployment
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: baddeployment10
+    resource: selur-baddeployment10
     kind: Deployment
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: baddeployment11
+    resource: selur-baddeployment11
     kind: Deployment
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: baddeployment12
+    resource: selur-baddeployment12
     kind: Deployment
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: baddeployment13
+    resource: selur-baddeployment13
     kind: Deployment
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: baddeployment14
+    resource: selur-baddeployment14
     kind: Deployment
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: baddeployment15
+    resource: selur-baddeployment15
     kind: Deployment
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: baddeployment16
+    resource: selur-baddeployment16
     kind: Deployment
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: baddeployment17
+    resource: selur-baddeployment17
     kind: Deployment
     result: fail
 ###### Deployments - Good
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: gooddeployment01
+    resource: selur-gooddeployment01
     kind: Deployment
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: gooddeployment02
+    resource: selur-gooddeployment02
     kind: Deployment
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: gooddeployment03
+    resource: selur-gooddeployment03
     kind: Deployment
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: gooddeployment04
+    resource: selur-gooddeployment04
     kind: Deployment
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: gooddeployment05
+    resource: selur-gooddeployment05
     kind: Deployment
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: gooddeployment06
+    resource: selur-gooddeployment06
     kind: Deployment
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: gooddeployment07
+    resource: selur-gooddeployment07
     kind: Deployment
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: gooddeployment08
+    resource: selur-gooddeployment08
     kind: Deployment
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: gooddeployment09
+    resource: selur-gooddeployment09
     kind: Deployment
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: gooddeployment10
+    resource: selur-gooddeployment10
     kind: Deployment
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: gooddeployment11
+    resource: selur-gooddeployment11
     kind: Deployment
     result: pass
 ###### CronJobs - Bad
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badcronjob01
+    resource: selur-badcronjob01
     kind: CronJob
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badcronjob02
+    resource: selur-badcronjob02
     kind: CronJob
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badcronjob03
+    resource: selur-badcronjob03
     kind: CronJob
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badcronjob04
+    resource: selur-badcronjob04
     kind: CronJob
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badcronjob05
+    resource: selur-badcronjob05
     kind: CronJob
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badcronjob06
+    resource: selur-badcronjob06
     kind: CronJob
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badcronjob07
+    resource: selur-badcronjob07
     kind: CronJob
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badcronjob08
+    resource: selur-badcronjob08
     kind: CronJob
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badcronjob09
+    resource: selur-badcronjob09
     kind: CronJob
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badcronjob10
+    resource: selur-badcronjob10
     kind: CronJob
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badcronjob11
+    resource: selur-badcronjob11
     kind: CronJob
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badcronjob12
+    resource: selur-badcronjob12
     kind: CronJob
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badcronjob13
+    resource: selur-badcronjob13
     kind: CronJob
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badcronjob14
+    resource: selur-badcronjob14
     kind: CronJob
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badcronjob15
+    resource: selur-badcronjob15
     kind: CronJob
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badcronjob16
+    resource: selur-badcronjob16
     kind: CronJob
     result: fail
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: badcronjob17
+    resource: selur-badcronjob17
     kind: CronJob
     result: fail
 ###### CronJobs - Good
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: goodcronjob01
+    resource: selur-goodcronjob01
     kind: CronJob
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: goodcronjob02
+    resource: selur-goodcronjob02
     kind: CronJob
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: goodcronjob03
+    resource: selur-goodcronjob03
     kind: CronJob
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: goodcronjob04
+    resource: selur-goodcronjob04
     kind: CronJob
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: goodcronjob05
+    resource: selur-goodcronjob05
     kind: CronJob
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: goodcronjob06
+    resource: selur-goodcronjob06
     kind: CronJob
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: goodcronjob07
+    resource: selur-goodcronjob07
     kind: CronJob
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: goodcronjob08
+    resource: selur-goodcronjob08
     kind: CronJob
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: goodcronjob09
+    resource: selur-goodcronjob09
     kind: CronJob
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: goodcronjob10
+    resource: selur-goodcronjob10
     kind: CronJob
     result: pass
   - policy: disallow-selinux
     rule: selinux-user-role
-    resource: goodcronjob11
+    resource: selur-goodcronjob11
     kind: CronJob
     result: pass
