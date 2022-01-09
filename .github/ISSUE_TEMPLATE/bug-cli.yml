@@ -47,32 +47,41 @@ body:
     validations:
       required: true
   - type: textarea
-    id: what-happened
+    id: bug-description
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
+      label: Description
+      description: Describe what happened.
       placeholder: Tell us what you see!
-      value: |
-        *Describe the bug**
-        A clear and concise description of what the bug is.
-
-        **To Reproduce**
-        Steps to reproduce the behavior:
-        1. Go to '...'
-        2. Click on '....'
-        3. Scroll down to '....'
-        4. See error
-
-        **Expected behavior**
-        A clear and concise description of what you expected to happen.
-
-        **Screenshots**
-        If applicable, add screenshots to help explain your problem.
-
-        **Additional context**
-        Add any other context about the problem here.
+      value: ""
     validations:
       required: true
+  - type: textarea
+    id: bug-reproduce-steps
+    attributes:
+      label: Steps to reproduce
+      description: What are the exact steps needed to reproduce the bug you experienced?
+      placeholder: Tell us what you see!
+      value: ""
+    validations:
+      required: true
+  - type: textarea
+    id: bug-expectations
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+      placeholder: Tell us what you see!
+      value: ""
+    validations:
+      required: true
+  - type: textarea
+    id: bug-screenshots
+    attributes:
+      label: Screenshots
+      description: If you have any screenshots that would help, please paste them below. GitHub allows you to copy-and-paste directly from the clipboard into the text area.
+      placeholder: Tell us what you see!
+      value: ""
+    validations:
+      required: false
   - type: textarea
     id: logs
     attributes:
