@@ -112,7 +112,7 @@ metadata:
   name: goodpod04
 spec:
   initContainers:
-  - name: container01
+  - name: initcontainer01
     image: dummyimagename
   containers:
   - name: container01
@@ -124,7 +124,7 @@ metadata:
   name: goodpod05
 spec:
   initContainers:
-  - name: container01
+  - name: initcontainer01
     image: dummyimagename
     securityContext:
       procMount: Default
@@ -138,9 +138,9 @@ metadata:
   name: goodpod06
 spec:
   initContainers:
-  - name: container01
+  - name: initcontainer01
     image: dummyimagename
-  - name: container02
+  - name: initcontainer02
     image: dummyimagename
     securityContext:
       procMount: Default
