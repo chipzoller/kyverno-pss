@@ -51,6 +51,10 @@ Kyverno needs the `AnyNotIn` and `AnyIn` operators to support some of these poli
 - [Bug fix in the CLI for test coverage of the SELinux rules](https://github.com/kyverno/kyverno/issues/2877)
 - [Bug fix in the CLI for tests of large sets of resources](https://github.com/kyverno/kyverno/issues/2878) (Closed; User error)
 
+**Optional**
+
+- [Support mutation of variables in `validate.deny` statements when matching on only Pod](https://github.com/kyverno/kyverno/issues/1933) (Rules manually created currently for other controllers)
+
 ### Optional Policies and Rules
 
 There are now some "optional" policies that we need to somehow account for, especially when installed with Helm. Policies like baseline/06-disallow-host-ports have a commented-out rule that is for users who want to support a list of allowed hostPorts rather than just categorically deny everything. The restricted/05-require-non-root-groups is now listed as "optional" on the PSS page so we'd need to agree whether this always gets installed or is behind some sort of switch.
@@ -139,4 +143,4 @@ Test manifest files should be renamed to `kyverno-test.yaml` in accordance with 
 
 ### Helm chart alignment
 
-Need to align these with the kyverno-policies Helm chart and figure out how to deal with optional and/or alternate policies.
+Need to align these with the kyverno-policies Helm chart and figure out how to deal with optional and/or alternate policies. An alternate would be in baseline/06-disallow-hostports. Host ports are either denied (set to `0`) or allowed with only a permitted array/range. The commented out rule represents the more permissive alternate rule. An optional policy (although unexplained) would be restricted/05-require-non-root-groups.
