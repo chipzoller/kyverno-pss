@@ -51,7 +51,7 @@ body:
     attributes:
       label: Description
       description: Describe what happened.
-      placeholder: Tell us what you see!
+      # placeholder: Tell us what you see!
       # value: "asdf"
     validations:
       required: true
@@ -60,8 +60,8 @@ body:
     attributes:
       label: Steps to reproduce
       description: What are the exact steps needed to reproduce the bug you experienced?
-      placeholder: Tell us what you see!
-      value: "asdf"
+      # placeholder: Tell us what you see!
+      # value: "asdf"
     validations:
       required: true
   - type: textarea
@@ -69,8 +69,8 @@ body:
     attributes:
       label: Expected behavior
       description: What did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "asdf"
+      # placeholder: Tell us what you see!
+      # value: "asdf"
     validations:
       required: true
   - type: textarea
@@ -78,8 +78,8 @@ body:
     attributes:
       label: Screenshots
       description: If you have any screenshots that would help, please paste them below. GitHub allows you to copy-and-paste directly from the clipboard into the text area.
-      placeholder: Tell us what you see!
-      value: "asdf"
+      # placeholder: Tell us what you see!
+      # value: "asdf"
     validations:
       required: false
   - type: textarea
