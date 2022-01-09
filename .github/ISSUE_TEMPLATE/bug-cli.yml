@@ -52,7 +52,7 @@ body:
       label: Description
       description: Describe what happened.
       placeholder: Tell us what you see!
-      value: ""
+      value: "asdf"
     validations:
       required: true
   - type: textarea
