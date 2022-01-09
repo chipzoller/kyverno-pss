@@ -61,7 +61,7 @@ body:
       label: Steps to reproduce
       description: What are the exact steps needed to reproduce the bug you experienced?
       # placeholder: Tell us what you see!
-      value: |
+      value: |-
         1. 
     validations:
       required: true
