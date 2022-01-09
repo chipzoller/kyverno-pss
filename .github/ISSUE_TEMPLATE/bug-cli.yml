@@ -101,7 +101,8 @@ body:
     id: troubleshooting
     attributes:
       label: Troubleshooting
-      description: By submitting this issue, you agree that you have read the [troubleshooting guide](https://kyverno.io/docs/troubleshooting/) first.
+      description: By submitting this issue, you agree that you have read the [troubleshooting guide]() first.
       options:
-        - label: I have read and followed the troubleshooting guide.
+        - label: I have read and followed the [troubleshooting guide](https://kyverno.io/docs/troubleshooting/).
+        - label: I have searched other issues in this repository and mine is not recorded.
           required: true
