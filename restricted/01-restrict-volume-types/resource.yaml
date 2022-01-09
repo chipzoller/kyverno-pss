@@ -1,3 +1,5 @@
+### WARNING: Current testing not possible with Kyverno CLI v1.5.2. This is a placeholder for a time where the CLI can support the tests.
+### See notes in README
 ###### Pods - Bad
 ---
 apiVersion: v1
