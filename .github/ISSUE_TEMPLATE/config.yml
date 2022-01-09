@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
   - name: Kyverno policy request
-    url: https://github.com/kyverno/policies
+    url: https://github.com/kyverno/policies/issues/new?assignees=&labels=&template=sample_policy.md&title=
     about: Open an issue to request a new policy.
