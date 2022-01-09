@@ -46,7 +46,7 @@ Kyverno needs the `AnyNotIn` and `AnyIn` operators to support some of these poli
 - [Support for the range operator on integers](https://github.com/kyverno/kyverno/issues/2734) (Closed)
 - [Support in the CLI for more JMESPath expression strings](https://github.com/kyverno/kyverno/issues/2442)
 - [Bug fix in the CLI for test coverage of the SELinux rules](https://github.com/kyverno/kyverno/issues/2877)
-- [Bug fix in the CLI for tests of large sets of resources](https://github.com/kyverno/kyverno/issues/2878)
+- [Bug fix in the CLI for tests of large sets of resources](https://github.com/kyverno/kyverno/issues/2878) (Closed; User error)
 
 ### Optional Policies and Rules
 
