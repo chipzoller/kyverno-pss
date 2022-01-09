@@ -78,7 +78,7 @@ body:
     id: bug-screenshots
     attributes:
       label: Screenshots
-      description: If you have any screenshots that would help, please paste them below. GitHub allows you to copy-and-paste directly from the clipboard into the text area.
+      description: If you have any screenshots that would help, please paste them below. GitHub allows you to copy-and-paste directly from the clipboard into the text area. Please avoid taking screenshots of either log or terminal output; paste any textual output in the logs section below.
       # placeholder: Tell us what you see!
       # value: "asdf"
     validations:
