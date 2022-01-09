@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: badpod01
+spec:
+  containers:
+  - name: container01
+    image: dummyimagename
+  securityContext:
+    runAsGroup: 111
+    supplementalGroups: [14,0]
