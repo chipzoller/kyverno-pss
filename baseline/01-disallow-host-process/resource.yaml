@@ -22,6 +22,9 @@ spec:
   containers:
   - name: container01
     image: dummyimagename
+    securityContext:
+      windowsOptions:
+        hostProcess: true
   - name: container02
     image: dummyimagename
     securityContext:
@@ -43,6 +46,9 @@ spec:
   containers:
   - name: container01
     image: dummyimagename
+    securityContext:
+      windowsOptions:
+        hostProcess: true
 ---
 apiVersion: v1
 kind: Pod
@@ -53,6 +59,9 @@ spec:
   initContainers:
   - name: initcontainer01
     image: dummyimagename
+    securityContext:
+      windowsOptions:
+        hostProcess: true
   - name: initcontainer02
     image: dummyimagename
     securityContext:
@@ -61,6 +70,9 @@ spec:
   containers:
   - name: container01
     image: dummyimagename
+    securityContext:
+      windowsOptions:
+        hostProcess: true
 ---
 apiVersion: v1
 kind: Pod
@@ -71,6 +83,9 @@ spec:
   initContainers:
   - name: initcontainer01
     image: dummyimagename
+    securityContext:
+      windowsOptions:
+        hostProcess: true
   - name: initcontainer02
     image: dummyimagename
     securityContext:
@@ -129,7 +144,7 @@ metadata:
 spec:
   hostNetwork: true
   initContainers:
-  - name: container01
+  - name: initcontainer01
     image: dummyimagename
   containers:
   - name: container01
@@ -142,7 +157,7 @@ metadata:
 spec:
   hostNetwork: true
   initContainers:
-  - name: container01
+  - name: initcontainer01
     image: dummyimagename
     securityContext:
       windowsOptions:
@@ -158,9 +173,9 @@ metadata:
 spec:
   hostNetwork: true
   initContainers:
-  - name: container01
+  - name: initcontainer01
     image: dummyimagename
-  - name: container02
+  - name: initcontainer02
     image: dummyimagename
     securityContext:
       windowsOptions:
@@ -213,6 +228,9 @@ spec:
       containers:
       - name: container01
         image: dummyimagename
+        securityContext:
+          windowsOptions:
+            hostProcess: true
       - name: container02
         image: dummyimagename
         securityContext:
@@ -243,6 +261,9 @@ spec:
       containers:
       - name: container01
         image: dummyimagename
+        securityContext:
+          windowsOptions:
+            hostProcess: true
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -262,6 +283,9 @@ spec:
       initContainers:
       - name: initcontainer01
         image: dummyimagename
+        securityContext:
+          windowsOptions:
+            hostProcess: true
       - name: initcontainer02
         image: dummyimagename
         securityContext:
@@ -270,6 +294,9 @@ spec:
       containers:
       - name: container01
         image: dummyimagename
+        securityContext:
+          windowsOptions:
+            hostProcess: true
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -289,6 +316,9 @@ spec:
       initContainers:
       - name: initcontainer01
         image: dummyimagename
+        securityContext:
+          windowsOptions:
+            hostProcess: true
       - name: initcontainer02
         image: dummyimagename
         securityContext:
@@ -479,6 +509,9 @@ spec:
           containers:
           - name: container01
             image: dummyimagename
+            securityContext:
+              windowsOptions:
+                hostProcess: true
           - name: container02
             image: dummyimagename
             securityContext:
@@ -506,6 +539,9 @@ spec:
           containers:
           - name: container01
             image: dummyimagename
+            securityContext:
+              windowsOptions:
+                hostProcess: true
 ---
 apiVersion: batch/v1
 kind: CronJob
@@ -522,6 +558,9 @@ spec:
           initContainers:
           - name: initcontainer01
             image: dummyimagename
+            securityContext:
+              windowsOptions:
+                hostProcess: true
           - name: initcontainer02
             image: dummyimagename
             securityContext:
@@ -530,6 +569,9 @@ spec:
           containers:
           - name: container01
             image: dummyimagename
+            securityContext:
+              windowsOptions:
+                hostProcess: true
 ---
 apiVersion: batch/v1
 kind: CronJob
@@ -546,6 +588,9 @@ spec:
           initContainers:
           - name: initcontainer01
             image: dummyimagename
+            securityContext:
+              windowsOptions:
+                hostProcess: true
           - name: initcontainer02
             image: dummyimagename
             securityContext:
