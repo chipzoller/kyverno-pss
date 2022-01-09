@@ -22,6 +22,8 @@ Table of Contents
   - [Kyverno CLI `test` command](#kyverno-cli-test-command)
 - [Questions/To-Do](#questionsto-do)
   - [Non-Root Groups](#non-root-groups)
+  - [Rename test files](#rename-test-files)
+  - [Helm chart alignment](#helm-chart-alignment)
 
 ## General Notes
 
