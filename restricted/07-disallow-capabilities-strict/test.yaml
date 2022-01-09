@@ -1,0 +1,266 @@
+### WARNING: Current testing not possible with Kyverno CLI v1.5.2. This is a placeholder for a time where the CLI can support the tests.
+### See notes in README
+name: disallow-capabilities-strict
+policies:
+  - cpol.yaml
+resources:
+  - resource.yaml
+results:
+#################################
+## Rule: require-drop-all-pods ##
+#################################
+###### Pods - Bad
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-pods
+    resource: badpod01
+    kind: Pod
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-pods
+    resource: badpod02
+    kind: Pod
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-pods
+    resource: badpod03
+    kind: Pod
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-pods
+    resource: badpod04
+    kind: Pod
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-pods
+    resource: badpod05
+    kind: Pod
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-pods
+    resource: badpod06
+    kind: Pod
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-pods
+    resource: badpod07
+    kind: Pod
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-pods
+    resource: badpod08
+    kind: Pod
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-pods
+    resource: badpod09
+    kind: Pod
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-pods
+    resource: badpod10
+    kind: Pod
+    result: fail
+###### Pods - Good
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-pods
+    resource: goodpod01
+    kind: Pod
+    result: pass
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-pods
+    resource: goodpod02
+    kind: Pod
+    result: pass
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-pods
+    resource: goodpod03
+    kind: Pod
+    result: pass
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-pods
+    resource: goodpod04
+    kind: Pod
+    result: pass
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-pods
+    resource: goodpod05
+    kind: Pod
+    result: pass
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-pods
+    resource: goodpod06
+    kind: Pod
+    result: pass
+########################################
+## Rule: require-drop-all-controllers ##
+########################################
+###### Deployments - Bad
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-controllers
+    resource: baddeployment01
+    kind: Deployment
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-controllers
+    resource: baddeployment02
+    kind: Deployment
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-controllers
+    resource: baddeployment03
+    kind: Deployment
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-controllers
+    resource: baddeployment04
+    kind: Deployment
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-controllers
+    resource: baddeployment05
+    kind: Deployment
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-controllers
+    resource: baddeployment06
+    kind: Deployment
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-controllers
+    resource: baddeployment07
+    kind: Deployment
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-controllers
+    resource: baddeployment08
+    kind: Deployment
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-controllers
+    resource: baddeployment09
+    kind: Deployment
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-controllers
+    resource: baddeployment10
+    kind: Deployment
+    result: fail
+###### Deployments - Good
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-controllers
+    resource: gooddeployment01
+    kind: Deployment
+    result: pass
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-controllers
+    resource: gooddeployment02
+    kind: Deployment
+    result: pass
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-controllers
+    resource: gooddeployment03
+    kind: Deployment
+    result: pass
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-controllers
+    resource: gooddeployment04
+    kind: Deployment
+    result: pass
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-controllers
+    resource: gooddeployment05
+    kind: Deployment
+    result: pass
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-controllers
+    resource: gooddeployment06
+    kind: Deployment
+    result: pass
+#####################################
+## Rule: require-drop-all-cronjobs ##
+#####################################
+###### CronJobs - Bad
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-cronjobs
+    resource: badcronjob01
+    kind: CronJob
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-cronjobs
+    resource: badcronjob02
+    kind: CronJob
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-cronjobs
+    resource: badcronjob03
+    kind: CronJob
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-cronjobs
+    resource: badcronjob04
+    kind: CronJob
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-cronjobs
+    resource: badcronjob05
+    kind: CronJob
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-cronjobs
+    resource: badcronjob06
+    kind: CronJob
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-cronjobs
+    resource: badcronjob07
+    kind: CronJob
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-cronjobs
+    resource: badcronjob08
+    kind: CronJob
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-cronjobs
+    resource: badcronjob09
+    kind: CronJob
+    result: fail
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-cronjobs
+    resource: badcronjob10
+    kind: CronJob
+    result: fail
+###### CronJobs - Good
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-cronjobs
+    resource: goodcronjob01
+    kind: CronJob
+    result: pass
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-cronjobs
+    resource: goodcronjob02
+    kind: CronJob
+    result: pass
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-cronjobs
+    resource: goodcronjob03
+    kind: CronJob
+    result: pass
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-cronjobs
+    resource: goodcronjob04
+    kind: CronJob
+    result: pass
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-cronjobs
+    resource: goodcronjob05
+    kind: CronJob
+    result: pass
+  - policy: disallow-capabilities-strict
+    rule: require-drop-all-cronjobs
+    resource: goodcronjob06
+    kind: CronJob
+    result: pass
+###########################################
+## Rule: adding-capabilities-strict-pods ##
+###########################################

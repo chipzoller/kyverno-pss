@@ -1,5 +1,8 @@
 ### WARNING: Current testing not possible with Kyverno CLI v1.5.2. This is a placeholder for a time where the CLI can support the tests.
 ### See notes in README
+#################################
+## Rule: require-drop-all-pods ##
+#################################
 ###### Pods - Bad
 ---
 apiVersion: v1
@@ -69,6 +72,108 @@ spec:
         drop:
         - ALL
 ---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: badpod06
+spec:
+  initContainers:
+  - name: initcontainer01
+    image: dummyimagename
+  containers:
+  - name: container01
+    image: dummyimagename
+    securityContext:
+      capabilities:
+        drop:
+        - ALL
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: badpod07
+spec:
+  initContainers:
+  - name: initcontainer01
+    image: dummyimagename
+    securityContext:
+      capabilities:
+        drop:
+        - NET_RAW
+  containers:
+  - name: container01
+    image: dummyimagename
+    securityContext:
+      capabilities:
+        drop:
+        - ALL
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: badpod08
+spec:
+  initContainers:
+  - name: initcontainer01
+    image: dummyimagename
+  - name: initcontainer02
+    image: dummyimagename
+  containers:
+  - name: container01
+    image: dummyimagename
+    securityContext:
+      capabilities:
+        drop:
+        - ALL
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: badpod09
+spec:
+  initContainers:
+  - name: initcontainer01
+    image: dummyimagename
+  - name: initcontainer02
+    image: dummyimagename
+    securityContext:
+      capabilities:
+        drop:
+        - NET_RAW
+  containers:
+  - name: container01
+    image: dummyimagename
+    securityContext:
+      capabilities:
+        drop:
+        - ALL
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: badpod10
+spec:
+  initContainers:
+  - name: initcontainer01
+    image: dummyimagename
+    securityContext:
+      capabilities:
+        drop:
+        - NET_RAW
+  - name: initcontainer02
+    image: dummyimagename
+    securityContext:
+      capabilities:
+        drop:
+        - ALL
+  containers:
+  - name: container01
+    image: dummyimagename
+    securityContext:
+      capabilities:
+        drop:
+        - ALL
+---
 ###### Pods - Good
 apiVersion: v1
 kind: Pod
@@ -82,3 +187,921 @@ spec:
       capabilities:
         drop:
         - ALL
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: goodpod02
+spec:
+  containers:
+  - name: container01
+    image: dummyimagename
+    securityContext:
+      capabilities:
+        drop:
+        - NET_RAW
+        - ALL
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: goodpod03
+spec:
+  containers:
+  - name: container01
+    image: dummyimagename
+    securityContext:
+      capabilities:
+        drop:
+        - ALL
+  - name: container02
+    image: dummyimagename
+    securityContext:
+      capabilities:
+        drop:
+        - ALL
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: goodpod04
+spec:
+  initContainers:
+  - name: initcontainer01
+    image: dummyimagename
+    securityContext:
+      capabilities:
+        drop:
+        - ALL
+  containers:
+  - name: container01
+    image: dummyimagename
+    securityContext:
+      capabilities:
+        drop:
+        - ALL
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: goodpod05
+spec:
+  initContainers:
+  - name: initcontainer01
+    image: dummyimagename
+    securityContext:
+      capabilities:
+        drop:
+        - NET_RAW
+        - ALL
+  containers:
+  - name: container01
+    image: dummyimagename
+    securityContext:
+      capabilities:
+        drop:
+        - ALL
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: goodpod06
+spec:
+  initContainers:
+  - name: initcontainer01
+    image: dummyimagename
+    securityContext:
+      capabilities:
+        drop:
+        - ALL
+  - name: initcontainer02
+    image: dummyimagename
+    securityContext:
+      capabilities:
+        drop:
+        - ALL
+  containers:
+  - name: container01
+    image: dummyimagename
+    securityContext:
+      capabilities:
+        drop:
+        - ALL
+---
+########################################
+## Rule: require-drop-all-controllers ##
+########################################
+###### Deployments - Bad
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: baddeployment01
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: container01
+        image: dummyimagename
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: baddeployment02
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: container01
+        image: dummyimagename
+        securityContext:
+          capabilities:
+            drop:
+            - NET_RAW
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: baddeployment03
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: container01
+        image: dummyimagename
+      - name: container02
+        image: dummyimagename
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: baddeployment04
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: container01
+        image: dummyimagename
+      - name: container02
+        image: dummyimagename
+        securityContext:
+          capabilities:
+            drop:
+            - NET_RAW
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: baddeployment05
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: container01
+        image: dummyimagename
+        securityContext:
+          capabilities:
+            drop:
+            - NET_RAW
+      - name: container02
+        image: dummyimagename
+        securityContext:
+          capabilities:
+            drop:
+            - ALL
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: baddeployment06
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      initContainers:
+      - name: initcontainer01
+        image: dummyimagename
+      containers:
+      - name: container01
+        image: dummyimagename
+        securityContext:
+          capabilities:
+            drop:
+            - ALL
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: baddeployment07
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      initContainers:
+      - name: initcontainer01
+        image: dummyimagename
+        securityContext:
+          capabilities:
+            drop:
+            - NET_RAW
+      containers:
+      - name: container01
+        image: dummyimagename
+        securityContext:
+          capabilities:
+            drop:
+            - ALL
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: baddeployment08
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      initContainers:
+      - name: initcontainer01
+        image: dummyimagename
+      - name: initcontainer02
+        image: dummyimagename
+      containers:
+      - name: container01
+        image: dummyimagename
+        securityContext:
+          capabilities:
+            drop:
+            - ALL
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: baddeployment09
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      initContainers:
+      - name: initcontainer01
+        image: dummyimagename
+      - name: initcontainer02
+        image: dummyimagename
+        securityContext:
+          capabilities:
+            drop:
+            - NET_RAW
+      containers:
+      - name: container01
+        image: dummyimagename
+        securityContext:
+          capabilities:
+            drop:
+            - ALL
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: baddeployment10
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      initContainers:
+      - name: initcontainer01
+        image: dummyimagename
+        securityContext:
+          capabilities:
+            drop:
+            - NET_RAW
+      - name: initcontainer02
+        image: dummyimagename
+        securityContext:
+          capabilities:
+            drop:
+            - ALL
+      containers:
+      - name: container01
+        image: dummyimagename
+        securityContext:
+          capabilities:
+            drop:
+            - ALL
+---
+###### Deployments - Good
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gooddeployment01
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: container01
+        image: dummyimagename
+        securityContext:
+          capabilities:
+            drop:
+            - ALL
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gooddeployment02
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: container01
+        image: dummyimagename
+        securityContext:
+          capabilities:
+            drop:
+            - NET_RAW
+            - ALL
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gooddeployment03
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: container01
+        image: dummyimagename
+        securityContext:
+          capabilities:
+            drop:
+            - ALL
+      - name: container02
+        image: dummyimagename
+        securityContext:
+          capabilities:
+            drop:
+            - ALL
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gooddeployment04
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      initContainers:
+      - name: initcontainer01
+        image: dummyimagename
+        securityContext:
+          capabilities:
+            drop:
+            - ALL
+      containers:
+      - name: container01
+        image: dummyimagename
+        securityContext:
+          capabilities:
+            drop:
+            - ALL
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gooddeployment05
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      initContainers:
+      - name: initcontainer01
+        image: dummyimagename
+        securityContext:
+          capabilities:
+            drop:
+            - NET_RAW
+            - ALL
+      containers:
+      - name: container01
+        image: dummyimagename
+        securityContext:
+          capabilities:
+            drop:
+            - ALL
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gooddeployment06
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      initContainers:
+      - name: initcontainer01
+        image: dummyimagename
+        securityContext:
+          capabilities:
+            drop:
+            - ALL
+      - name: initcontainer02
+        image: dummyimagename
+        securityContext:
+          capabilities:
+            drop:
+            - ALL
+      containers:
+      - name: container01
+        image: dummyimagename
+        securityContext:
+          capabilities:
+            drop:
+            - ALL
+---
+#####################################
+## Rule: require-drop-all-cronjobs ##
+#####################################
+###### CronJobs - Bad
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: badcronjob01
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: container01
+            image: dummyimagename
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: badcronjob02
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: container01
+            image: dummyimagename
+            securityContext:
+              capabilities:
+                drop:
+                - NET_RAW
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: badcronjob03
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: container01
+            image: dummyimagename
+          - name: container02
+            image: dummyimagename
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: badcronjob04
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: container01
+            image: dummyimagename
+          - name: container02
+            image: dummyimagename
+            securityContext:
+              capabilities:
+                drop:
+                - NET_RAW
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: badcronjob05
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: container01
+            image: dummyimagename
+            securityContext:
+              capabilities:
+                drop:
+                - NET_RAW
+          - name: container02
+            image: dummyimagename
+            securityContext:
+              capabilities:
+                drop:
+                - ALL
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: badcronjob06
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          initContainers:
+          - name: initcontainer01
+            image: dummyimagename
+          containers:
+          - name: container01
+            image: dummyimagename
+            securityContext:
+              capabilities:
+                drop:
+                - ALL
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: badcronjob07
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          initContainers:
+          - name: initcontainer01
+            image: dummyimagename
+            securityContext:
+              capabilities:
+                drop:
+                - NET_RAW
+          containers:
+          - name: container01
+            image: dummyimagename
+            securityContext:
+              capabilities:
+                drop:
+                - ALL
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: badcronjob08
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          initContainers:
+          - name: initcontainer01
+            image: dummyimagename
+          - name: initcontainer02
+            image: dummyimagename
+          containers:
+          - name: container01
+            image: dummyimagename
+            securityContext:
+              capabilities:
+                drop:
+                - ALL
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: badcronjob09
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          initContainers:
+          - name: initcontainer01
+            image: dummyimagename
+          - name: initcontainer02
+            image: dummyimagename
+            securityContext:
+              capabilities:
+                drop:
+                - NET_RAW
+          containers:
+          - name: container01
+            image: dummyimagename
+            securityContext:
+              capabilities:
+                drop:
+                - ALL
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: badcronjob10
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          initContainers:
+          - name: initcontainer01
+            image: dummyimagename
+            securityContext:
+              capabilities:
+                drop:
+                - NET_RAW
+          - name: initcontainer02
+            image: dummyimagename
+            securityContext:
+              capabilities:
+                drop:
+                - ALL
+          containers:
+          - name: container01
+            image: dummyimagename
+            securityContext:
+              capabilities:
+                drop:
+                - ALL
+---
+###### CronJobs - Good
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: goodcronjob01
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: container01
+            image: dummyimagename
+            securityContext:
+              capabilities:
+                drop:
+                - ALL
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: goodcronjob02
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: container01
+            image: dummyimagename
+            securityContext:
+              capabilities:
+                drop:
+                - NET_RAW
+                - ALL
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: goodcronjob03
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: container01
+            image: dummyimagename
+            securityContext:
+              capabilities:
+                drop:
+                - ALL
+          - name: container02
+            image: dummyimagename
+            securityContext:
+              capabilities:
+                drop:
+                - ALL
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: goodcronjob04
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          initContainers:
+          - name: initcontainer01
+            image: dummyimagename
+            securityContext:
+              capabilities:
+                drop:
+                - ALL
+          containers:
+          - name: container01
+            image: dummyimagename
+            securityContext:
+              capabilities:
+                drop:
+                - ALL
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: goodcronjob05
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          initContainers:
+          - name: initcontainer01
+            image: dummyimagename
+            securityContext:
+              capabilities:
+                drop:
+                - NET_RAW
+                - ALL
+          containers:
+          - name: container01
+            image: dummyimagename
+            securityContext:
+              capabilities:
+                drop:
+                - ALL
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: goodcronjob06
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          initContainers:
+          - name: initcontainer01
+            image: dummyimagename
+            securityContext:
+              capabilities:
+                drop:
+                - ALL
+          - name: initcontainer02
+            image: dummyimagename
+            securityContext:
+              capabilities:
+                drop:
+                - ALL
+          containers:
+          - name: container01
+            image: dummyimagename
+            securityContext:
+              capabilities:
+                drop:
+                - ALL
+---
+###########################################
+## Rule: adding-capabilities-strict-pods ##
+###########################################
