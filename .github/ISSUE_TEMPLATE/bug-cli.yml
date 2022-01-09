@@ -78,7 +78,7 @@ body:
     id: bug-screenshots
     attributes:
       label: Screenshots
-      description: If you have any screenshots that would help, please paste them below. GitHub allows you to copy-and-paste directly from the clipboard into the text area. Please avoid taking screenshots of either log or terminal output; paste any textual output in the logs section below.
+      description: If you have any screenshots that would help, please paste them below. GitHub allows you to copy-and-paste directly from the clipboard into the text area. *Please avoid taking screenshots of either log or terminal output*; paste any textual output in the logs section below.
       # placeholder: Tell us what you see!
       # value: "asdf"
     validations:
@@ -101,8 +101,9 @@ body:
     id: troubleshooting
     attributes:
       label: Troubleshooting
-      description: By submitting this issue, you agree that you have read the [troubleshooting guide]() first.
+      description: By submitting this issue, you agree that you have performed some basic attempts at researching and solving your problem.
       options:
         - label: I have read and followed the [troubleshooting guide](https://kyverno.io/docs/troubleshooting/).
+          required: true
         - label: I have searched other issues in this repository and mine is not recorded.
           required: true
