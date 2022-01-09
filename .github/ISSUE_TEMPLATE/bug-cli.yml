@@ -1,12 +1,12 @@
 name: "Bug Report: CLI"
 description: Report a bug in the Kyverno CLI.
 title: "[Bug] "
-labels: ["bug", "cli"]
+labels: ["bug", "type:cli"]
 body:
   - type: markdown
     attributes:
       value: |
-        Please tell us about the bug.
+        Please tell us about the bug, but before doing, ensure you have read the documentation on the CLI functionality found [here](https://kyverno.io/docs/kyverno-cli/).
   - type: dropdown
     id: kyverno-version
     attributes:
@@ -89,11 +89,11 @@ body:
       label: Kyverno logs
       description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
       render: shell
-  # - type: checkboxes
-  #   id: terms
-  #   attributes:
-  #     label: Code of Conduct
-  #     description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
-  #     options:
-  #       - label: I agree to follow this project's Code of Conduct
-  #         required: true
+  - type: checkboxes
+    id: troubleshooting
+    attributes:
+      label: Troubleshooting
+      description: By submitting this issue, you agree that you have read the [troubleshooting guide](https://kyverno.io/docs/troubleshooting/) first.
+      options:
+        - label: I have exhausted all options in the troubleshooting guide.
+          required: true
