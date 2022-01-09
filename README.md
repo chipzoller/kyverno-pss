@@ -35,7 +35,7 @@ kubectl replace --raw /api/v1/namespaces/default/pods/testpod/ephemeralcontainer
 
 This will do a `patch` op on the `testpod/ephemeralcontainers` subresource. `testpod` must first exist. A `kubectl debug` command cannot be used to attach an ephemeral container with customized fields, nor can ephemeral containers be created upon initial pod creation.
 
-Kyverno needs to add `pods/ephemeralcontainers` as a subresource to the `validatingwebhookconfiguration` in order for AdmissionReview requests to hit Kyverno. When testing, each time a policy is deleted and another created, this change must be made to the webhook.
+Kyverno needs to add `pods/ephemeralcontainers` as a subresource to the `validatingwebhookconfiguration` in order for AdmissionReview requests to hit Kyverno. When testing, each time a policy is deleted and another created, this change must be made to the webhook. EDIT: Support for ephemeral containers was added to Kyverno v1.5.3.
 
 ### Version Support
 
@@ -133,3 +133,7 @@ From the restricted/06-restrict-seccomp-strict control in the [PSS Restricted](h
 ### Rename test files
 
 Test manifest files should be renamed to `kyverno-test.yaml` in accordance with https://github.com/kyverno/kyverno/issues/2322.
+
+### Helm chart alignment
+
+Need to align these with the kyverno-policies Helm chart and figure out how to deal with optional and/or alternate policies.
