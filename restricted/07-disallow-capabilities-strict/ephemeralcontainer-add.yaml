@@ -11,5 +11,5 @@ spec:
     - "9999"
     securityContext:
       capabilities:
-        drop:
-        - ALL
+        add:
+        - CHOWN

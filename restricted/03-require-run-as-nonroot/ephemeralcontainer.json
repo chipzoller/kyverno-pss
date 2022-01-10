@@ -14,11 +14,7 @@
           "9999"
         ],
         "securityContext": {
-          "capabilities": {
-            "drop": [
-              "ALL"
-            ]
-          }
+          "runAsNonRoot": false
         }
       }
     ]
