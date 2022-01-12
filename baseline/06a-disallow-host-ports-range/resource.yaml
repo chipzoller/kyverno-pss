@@ -210,6 +210,7 @@ spec:
     ports:
     - name: admin
       containerPort: 8000
+      hostPort: 5555
       protocol: TCP
 ---
 apiVersion: v1
@@ -223,6 +224,7 @@ spec:
     ports:
     - name: admin
       containerPort: 8000
+      hostPort: 5555
       protocol: TCP
     - name: web-insecure
       containerPort: 8080
@@ -251,6 +253,7 @@ spec:
     ports:
     - name: admin
       containerPort: 8000
+      hostPort: 5555
       protocol: TCP
 ---
 apiVersion: v1
@@ -269,6 +272,7 @@ spec:
     ports:
     - name: admin
       containerPort: 8000
+      hostPort: 5555
       protocol: TCP
 ---
 apiVersion: v1
@@ -294,6 +298,7 @@ spec:
     ports:
     - name: web-insecure
       containerPort: 8080
+      hostPort: 5555
   containers:
   - name: container01
     image: dummyimagename
@@ -309,6 +314,7 @@ spec:
     ports:
     - name: web-insecure
       containerPort: 8080
+      hostPort: 5555
   containers:
   - name: container01
     image: dummyimagename
@@ -329,6 +335,7 @@ spec:
     ports:
     - name: web-insecure
       containerPort: 8080
+      hostPort: 5555
   containers:
   - name: container01
     image: dummyimagename
@@ -655,6 +662,7 @@ spec:
         ports:
         - name: admin
           containerPort: 8000
+          hostPort: 5555
           protocol: TCP
 ---
 apiVersion: apps/v1
@@ -677,6 +685,7 @@ spec:
         ports:
         - name: admin
           containerPort: 8000
+          hostPort: 5555
           protocol: TCP
         - name: web-insecure
           containerPort: 8080
@@ -723,6 +732,7 @@ spec:
         ports:
         - name: admin
           containerPort: 8000
+          hostPort: 5555
           protocol: TCP
 ---
 apiVersion: apps/v1
@@ -745,6 +755,7 @@ spec:
         ports:
         - name: web-insecure
           containerPort: 8080
+          hostPort: 5555
       - name: container02
         image: dummyimagename
         ports:
@@ -793,6 +804,7 @@ spec:
         ports:
         - name: web-insecure
           containerPort: 8080
+          hostPort: 5555
       containers:
       - name: container01
         image: dummyimagename
@@ -817,6 +829,7 @@ spec:
         ports:
         - name: web-insecure
           containerPort: 8080
+          hostPort: 5555
       containers:
       - name: container01
         image: dummyimagename
@@ -846,6 +859,7 @@ spec:
         ports:
         - name: web-insecure
           containerPort: 8080
+          hostPort: 5555
       containers:
       - name: container01
         image: dummyimagename
@@ -1136,6 +1150,7 @@ spec:
             ports:
             - name: admin
               containerPort: 8000
+              hostPort: 5555
               protocol: TCP
 ---
 apiVersion: batch/v1
@@ -1155,6 +1170,7 @@ spec:
             ports:
             - name: admin
               containerPort: 8000
+              hostPort: 5555
               protocol: TCP
             - name: web-insecure
               containerPort: 8080
@@ -1195,6 +1211,7 @@ spec:
             ports:
             - name: admin
               containerPort: 8000
+              hostPort: 5555
               protocol: TCP
 ---
 apiVersion: batch/v1
@@ -1214,6 +1231,7 @@ spec:
             ports:
             - name: web-insecure
               containerPort: 8080
+              hostPort: 5555
           - name: container02
             image: dummyimagename
             ports:
@@ -1256,6 +1274,7 @@ spec:
             ports:
             - name: web-insecure
               containerPort: 8080
+              hostPort: 5555
           containers:
           - name: container01
             image: dummyimagename
@@ -1277,6 +1296,7 @@ spec:
             ports:
             - name: web-insecure
               containerPort: 8080
+              hostPort: 5555
           containers:
           - name: container01
             image: dummyimagename
@@ -1303,6 +1323,7 @@ spec:
             ports:
             - name: web-insecure
               containerPort: 8080
+              hostPort: 5555
           containers:
           - name: container01
             image: dummyimagename

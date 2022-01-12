@@ -124,8 +124,6 @@ I'm trying to start from the ground up and determine the most reasonably complet
 
 ## Questions/To-Do
 
-Need to finish building out the test cases for the newly broken out baseline/06a policy.
-
 ### Non-Root Groups
 
 The "non-root groups" control is listed as optional without an explanation on the [Restricted page](https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted). Would like to understand this rationale.
