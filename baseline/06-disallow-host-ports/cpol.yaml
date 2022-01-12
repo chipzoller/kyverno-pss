@@ -6,18 +6,17 @@ metadata:
     policies.kyverno.io/category: Pod Security Standards (Baseline)
     policies.kyverno.io/severity: medium
     policies.kyverno.io/subject: Pod
-    kyverno.io/kyverno-version: 1.6.0
-    policies.kyverno.io/minversion: 1.6.0
+    kyverno.io/kyverno-version: 1.5.2
     kyverno.io/kubernetes-version: "1.22"
     policies.kyverno.io/description: >-
       Access to host ports allows potential snooping of network traffic and should not be
       allowed, or at minimum restricted to a known list. This policy ensures the `hostPort`
-      field is unset, set to `0`, or, optionally (if uncommented), set to one in the designated list. 
+      field is unset or set to `0`. 
 spec:
   validationFailureAction: enforce
   background: true
   rules:
-    - name: host-ports
+    - name: host-ports-none
       match:
         resources:
           kinds:
@@ -38,57 +37,3 @@ spec:
             containers:
               - =(ports):
                   - =(hostPort): 0
-    # - name: host-port-list-pods
-    #   match:
-    #     resources:
-    #       kinds:
-    #         - Pod
-    #   validate:
-    #     message: >-
-    #       Only permitted hostPorts are allowed: 2222, 3333, 4444.
-    #     deny:
-    #       conditions:
-    #         all:
-    #         - key: "{{ request.object.spec.[ephemeralContainers, initContainers, containers][].ports[].hostPort }}"
-    #           operator: AnyNotIn
-    #           value:
-    #           - 2222
-    #           - 3333
-    #           - 4444
-    # - name: host-port-list-controllers
-    #   match:
-    #     resources:
-    #       kinds:
-    #         - Deployment
-    #         - DaemonSet
-    #         - StatefulSet
-    #         - Job
-    #   validate:
-    #     message: >-
-    #       Only permitted hostPorts are allowed: 2222, 3333, 4444.
-    #     deny:
-    #       conditions:
-    #         all:
-    #         - key: "{{ request.object.spec.template.spec.[ephemeralContainers, initContainers, containers][].ports[].hostPort }}"
-    #           operator: AnyNotIn
-    #           value:
-    #           - 2222
-    #           - 3333
-    #           - 4444
-    # - name: host-port-list-cronjobs
-    #   match:
-    #     resources:
-    #       kinds:
-    #         - CronJob
-    #   validate:
-    #     message: >-
-    #       Only permitted hostPorts are allowed: 2222, 3333, 4444.
-    #     deny:
-    #       conditions:
-    #         all:
-    #         - key: "{{ request.object.spec.jobTemplate.spec.template.spec.[ephemeralContainers, initContainers, containers][].ports[].hostPort }}"
-    #           operator: AnyNotIn
-    #           value:
-    #           - 2222
-    #           - 3333
-    #           - 4444

@@ -60,6 +60,8 @@ Kyverno needs the `AnyNotIn` and `AnyIn` operators to support some of these poli
 
 There are now some "optional" policies that we need to somehow account for, especially when installed with Helm. Policies like baseline/06-disallow-host-ports have a commented-out rule that is for users who want to support a list of allowed hostPorts rather than just categorically deny everything. The restricted/05-require-non-root-groups is now listed as "optional" on the PSS page so we'd need to agree whether this always gets installed or is behind some sort of switch.
 
+**Initial thoughts**: The restricted/05-require-non-root-groups policy should be a default installation as part of the PSS suite (Helm included). The baseline/06-disallow-host-ports control should default to the most restrictive which would be the present policy of "if hostPort is present it must be set to zero." This is rule named `host-ports-none`. This is the one that should be installed with Helm. An alternate version of this policy would be to allow for a range of hostPort defined in a rule the base name of which is `host-port-range`. This would not be installed with Helm but would exist in kyverno/policies and tagged with the annotation `policies.kyverno.io/category: Pod Security Standards (Baseline)` so that it is locatable along with the rest of the PSS policies. In this way, the default stance is more secure, and if users want a more permissable policy, they can find it on either kyverno/policies or the web frontend to that at kyverno.io/policies.
+
 ### CLI Support
 
 Because some of these policies use a JMESPath expression to group all ephemeralContainers, initContainers, and containers into a single, flattened array, the Kyverno CLI is not going to be able to test against these policies presently. See [this issue](https://github.com/kyverno/kyverno/issues/2442) for reference. There are also some bugs that need to be addressed. See the list containing them under [Version Support](#version-support).
@@ -122,6 +124,8 @@ I'm trying to start from the ground up and determine the most reasonably complet
 
 ## Questions/To-Do
 
+Need to finish building out the test cases for the newly broken out baseline/06a policy.
+
 ### Non-Root Groups
 
 The "non-root groups" control is listed as optional without an explanation on the [Restricted page](https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted). Would like to understand this rationale.
@@ -144,4 +148,4 @@ Test manifest files should be renamed to `kyverno-test.yaml` in accordance with 
 
 ### Helm chart alignment
 
-Need to align these with the kyverno-policies Helm chart and figure out how to deal with optional and/or alternate policies. An alternate would be in baseline/06-disallow-hostports. Host ports are either denied (set to `0`) or allowed with only a permitted array/range. The commented out rule represents the more permissive alternate rule. An optional policy (although unexplained) would be restricted/05-require-non-root-groups.
+Need to align these with the kyverno-policies Helm chart and figure out how to deal with optional and/or alternate policies. An alternate would be in baseline/06-disallow-hostports. Host ports are either denied (set to `0`) or allowed with only a permitted array/range. The commented out rule represents the more permissive alternate rule. An optional policy (although unexplained) would be restricted/05-require-non-root-groups. See [Optional Policies and Rules](#optional-policies-and-rules) above for a solution.

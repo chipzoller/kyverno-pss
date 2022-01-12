@@ -1,0 +1,17 @@
+### This ephemeral container is provided, however the Kubernetes API
+### forbids ephemeralContainers from setting ports so it will be rejected
+### before ever being sent to admission controllers.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: testpod
+spec:
+  ephemeralContainers:
+  - name: ephemjunk
+    image: busybox:1.28
+    args:
+    - sleep
+    - "9999"
+    ports:
+      - containerPort: 8888
+        hostPort: 1234
