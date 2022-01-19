@@ -178,11 +178,6 @@ results:
     resource: gooddeployment10
     kind: Deployment
     result: pass
-  - policy: restrict-seccomp-strict
-    rule: check-seccomp-strict
-    resource: gooddeployment11
-    kind: Deployment
-    result: pass
 ###### CronJobs - Bad
   - policy: restrict-seccomp-strict
     rule: check-seccomp-strict
@@ -268,10 +263,5 @@ results:
   - policy: restrict-seccomp-strict
     rule: check-seccomp-strict
     resource: goodcronjob10
-    kind: CronJob
-    result: pass
-  - policy: restrict-seccomp-strict
-    rule: check-seccomp-strict
-    resource: goodcronjob11
     kind: CronJob
     result: pass
