@@ -92,172 +92,172 @@ results:
     kind: Pod
     result: pass
 ########################################
-## Rule: require-drop-all-controllers ##
+## Rule: autogen-require-drop-all-pods ##
 ########################################
 ###### Deployments - Bad
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-controllers
+    rule: autogen-require-drop-all-pods
     resource: baddeployment01
     kind: Deployment
     result: fail
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-controllers
+    rule: autogen-require-drop-all-pods
     resource: baddeployment02
     kind: Deployment
     result: fail
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-controllers
+    rule: autogen-require-drop-all-pods
     resource: baddeployment03
     kind: Deployment
     result: fail
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-controllers
+    rule: autogen-require-drop-all-pods
     resource: baddeployment04
     kind: Deployment
     result: fail
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-controllers
+    rule: autogen-require-drop-all-pods
     resource: baddeployment05
     kind: Deployment
     result: fail
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-controllers
+    rule: autogen-require-drop-all-pods
     resource: baddeployment06
     kind: Deployment
     result: fail
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-controllers
+    rule: autogen-require-drop-all-pods
     resource: baddeployment07
     kind: Deployment
     result: fail
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-controllers
+    rule: autogen-require-drop-all-pods
     resource: baddeployment08
     kind: Deployment
     result: fail
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-controllers
+    rule: autogen-require-drop-all-pods
     resource: baddeployment09
     kind: Deployment
     result: fail
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-controllers
+    rule: autogen-require-drop-all-pods
     resource: baddeployment10
     kind: Deployment
     result: fail
 ###### Deployments - Good
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-controllers
+    rule: autogen-require-drop-all-pods
     resource: gooddeployment01
     kind: Deployment
     result: pass
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-controllers
+    rule: autogen-require-drop-all-pods
     resource: gooddeployment02
     kind: Deployment
     result: pass
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-controllers
+    rule: autogen-require-drop-all-pods
     resource: gooddeployment03
     kind: Deployment
     result: pass
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-controllers
+    rule: autogen-require-drop-all-pods
     resource: gooddeployment04
     kind: Deployment
     result: pass
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-controllers
+    rule: autogen-require-drop-all-pods
     resource: gooddeployment05
     kind: Deployment
     result: pass
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-controllers
+    rule: autogen-require-drop-all-pods
     resource: gooddeployment06
     kind: Deployment
     result: pass
 #####################################
-## Rule: require-drop-all-cronjobs ##
+## Rule: autogen-cronjob-require-drop-all-pods ##
 #####################################
 ###### CronJobs - Bad
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-cronjobs
+    rule: autogen-cronjob-require-drop-all-pods
     resource: badcronjob01
     kind: CronJob
     result: fail
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-cronjobs
+    rule: autogen-cronjob-require-drop-all-pods
     resource: badcronjob02
     kind: CronJob
     result: fail
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-cronjobs
+    rule: autogen-cronjob-require-drop-all-pods
     resource: badcronjob03
     kind: CronJob
     result: fail
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-cronjobs
+    rule: autogen-cronjob-require-drop-all-pods
     resource: badcronjob04
     kind: CronJob
     result: fail
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-cronjobs
+    rule: autogen-cronjob-require-drop-all-pods
     resource: badcronjob05
     kind: CronJob
     result: fail
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-cronjobs
+    rule: autogen-cronjob-require-drop-all-pods
     resource: badcronjob06
     kind: CronJob
     result: fail
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-cronjobs
+    rule: autogen-cronjob-require-drop-all-pods
     resource: badcronjob07
     kind: CronJob
     result: fail
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-cronjobs
+    rule: autogen-cronjob-require-drop-all-pods
     resource: badcronjob08
     kind: CronJob
     result: fail
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-cronjobs
+    rule: autogen-cronjob-require-drop-all-pods
     resource: badcronjob09
     kind: CronJob
     result: fail
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-cronjobs
+    rule: autogen-cronjob-require-drop-all-pods
     resource: badcronjob10
     kind: CronJob
     result: fail
 ###### CronJobs - Good
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-cronjobs
+    rule: autogen-cronjob-require-drop-all-pods
     resource: goodcronjob01
     kind: CronJob
     result: pass
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-cronjobs
+    rule: autogen-cronjob-require-drop-all-pods
     resource: goodcronjob02
     kind: CronJob
     result: pass
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-cronjobs
+    rule: autogen-cronjob-require-drop-all-pods
     resource: goodcronjob03
     kind: CronJob
     result: pass
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-cronjobs
+    rule: autogen-cronjob-require-drop-all-pods
     resource: goodcronjob04
     kind: CronJob
     result: pass
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-cronjobs
+    rule: autogen-cronjob-require-drop-all-pods
     resource: goodcronjob05
     kind: CronJob
     result: pass
   - policy: disallow-capabilities-strict
-    rule: require-drop-all-cronjobs
+    rule: autogen-cronjob-require-drop-all-pods
     resource: goodcronjob06
     kind: CronJob
     result: pass
@@ -367,212 +367,212 @@ results:
     kind: Pod
     result: pass
 ##################################################
-## Rule: adding-capabilities-strict-controllers ##
+## Rule: autogen-adding-capabilities-strict-pods  ##
 ##################################################
 ###### Deployments - Bad
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-controllers
+    rule: autogen-adding-capabilities-strict-pods 
     resource: addcap-baddeployment01
     kind: Deployment
     result: fail
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-controllers
+    rule: autogen-adding-capabilities-strict-pods 
     resource: addcap-baddeployment02
     kind: Deployment
     result: fail
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-controllers
+    rule: autogen-adding-capabilities-strict-pods 
     resource: addcap-baddeployment03
     kind: Deployment
     result: fail
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-controllers
+    rule: autogen-adding-capabilities-strict-pods 
     resource: addcap-baddeployment04
     kind: Deployment
     result: fail
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-controllers
+    rule: autogen-adding-capabilities-strict-pods 
     resource: addcap-baddeployment05
     kind: Deployment
     result: fail
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-controllers
+    rule: autogen-adding-capabilities-strict-pods 
     resource: addcap-baddeployment06
     kind: Deployment
     result: fail
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-controllers
+    rule: autogen-adding-capabilities-strict-pods 
     resource: addcap-baddeployment07
     kind: Deployment
     result: fail
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-controllers
+    rule: autogen-adding-capabilities-strict-pods 
     resource: addcap-baddeployment08
     kind: Deployment
     result: fail
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-controllers
+    rule: autogen-adding-capabilities-strict-pods 
     resource: addcap-baddeployment09
     kind: Deployment
     result: fail
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-controllers
+    rule: autogen-adding-capabilities-strict-pods 
     resource: addcap-baddeployment10
     kind: Deployment
     result: fail
 ###### Deployments - Good
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-controllers
+    rule: autogen-adding-capabilities-strict-pods 
     resource: addcap-gooddeployment01
     kind: Deployment
     result: pass
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-controllers
+    rule: autogen-adding-capabilities-strict-pods 
     resource: addcap-gooddeployment02
     kind: Deployment
     result: pass
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-controllers
+    rule: autogen-adding-capabilities-strict-pods 
     resource: addcap-gooddeployment03
     kind: Deployment
     result: pass
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-controllers
+    rule: autogen-adding-capabilities-strict-pods 
     resource: addcap-gooddeployment04
     kind: Deployment
     result: pass
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-controllers
+    rule: autogen-adding-capabilities-strict-pods 
     resource: addcap-gooddeployment05
     kind: Deployment
     result: pass
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-controllers
+    rule: autogen-adding-capabilities-strict-pods 
     resource: addcap-gooddeployment06
     kind: Deployment
     result: pass
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-controllers
+    rule: autogen-adding-capabilities-strict-pods 
     resource: addcap-gooddeployment07
     kind: Deployment
     result: pass
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-controllers
+    rule: autogen-adding-capabilities-strict-pods 
     resource: addcap-gooddeployment08
     kind: Deployment
     result: pass
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-controllers
+    rule: autogen-adding-capabilities-strict-pods 
     resource: addcap-gooddeployment09
     kind: Deployment
     result: pass
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-controllers
+    rule: autogen-adding-capabilities-strict-pods 
     resource: addcap-gooddeployment10
     kind: Deployment
     result: pass
 ###############################################
-## Rule: adding-capabilities-strict-cronjobs ##
+## Rule: autogen-cronjob-adding-capabilities-strict-pods  ##
 ###############################################
 ###### CronJobs - Bad
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-cronjobs
+    rule: autogen-cronjob-adding-capabilities-strict-pods 
     resource: addcap-badcronjob01
     kind: CronJob
     result: fail
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-cronjobs
+    rule: autogen-cronjob-adding-capabilities-strict-pods 
     resource: addcap-badcronjob02
     kind: CronJob
     result: fail
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-cronjobs
+    rule: autogen-cronjob-adding-capabilities-strict-pods 
     resource: addcap-badcronjob03
     kind: CronJob
     result: fail
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-cronjobs
+    rule: autogen-cronjob-adding-capabilities-strict-pods 
     resource: addcap-badcronjob04
     kind: CronJob
     result: fail
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-cronjobs
+    rule: autogen-cronjob-adding-capabilities-strict-pods 
     resource: addcap-badcronjob05
     kind: CronJob
     result: fail
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-cronjobs
+    rule: autogen-cronjob-adding-capabilities-strict-pods 
     resource: addcap-badcronjob06
     kind: CronJob
     result: fail
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-cronjobs
+    rule: autogen-cronjob-adding-capabilities-strict-pods 
     resource: addcap-badcronjob07
     kind: CronJob
     result: fail
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-cronjobs
+    rule: autogen-cronjob-adding-capabilities-strict-pods 
     resource: addcap-badcronjob08
     kind: CronJob
     result: fail
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-cronjobs
+    rule: autogen-cronjob-adding-capabilities-strict-pods 
     resource: addcap-badcronjob09
     kind: CronJob
     result: fail
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-cronjobs
+    rule: autogen-cronjob-adding-capabilities-strict-pods 
     resource: addcap-badcronjob10
     kind: CronJob
     result: fail
 ###### CronJobs - Good
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-cronjobs
+    rule: autogen-cronjob-adding-capabilities-strict-pods 
     resource: addcap-goodcronjob01
     kind: CronJob
     result: pass
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-cronjobs
+    rule: autogen-cronjob-adding-capabilities-strict-pods 
     resource: addcap-goodcronjob02
     kind: CronJob
     result: pass
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-cronjobs
+    rule: autogen-cronjob-adding-capabilities-strict-pods 
     resource: addcap-goodcronjob03
     kind: CronJob
     result: pass
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-cronjobs
+    rule: autogen-cronjob-adding-capabilities-strict-pods 
     resource: addcap-goodcronjob04
     kind: CronJob
     result: pass
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-cronjobs
+    rule: autogen-cronjob-adding-capabilities-strict-pods 
     resource: addcap-goodcronjob05
     kind: CronJob
     result: pass
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-cronjobs
+    rule: autogen-cronjob-adding-capabilities-strict-pods 
     resource: addcap-goodcronjob06
     kind: CronJob
     result: pass
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-cronjobs
+    rule: autogen-cronjob-adding-capabilities-strict-pods 
     resource: addcap-goodcronjob07
     kind: CronJob
     result: pass
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-cronjobs
+    rule: autogen-cronjob-adding-capabilities-strict-pods 
     resource: addcap-goodcronjob08
     kind: CronJob
     result: pass
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-cronjobs
+    rule: autogen-cronjob-adding-capabilities-strict-pods 
     resource: addcap-goodcronjob09
     kind: CronJob
     result: pass
   - policy: disallow-capabilities-strict
-    rule: adding-capabilities-strict-cronjobs
+    rule: autogen-cronjob-adding-capabilities-strict-pods 
     resource: addcap-goodcronjob10
     kind: CronJob
     result: pass
