@@ -6,7 +6,6 @@ metadata:
     policies.kyverno.io/category: Pod Security Standards (Restricted)
     policies.kyverno.io/severity: medium
     policies.kyverno.io/subject: Pod,Volume
-    pod-policies.kyverno.io/autogen-controllers: none
     policies.kyverno.io/minversion: 1.6.0
     kyverno.io/kubernetes-version: "1.22"
     policies.kyverno.io/description: >-
@@ -31,7 +30,7 @@ spec:
       deny:
         conditions:
           all:
-          - key: "{{ request.object.spec.volumes[].keys(@)[] }}"
+          - key: "{{ request.object.spec.volumes[].keys(@)[] || '' }}"
             operator: AnyIn
             value:
             - gcePersistentDisk
@@ -54,80 +53,80 @@ spec:
             - scaleIO
             - storageos
             - photonPersistentDisk
-  - name: restricted-volumes-controllers
-    match:
-      resources:
-        kinds:
-        - Deployment
-        - DaemonSet
-        - StatefulSet
-        - Job
-    validate:
-      message: >-
-        Any of the following volume types are restricted and may not be used: gcePersistentDisk,
-        awsElasticBlockStore, gitRepo, nfs, iscsi, glusterfs, rbd, flexVolume, cinder, cephfs,
-        flocker, fc, azureFile, vsphereVolume, quobyte, azureDisk, portworxVolume, scaleIO,
-        storageos, and photonPersistentDisk.
-      deny:
-        conditions:
-          all:
-          - key: "{{ request.object.spec.template.spec.volumes[].keys(@)[] }}"
-            operator: AnyIn
-            value:
-            - gcePersistentDisk
-            - awsElasticBlockStore
-            - gitRepo
-            - nfs
-            - iscsi
-            - glusterfs
-            - rbd
-            - flexVolume
-            - cinder
-            - cephfs
-            - flocker
-            - fc
-            - azureFile
-            - vsphereVolume
-            - quobyte
-            - azureDisk
-            - portworxVolume
-            - scaleIO
-            - storageos
-            - photonPersistentDisk
-  - name: restricted-volumes-cronjob
-    match:
-      resources:
-        kinds:
-        - CronJob
-    validate:
-      message: >-
-        Any of the following volume types are restricted and may not be used: gcePersistentDisk,
-        awsElasticBlockStore, gitRepo, nfs, iscsi, glusterfs, rbd, flexVolume, cinder, cephfs,
-        flocker, fc, azureFile, vsphereVolume, quobyte, azureDisk, portworxVolume, scaleIO,
-        storageos, and photonPersistentDisk.
-      deny:
-        conditions:
-          all:
-          - key: "{{ request.object.spec.jobTemplate.spec.template.spec.volumes[].keys(@)[] }}"
-            operator: AnyIn
-            value:
-            - gcePersistentDisk
-            - awsElasticBlockStore
-            - gitRepo
-            - nfs
-            - iscsi
-            - glusterfs
-            - rbd
-            - flexVolume
-            - cinder
-            - cephfs
-            - flocker
-            - fc
-            - azureFile
-            - vsphereVolume
-            - quobyte
-            - azureDisk
-            - portworxVolume
-            - scaleIO
-            - storageos
-            - photonPersistentDisk
+  # - name: restricted-volumes-controllers
+  #   match:
+  #     resources:
+  #       kinds:
+  #       - Deployment
+  #       - DaemonSet
+  #       - StatefulSet
+  #       - Job
+  #   validate:
+  #     message: >-
+  #       Any of the following volume types are restricted and may not be used: gcePersistentDisk,
+  #       awsElasticBlockStore, gitRepo, nfs, iscsi, glusterfs, rbd, flexVolume, cinder, cephfs,
+  #       flocker, fc, azureFile, vsphereVolume, quobyte, azureDisk, portworxVolume, scaleIO,
+  #       storageos, and photonPersistentDisk.
+  #     deny:
+  #       conditions:
+  #         all:
+  #         - key: "{{ request.object.spec.template.spec.volumes[].keys(@)[] || '' }}"
+  #           operator: AnyIn
+  #           value:
+  #           - gcePersistentDisk
+  #           - awsElasticBlockStore
+  #           - gitRepo
+  #           - nfs
+  #           - iscsi
+  #           - glusterfs
+  #           - rbd
+  #           - flexVolume
+  #           - cinder
+  #           - cephfs
+  #           - flocker
+  #           - fc
+  #           - azureFile
+  #           - vsphereVolume
+  #           - quobyte
+  #           - azureDisk
+  #           - portworxVolume
+  #           - scaleIO
+  #           - storageos
+  #           - photonPersistentDisk
+  # - name: restricted-volumes-cronjob
+  #   match:
+  #     resources:
+  #       kinds:
+  #       - CronJob
+  #   validate:
+  #     message: >-
+  #       Any of the following volume types are restricted and may not be used: gcePersistentDisk,
+  #       awsElasticBlockStore, gitRepo, nfs, iscsi, glusterfs, rbd, flexVolume, cinder, cephfs,
+  #       flocker, fc, azureFile, vsphereVolume, quobyte, azureDisk, portworxVolume, scaleIO,
+  #       storageos, and photonPersistentDisk.
+  #     deny:
+  #       conditions:
+  #         all:
+  #         - key: "{{ request.object.spec.jobTemplate.spec.template.spec.volumes[].keys(@)[] || '' }}"
+  #           operator: AnyIn
+  #           value:
+  #           - gcePersistentDisk
+  #           - awsElasticBlockStore
+  #           - gitRepo
+  #           - nfs
+  #           - iscsi
+  #           - glusterfs
+  #           - rbd
+  #           - flexVolume
+  #           - cinder
+  #           - cephfs
+  #           - flocker
+  #           - fc
+  #           - azureFile
+  #           - vsphereVolume
+  #           - quobyte
+  #           - azureDisk
+  #           - portworxVolume
+  #           - scaleIO
+  #           - storageos
+  #           - photonPersistentDisk

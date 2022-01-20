@@ -9,7 +9,6 @@ metadata:
     policies.kyverno.io/minversion: 1.6.0
     kyverno.io/kubernetes-version: "1.22"
     policies.kyverno.io/subject: Pod
-    pod-policies.kyverno.io/autogen-controllers: none
     policies.kyverno.io/description: >-
       Adding capabilities beyond those listed in the policy must be disallowed. Needs
       Kyverno 1.6.0 for the AnyNotIn operator.
@@ -30,7 +29,7 @@ spec:
         deny:
           conditions:
             all:
-            - key: "{{ request.object.spec.[ephemeralContainers, initContainers, containers][].securityContext.capabilities.add[] }}"
+            - key: "{{ request.object.spec.[ephemeralContainers, initContainers, containers][].securityContext.capabilities.add[] || '' }}"
               operator: AnyNotIn
               value:
               - AUDIT_WRITE
@@ -46,64 +45,64 @@ spec:
               - SETPCAP
               - SETUID
               - SYS_CHROOT
-    - name: adding-capabilities-controllers
-      match:
-        resources:
-          kinds:
-            - Deployment
-            - DaemonSet
-            - StatefulSet
-            - Job
-      validate:
-        message: >-
-          Any capabilities added beyond the allowed list (AUDIT_WRITE, CHOWN, DAC_OVERRIDE, FOWNER,
-          FSETID, KILL, MKNOD, NET_BIND_SERVICE, SETFCAP, SETGID, SETPCAP, SETUID, SYS_CHROOT)
-          are disallowed.
-        deny:
-          conditions:
-            all:
-            - key: "{{ request.object.spec.template.spec.[ephemeralContainers, initContainers, containers][].securityContext.capabilities.add[] }}"
-              operator: AnyNotIn
-              value:
-              - AUDIT_WRITE
-              - CHOWN
-              - DAC_OVERRIDE
-              - FOWNER
-              - FSETID
-              - KILL
-              - MKNOD
-              - NET_BIND_SERVICE
-              - SETFCAP
-              - SETGID
-              - SETPCAP
-              - SETUID
-              - SYS_CHROOT
-    - name: adding-capabilities-cronjobs
-      match:
-        resources:
-          kinds:
-            - CronJob
-      validate:
-        message: >-
-          Any capabilities added beyond the allowed list (AUDIT_WRITE, CHOWN, DAC_OVERRIDE, FOWNER,
-          FSETID, KILL, MKNOD, NET_BIND_SERVICE, SETFCAP, SETGID, SETPCAP, SETUID, SYS_CHROOT)
-          are disallowed.
-        deny:
-          conditions:
-            all:
-            - key: "{{ request.object.spec.jobTemplate.spec.template.spec.[ephemeralContainers, initContainers, containers][].securityContext.capabilities.add[] }}"
-              operator: AnyNotIn
-              value:
-              - AUDIT_WRITE
-              - CHOWN
-              - DAC_OVERRIDE
-              - FOWNER
-              - FSETID
-              - KILL
-              - MKNOD
-              - NET_BIND_SERVICE
-              - SETFCAP
-              - SETGID
-              - SETPCAP
-              - SETUID
-              - SYS_CHROOT
+    # - name: adding-capabilities-controllers
+    #   match:
+    #     resources:
+    #       kinds:
+    #         - Deployment
+    #         - DaemonSet
+    #         - StatefulSet
+    #         - Job
+    #   validate:
+    #     message: >-
+    #       Any capabilities added beyond the allowed list (AUDIT_WRITE, CHOWN, DAC_OVERRIDE, FOWNER,
+    #       FSETID, KILL, MKNOD, NET_BIND_SERVICE, SETFCAP, SETGID, SETPCAP, SETUID, SYS_CHROOT)
+    #       are disallowed.
+    #     deny:
+    #       conditions:
+    #         all:
+    #         - key: "{{ request.object.spec.template.spec.[ephemeralContainers, initContainers, containers][].securityContext.capabilities.add[] || '' }}"
+    #           operator: AnyNotIn
+    #           value:
+    #           - AUDIT_WRITE
+    #           - CHOWN
+    #           - DAC_OVERRIDE
+    #           - FOWNER
+    #           - FSETID
+    #           - KILL
+    #           - MKNOD
+    #           - NET_BIND_SERVICE
+    #           - SETFCAP
+    #           - SETGID
+    #           - SETPCAP
+    #           - SETUID
+    #           - SYS_CHROOT
+    # - name: adding-capabilities-cronjobs
+    #   match:
+    #     resources:
+    #       kinds:
+    #         - CronJob
+    #   validate:
+    #     message: >-
+    #       Any capabilities added beyond the allowed list (AUDIT_WRITE, CHOWN, DAC_OVERRIDE, FOWNER,
+    #       FSETID, KILL, MKNOD, NET_BIND_SERVICE, SETFCAP, SETGID, SETPCAP, SETUID, SYS_CHROOT)
+    #       are disallowed.
+    #     deny:
+    #       conditions:
+    #         all:
+    #         - key: "{{ request.object.spec.jobTemplate.spec.template.spec.[ephemeralContainers, initContainers, containers][].securityContext.capabilities.add[] || '' }}"
+    #           operator: AnyNotIn
+    #           value:
+    #           - AUDIT_WRITE
+    #           - CHOWN
+    #           - DAC_OVERRIDE
+    #           - FOWNER
+    #           - FSETID
+    #           - KILL
+    #           - MKNOD
+    #           - NET_BIND_SERVICE
+    #           - SETFCAP
+    #           - SETGID
+    #           - SETPCAP
+    #           - SETUID
+    #           - SYS_CHROOT
