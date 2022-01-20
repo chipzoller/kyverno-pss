@@ -32,7 +32,7 @@ spec:
                 all:
                 - key: ALL
                   operator: AnyNotIn
-                  value: "{{ element.securityContext.capabilities.drop }}"
+                  value: "{{ element.securityContext.capabilities.drop || '' }}"
     # - name: require-drop-all-controllers
     #   match:
     #     resources:
@@ -76,13 +76,23 @@ spec:
       validate:
         message: >-
           Any capabilities added other than NET_BIND_SERVICE are disallowed.
-        deny:
-          conditions:
-            all:
-            - key: "{{ request.object.spec.[ephemeralContainers, initContainers, containers][].securityContext.capabilities.add[] }}"
-              operator: AnyNotIn
-              value:
-              - NET_BIND_SERVICE
+        foreach:
+          - list: request.object.spec.[ephemeralContainers, initContainers, containers][]
+            deny:
+              conditions:
+                all:
+                - key: "{{ element.securityContext.capabilities.add[] || '' }}"
+                  operator: AnyNotIn
+                  value:
+                  - NET_BIND_SERVICE
+                  - ''
+        # deny:
+        #   conditions:
+        #     all:
+        #     - key: "{{ request.object.spec.[ephemeralContainers, initContainers, containers][].securityContext.capabilities.add[] }}"
+        #       operator: AnyNotIn
+        #       value:
+        #       - NET_BIND_SERVICE
     # - name: adding-capabilities-strict-controllers
     #   match:
     #     resources:
