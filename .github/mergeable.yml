@@ -23,7 +23,7 @@ mergeable:
     validate:
       - do: contents
         must_include:
-          regex: /(?<=### Kubernetes Platform\n\n)AKS/gm
+          regex: '/(?<=### Kubernetes Platform\n\n)AKS/gm'
     pass:
       - do: labels
         add: AKS
@@ -31,7 +31,7 @@ mergeable:
     validate:
       - do: contents
         must_include:
-          regex: /(?<=### Kubernetes Platform\n\n)asdfasdf/gm
+          regex: '/(?<=### Kubernetes Platform\n\n)GKE/gm'
     pass:
       - do: labels
         add: GKE
