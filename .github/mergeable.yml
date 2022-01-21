@@ -19,7 +19,8 @@
 ---
 version: 2
 mergeable:
-  - when: issues.opened
+  - name: Label AKS
+    when: issues.opened
     validate:
       - do: description
         must_include:
@@ -27,6 +28,17 @@ mergeable:
     pass:
       - do: labels
         add: AKS
+  - name: Label GKE
+    when: issues.opened
+    validate:
+      - do: description
+        must_include:
+          regex: '(?<=### Kubernetes Platform\n\n)GKE'
+    pass:
+      - do: labels
+        add: GKE
+---
+#backup
   # - when: issues.opened
   #   validate:
   #     - do: contents
