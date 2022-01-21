@@ -5,7 +5,7 @@ mergeable:
       - do: title
         begins_with:
           match: ['AUTH', 'SOCIAL', 'CORE']
-      - do: label
+      - do: labels
         must_include:
           regex: bug|enhancement
         add: foo
