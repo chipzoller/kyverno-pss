@@ -1,18 +1,29 @@
+# version: 2
+# mergeable:
+#   - when: issues.opened
+#     validate:
+#       - do: title
+#         begins_with:
+#           match: ['BUG']
+#     pass:
+#       - do: labels
+#         add: 'bug'
+#   - when: issues.opened
+#     validate:
+#       - do: title
+#         begins_with:
+#           match: ['FEATURE']
+#     pass:
+#       - do: labels
+#         add: 'feature'
+---
 version: 2
 mergeable:
   - when: issues.opened
     validate:
-      - do: title
-        begins_with:
-          match: ['BUG']
+      - do: contents
+        must_include:
+          regex: AKS
     pass:
       - do: labels
-        add: 'bug'
-  - when: issues.opened
-    validate:
-      - do: title
-        begins_with:
-          match: ['FEATURE']
-    pass:
-      - do: labels
-        add: 'feature'
+        add: AKS
