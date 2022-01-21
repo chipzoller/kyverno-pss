@@ -1,0 +1,11 @@
+version: 2
+mergeable:
+  - when: issues.opened
+    validate:
+      - do: title
+        begins_with:
+          match: ['AUTH', 'SOCIAL', 'CORE']
+      - do: label
+        must_include:
+          regex: bug|enhancement
+        add: foo
