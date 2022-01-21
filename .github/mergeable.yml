@@ -23,7 +23,7 @@ mergeable:
     validate:
       - do: description
         must_include:
-          regex: 'AKS'
+          regex: '(?<=### Kubernetes Platform\n\n)AKS'
     pass:
       - do: labels
         add: AKS
