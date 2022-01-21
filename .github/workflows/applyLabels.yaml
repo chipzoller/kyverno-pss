@@ -1,0 +1,36 @@
+name: Repo Gardening
+
+on:
+  # We need to listen to all these events to catch all scenarios
+  # where notifying the Design team or cleaning labels may be necessary.
+  # Refer to src/index.js to see a list of all events each task needs to be listen to.
+  issues:
+    types:
+      - opened
+jobs:
+  repo-gardening:
+    name: 'Clean up labels, and notify Design when necessary'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10  # 2021-03-12: Successful runs seem to take a few seconds, but can sometimes take a lot longer since we wait for previous runs to complete.
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: 12
+
+    - name: Wait for prior instances of the workflow to finish
+      uses: softprops/turnstyle@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: 'Run gardening action'
+      uses: automattic/action-repo-gardening@v1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        slack_token: ${{ secrets.SLACK_TOKEN }}
+        slack_design_channel: ${{ secrets.SLACK_DESIGN_CHANNEL }}
+        tasks: 'triageNewIssues'
