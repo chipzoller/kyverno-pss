@@ -35,7 +35,6 @@ mergeable:
   #   pass:
   #     - do: labels
   #       add: GKE
----
 #backup
   # - when: issues.opened
   #   validate:
