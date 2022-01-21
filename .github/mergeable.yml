@@ -4,8 +4,15 @@ mergeable:
     validate:
       - do: title
         begins_with:
-          match: ['AUTH', 'SOCIAL', 'CORE']
+          match: ['BUG']
+    pass:
       - do: labels
-        must_include:
-          regex: bug|enhancement
-        add: foo
+        add: 'bug'
+  - when: issues.opened
+    validate:
+      - do: title
+        begins_with:
+          match: ['FEATURE']
+    pass:
+      - do: labels
+        add: 'feature'
