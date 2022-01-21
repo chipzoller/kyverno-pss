@@ -21,15 +21,15 @@ version: 2
 mergeable:
   - when: issues.opened
     validate:
-      - do: description
+      - do: contents
         must_include:
           regex: /(?<=### Kubernetes Platform\n\n)AKS/gm
-      pass:
-        - do: labels
-          add: AKS
+    pass:
+      - do: labels
+        add: AKS
   - when: issues.opened
     validate:
-      - do: description
+      - do: contents
         must_include:
           regex: /(?<=### Kubernetes Platform\n\n)GKE/gm
     pass:
