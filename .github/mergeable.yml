@@ -8,20 +8,11 @@ mergeable:
     pass:
       - do: labels
         add: GKE
-  # - when: issues.opened
-  #   validate:
-  #     - do: description
-  #       must_include:
-  #         regex: '(?<=### Kubernetes Platform\n\n)AKS'
-  #   pass:
-  #     - do: labels
-  #       add: AKS
-#backup
-  # - when: issues.opened
-  #   validate:
-  #     - do: contents
-  #       must_include:
-  #         regex: '/(?<=### Kubernetes Platform\n\n)GKE/gm'
-  #   pass:
-  #     - do: labels
-  #       add: GKE
+  - when: issues.opened
+    validate:
+      - do: description
+        must_include:
+          regex: '(?<=### Kubernetes Platform\n\n)AKS'
+    pass:
+      - do: labels
+        add: AKS
