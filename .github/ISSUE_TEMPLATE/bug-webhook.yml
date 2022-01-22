@@ -74,7 +74,10 @@ body:
     id: bug-reproduce-steps
     attributes:
       label: Steps to reproduce
-      description: What are the exact steps needed to reproduce the bug you experienced? Please provide any and all manifests needed to reproduce your issue, including Kyverno policies and test Kubernetes resources.
+      description: >-
+        What are the exact steps needed to reproduce the bug you experienced?
+        Please provide any and all manifests needed to reproduce your issue, including Kyverno policies and test Kubernetes resources.
+        GitHub supports [syntax highlighting](https://docs.github.com/en/github/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks#syntax-highlighting) with code blocks.
       # placeholder: Tell us what you see!
       value: |-
         1. 
