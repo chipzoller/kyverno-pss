@@ -1,12 +1,12 @@
-name: "Bug Report: Validate"
-description: Report a bug with a validate rule.
+name: "Bug Report: Webhook"
+description: Report a bug with the Kyverno webhook.
 title: "[Bug] "
-labels: ["bug", "validate"]
+labels: ["bug"]
 body:
   - type: markdown
     attributes:
       value: |
-        Please tell us about the bug, but before doing so ensure you have read the documentation on the validate functionality found [here](https://kyverno.io/docs/writing-policies/validate/).
+        Please tell us about the bug, but before doing so ensure you have read the documentation on the validate functionality found [here](https://kyverno.io/docs/writing-policies/validate/).<br>This doesn't look right? Go back and [start over](https://github.com/chipzoller/kyverno-pss/issues/new/choose).
   - type: dropdown
     id: kyverno-version
     attributes:
@@ -46,6 +46,19 @@ body:
         - VMware Tanzu (specify in description)
         - Bare metal
         - Other (specify in description)
+    validations:
+      required: true
+  - type: dropdown
+    id: kyverno-rule
+    attributes:
+      label: Kyverno Rule Type
+      description: What Kyverno rule type?
+      options:
+        - Validate
+        - Mutate
+        - Generate
+        - imageVerify
+        - Other
     validations:
       required: true
   - type: textarea
@@ -105,7 +118,7 @@ body:
       label: Troubleshooting
       description: By submitting this issue, you agree that you have performed some basic attempts at researching and solving your problem.
       options:
-        - label: I have read and followed the [troubleshooting guide](https://kyverno.io/docs/troubleshooting/).
+        - label: I have read and followed the documentation AND the [troubleshooting guide](https://kyverno.io/docs/troubleshooting/).
           required: true
         - label: I have searched other issues in this repository and mine is not recorded.
           required: true
