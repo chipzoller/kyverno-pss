@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Please tell us about the bug, but before doing so ensure you have read the documentation on the validate functionality found [here](https://kyverno.io/docs/writing-policies/validate/).<br>This doesn't look right? Go back and [start over](https://github.com/chipzoller/kyverno-pss/issues/new/choose).
+        Please tell us about the bug, but before doing so ensure you have read the documentation on the validate functionality found [here](https://kyverno.io/docs/writing-policies/validate/).
   - type: dropdown
     id: kyverno-version
     attributes:

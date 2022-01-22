@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Please explain the new feature. This doesn't look right? Go back and [start over](https://github.com/chipzoller/kyverno-pss/issues/new/choose).
+        Please explain the new feature.
   - type: textarea
     id: problem
     attributes:
