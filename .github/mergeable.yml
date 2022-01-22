@@ -1,6 +1,7 @@
 version: 2
 mergeable:
   - when: issues.opened
+    name: Label GKE
     validate:
       - do: description
         must_include:
@@ -8,7 +9,9 @@ mergeable:
     pass:
       - do: labels
         add: GKE
+
   - when: issues.opened
+    name: label AKS
     validate:
       - do: description
         must_include:
