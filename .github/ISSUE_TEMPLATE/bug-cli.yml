@@ -10,8 +10,8 @@ body:
   - type: dropdown
     id: kyverno-version
     attributes:
-      label: Kyverno Version
-      description: What version of Kyverno are you running?
+      label: Kyverno CLI Version
+      description: What version of the Kyverno CLI are you running (`kyverno version`)?
       options:
         - 1.4.x
         - 1.5.x
