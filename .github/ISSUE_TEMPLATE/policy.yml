@@ -26,31 +26,32 @@ body:
     validations:
       required: true
   - type: textarea
-    id: bug-expectations
+    id: validate-good
     attributes:
-      label: Expected behavior
-      description: What did you expect to happen?
-      # placeholder: Tell us what you see!
-      # value: "asdf"
-    validations:
-      required: true
-  - type: textarea
-    id: good
-    attributes:
-      label: Example "good" resource.
+      label: Example "Good" Resource
       description: >-
-        Provide an example of a "good" Kubernetes resource which, if the request is for a validate rule, should be allowed.
+        For a validate rule, provide an example of one or more "good" Kubernetes resources which should be allowed.
         For other types of policies, provide a sample input resource.
+        YAML syntax highlighting will be applied automatically.
       render: yaml
   - type: textarea
-    id: logs
+    id: validate-bad
     attributes:
-      label: Kyverno logs
+      label: Example "Bad" Resource
       description: >-
-        Please copy and paste any relevant log output.
-        This will be automatically formatted into code, so no need for backticks.
-        For help on how to view Pod logs in Kubernetes, see [here](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-running-pod/#examine-pod-logs).
-      render: shell
+        For a validate rule, provide an example of one or more "bad" Kubernetes resources which should be denied.
+        For other types of policies, provide a sample output resource.
+        YAML syntax highlighting will be applied automatically.
+      render: yaml
+  - type: textarea
+    id: other
+    attributes:
+      label: Other Comments
+      description: Provide any other comments.
+      placeholder: Any other relevant comments.
+      # value: "asdf"
+    validations:
+      required: false
   - type: input
     id: slack
     attributes:
@@ -69,5 +70,5 @@ body:
       options:
         - label: I have read and followed the documentation AND the [troubleshooting guide](https://kyverno.io/docs/troubleshooting/).
           required: true
-        - label: I have searched other issues in this repository and mine is not recorded.
+        - label: I have verified the policy does not exist in the [samples library](https://kyverno.io/policies/).
           required: true
