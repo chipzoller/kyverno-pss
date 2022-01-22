@@ -9,3 +9,23 @@ mergeable:
     pass:
       - do: labels
         add: GKE
+
+  - when: issues.opened
+    name: Label AKS
+    validate:
+      - do: description
+        must_include:
+          regex: '### Kubernetes Platform\n\nAKS'
+    pass:
+      - do: labels
+        add: AKS
+
+  - when: issues.opened
+    name: Label EKS
+    validate:
+      - do: description
+        must_include:
+          regex: '### Kubernetes Platform\n\nEKS'
+    pass:
+      - do: labels
+        add: EKS
