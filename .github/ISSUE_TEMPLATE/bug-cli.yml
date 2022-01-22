@@ -11,7 +11,8 @@ body:
     id: kyverno-version
     attributes:
       label: Kyverno CLI Version
-      description: What version of the Kyverno CLI are you running (`kyverno version`)?
+      description: >-
+        What version of the Kyverno CLI are you running (`kyverno version`)?
       options:
         - 1.4.x
         - 1.5.x
@@ -52,7 +53,10 @@ body:
     id: bug-screenshots
     attributes:
       label: Screenshots
-      description: If you have any screenshots that would help, please paste them below. GitHub allows you to copy-and-paste directly from the clipboard into the text area. **Please avoid taking screenshots of either log or terminal output**; paste any textual output in the logs section below.
+      description: >-
+        If you have any screenshots that would help, please paste them below.
+        GitHub allows you to copy-and-paste directly from the clipboard into the text area.
+        **Please avoid taking screenshots of either log or terminal output**; paste any textual output in the logs section below.
       # placeholder: Tell us what you see!
       # value: "asdf"
     validations:
@@ -61,13 +65,15 @@ body:
     id: logs
     attributes:
       label: Kyverno logs
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks. For help on how to view Pod logs in Kubernetes, see [here](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-running-pod/#examine-pod-logs).
+      description: >-
+        Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
       render: shell
   - type: input
     id: slack
     attributes:
       label: Slack discussion
-      description: If this issue is the result of a discussion thread on Slack, please provide the link to the discussion for reference.
+      description: >-
+        If this issue is the result of a discussion thread on Slack, please provide the link to the discussion for reference.
       # placeholder: ex. email@example.com
     validations:
       required: false
@@ -75,7 +81,8 @@ body:
     id: troubleshooting
     attributes:
       label: Troubleshooting
-      description: By submitting this issue, you agree that you have performed some basic attempts at researching and solving your problem.
+      description: >-
+        By submitting this issue, you agree that you have performed some basic attempts at researching and solving your problem.
       options:
         - label: I have read and followed the [troubleshooting guide](https://kyverno.io/docs/troubleshooting/).
           required: true
