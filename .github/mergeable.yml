@@ -1,31 +1,41 @@
 version: 2
 mergeable:
   - when: issues.opened
-    name: Label GKE
+    name: Label validate
     validate:
       - do: description
         must_include:
-          regex: '### Kubernetes Platform\n\nGKE'
+          regex: '### Kyverno Rule Type\n\nValidate'
     pass:
       - do: labels
-        add: GKE
+        add: validation
 
   - when: issues.opened
-    name: Label AKS
+    name: Label mutate
     validate:
       - do: description
         must_include:
-          regex: '### Kubernetes Platform\n\nAKS'
+          regex: '### Kyverno Rule Type\n\nMutate'
     pass:
       - do: labels
-        add: AKS
+        add: mutation
 
   - when: issues.opened
-    name: Label EKS
+    name: Label generate
     validate:
       - do: description
         must_include:
-          regex: '### Kubernetes Platform\n\nEKS'
+          regex: '### Kyverno Rule Type\n\nGenerate'
     pass:
       - do: labels
-        add: EKS
+        add: generation
+
+  - when: issues.opened
+    name: Label imageVerify
+    validate:
+      - do: description
+        must_include:
+          regex: '### Kyverno Rule Type\n\nimageVerify'
+    pass:
+      - do: labels
+        add: imageVerify
