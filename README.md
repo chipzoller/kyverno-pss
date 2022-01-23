@@ -43,10 +43,10 @@ Kyverno needs to add `pods/ephemeralcontainers` as a subresource to the `validat
 
 Kyverno needs the `AnyNotIn` and `AnyIn` operators to support some of these policies, specifically the baseline/04-disallow-capabilities, baseline/06-disallow-host-ports (commented rule), restricted/01-restrict-volume-types, and restricted/07-disallow-capabilities-strict policies. Also in the baseline/06-disallow-host-ports (commented rule), if/when this is employed by users, it's highly likely they're going to want to set a range of allowed ports rather than a static list. For that, an additional capability in Kyverno that's needed is the range operator (PR [here](https://github.com/kyverno/kyverno/pull/2788)). Combined together, Kyverno needs these enhancements to fully support all these policies:
 
-- [Support in the CLI for more JMESPath expression strings](https://github.com/kyverno/kyverno/issues/2442)
-- [Improve/provide translations for nil JMESPath resolution to empty string](https://github.com/kyverno/kyverno/issues/2665)
-- [Bug fix in the CLI for test coverage of the SELinux rules](https://github.com/kyverno/kyverno/issues/2877)
-- [anyPattern not working for ephemeralContainers](https://github.com/kyverno/kyverno/issues/2957)
+- [Support in the CLI for more JMESPath expression strings](https://github.com/kyverno/kyverno/issues/2442) (Closed)
+- [Improve/provide translations for nil JMESPath resolution to empty string](https://github.com/kyverno/kyverno/issues/2665) (Closed with workaround; implemented here)
+- [Bug fix in the CLI for test coverage of the SELinux rules](https://github.com/kyverno/kyverno/issues/2877) (Closed)
+- [anyPattern not working for ephemeralContainers](https://github.com/kyverno/kyverno/issues/2957) (Acknowledged bug in Kubernetes 1.23; fixed in 1.23.3)
 - [Support for ephemeral containers out-of-the-box](https://github.com/kyverno/kyverno/issues/2821) (Closed)
 - [Support for the `AnyNotIn` and `AnyIn` operators](https://github.com/kyverno/kyverno/issues/1837) (Closed)
 - [Support for the range operator on integers](https://github.com/kyverno/kyverno/issues/2734) (Closed)
@@ -54,7 +54,7 @@ Kyverno needs the `AnyNotIn` and `AnyIn` operators to support some of these poli
 
 **Optional**
 
-- [Support mutation of variables in `validate.deny` statements when matching on only Pod](https://github.com/kyverno/kyverno/issues/1933) (Rules manually created currently for other controllers)
+- [Support mutation of variables in `validate.deny` statements when matching on only Pod](https://github.com/kyverno/kyverno/issues/1933) (Closed)
 
 ### Optional Policies and Rules
 
