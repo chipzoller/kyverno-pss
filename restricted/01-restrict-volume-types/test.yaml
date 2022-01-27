@@ -118,225 +118,225 @@ results:
     result: pass
 ###### Deployments - Bad
   - policy: restrict-volume-types
-    rule: autogen-restricted-volumes-pods
+    rule: restricted-volumes-pods
     resource: baddeployment01
     kind: Deployment
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-restricted-volumes-pods
+    rule: restricted-volumes-pods
     resource: baddeployment02
     kind: Deployment
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-restricted-volumes-pods
+    rule: restricted-volumes-pods
     resource: baddeployment03
     kind: Deployment
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-restricted-volumes-pods
+    rule: restricted-volumes-pods
     resource: baddeployment04
     kind: Deployment
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-restricted-volumes-pods
+    rule: restricted-volumes-pods
     resource: baddeployment05
     kind: Deployment
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-restricted-volumes-pods
+    rule: restricted-volumes-pods
     resource: baddeployment06
     kind: Deployment
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-restricted-volumes-pods
+    rule: restricted-volumes-pods
     resource: baddeployment07
     kind: Deployment
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-restricted-volumes-pods
+    rule: restricted-volumes-pods
     resource: baddeployment08
     kind: Deployment
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-restricted-volumes-pods
+    rule: restricted-volumes-pods
     resource: baddeployment09
     kind: Deployment
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-restricted-volumes-pods
+    rule: restricted-volumes-pods
     resource: baddeployment10
     kind: Deployment
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-restricted-volumes-pods
+    rule: restricted-volumes-pods
     resource: baddeployment11
     kind: Deployment
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-restricted-volumes-pods
+    rule: restricted-volumes-pods
     resource: baddeployment12
     kind: Deployment
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-restricted-volumes-pods
+    rule: restricted-volumes-pods
     resource: baddeployment13
     kind: Deployment
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-restricted-volumes-pods
+    rule: restricted-volumes-pods
     resource: baddeployment14
     kind: Deployment
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-restricted-volumes-pods
+    rule: restricted-volumes-pods
     resource: baddeployment15
     kind: Deployment
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-restricted-volumes-pods
+    rule: restricted-volumes-pods
     resource: baddeployment16
     kind: Deployment
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-restricted-volumes-pods
+    rule: restricted-volumes-pods
     resource: baddeployment17
     kind: Deployment
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-restricted-volumes-pods
+    rule: restricted-volumes-pods
     resource: baddeployment18
     kind: Deployment
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-restricted-volumes-pods
+    rule: restricted-volumes-pods
     resource: baddeployment19
     kind: Deployment
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-restricted-volumes-pods
+    rule: restricted-volumes-pods
     resource: baddeployment20
     kind: Deployment
     result: fail
 ###### Deployments - Good
   - policy: restrict-volume-types
-    rule: autogen-restricted-volumes-pods
+    rule: restricted-volumes-pods
     resource: gooddeployment01
     kind: Deployment
     result: pass
   - policy: restrict-volume-types
-    rule: autogen-restricted-volumes-pods
+    rule: restricted-volumes-pods
     resource: gooddeployment02
     kind: Deployment
     result: pass
 ###### CronJobs - Bad
   - policy: restrict-volume-types
-    rule: autogen-cronjob-restricted-volumes-pods
+    rule: cronjob-restricted-volumes-pods
     resource: badcronjob01
     kind: CronJob
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-cronjob-restricted-volumes-pods
+    rule: cronjob-restricted-volumes-pods
     resource: badcronjob02
     kind: CronJob
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-cronjob-restricted-volumes-pods
+    rule: cronjob-restricted-volumes-pods
     resource: badcronjob03
     kind: CronJob
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-cronjob-restricted-volumes-pods
+    rule: cronjob-restricted-volumes-pods
     resource: badcronjob04
     kind: CronJob
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-cronjob-restricted-volumes-pods
+    rule: cronjob-restricted-volumes-pods
     resource: badcronjob05
     kind: CronJob
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-cronjob-restricted-volumes-pods
+    rule: cronjob-restricted-volumes-pods
     resource: badcronjob06
     kind: CronJob
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-cronjob-restricted-volumes-pods
+    rule: cronjob-restricted-volumes-pods
     resource: badcronjob07
     kind: CronJob
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-cronjob-restricted-volumes-pods
+    rule: cronjob-restricted-volumes-pods
     resource: badcronjob08
     kind: CronJob
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-cronjob-restricted-volumes-pods
+    rule: cronjob-restricted-volumes-pods
     resource: badcronjob09
     kind: CronJob
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-cronjob-restricted-volumes-pods
+    rule: cronjob-restricted-volumes-pods
     resource: badcronjob10
     kind: CronJob
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-cronjob-restricted-volumes-pods
+    rule: cronjob-restricted-volumes-pods
     resource: badcronjob11
     kind: CronJob
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-cronjob-restricted-volumes-pods
+    rule: cronjob-restricted-volumes-pods
     resource: badcronjob12
     kind: CronJob
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-cronjob-restricted-volumes-pods
+    rule: cronjob-restricted-volumes-pods
     resource: badcronjob13
     kind: CronJob
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-cronjob-restricted-volumes-pods
+    rule: cronjob-restricted-volumes-pods
     resource: badcronjob14
     kind: CronJob
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-cronjob-restricted-volumes-pods
+    rule: cronjob-restricted-volumes-pods
     resource: badcronjob15
     kind: CronJob
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-cronjob-restricted-volumes-pods
+    rule: cronjob-restricted-volumes-pods
     resource: badcronjob16
     kind: CronJob
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-cronjob-restricted-volumes-pods
+    rule: cronjob-restricted-volumes-pods
     resource: badcronjob17
     kind: CronJob
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-cronjob-restricted-volumes-pods
+    rule: cronjob-restricted-volumes-pods
     resource: badcronjob18
     kind: CronJob
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-cronjob-restricted-volumes-pods
+    rule: cronjob-restricted-volumes-pods
     resource: badcronjob19
     kind: CronJob
     result: fail
   - policy: restrict-volume-types
-    rule: autogen-cronjob-restricted-volumes-pods
+    rule: cronjob-restricted-volumes-pods
     resource: badcronjob20
     kind: CronJob
     result: fail
 ###### CronJobs - Good
   - policy: restrict-volume-types
-    rule: autogen-cronjob-restricted-volumes-pods
+    rule: cronjob-restricted-volumes-pods
     resource: goodcronjob01
     kind: CronJob
     result: pass
   - policy: restrict-volume-types
-    rule: autogen-cronjob-restricted-volumes-pods
+    rule: cronjob-restricted-volumes-pods
     resource: goodcronjob02
     kind: CronJob
     result: pass

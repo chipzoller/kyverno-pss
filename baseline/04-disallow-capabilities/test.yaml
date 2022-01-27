@@ -1,5 +1,3 @@
-### WARNING: Current testing not possible with Kyverno CLI. This is a placeholder.
-### See notes in README
 name: disallow-capabilities
 policies:
   - cpol.yaml
@@ -70,125 +68,125 @@ results:
     result: pass
 ###### Deployments - Bad
   - policy: disallow-capabilities
-    rule: autogen-adding-capabilities-pods
+    rule: adding-capabilities-pods
     resource: baddeployment01
     kind: Deployment
     result: fail
   - policy: disallow-capabilities
-    rule: autogen-adding-capabilities-pods
+    rule: adding-capabilities-pods
     resource: baddeployment02
     kind: Deployment
     result: fail
   - policy: disallow-capabilities
-    rule: autogen-adding-capabilities-pods
+    rule: adding-capabilities-pods
     resource: baddeployment03
     kind: Deployment
     result: fail
   - policy: disallow-capabilities
-    rule: autogen-adding-capabilities-pods
+    rule: adding-capabilities-pods
     resource: baddeployment04
     kind: Deployment
     result: fail
   - policy: disallow-capabilities
-    rule: autogen-adding-capabilities-pods
+    rule: adding-capabilities-pods
     resource: baddeployment05
     kind: Deployment
     result: fail
   - policy: disallow-capabilities
-    rule: autogen-adding-capabilities-pods
+    rule: adding-capabilities-pods
     resource: baddeployment06
     kind: Deployment
     result: fail
 ###### Deployments - Good
   - policy: disallow-capabilities
-    rule: autogen-adding-capabilities-pods
+    rule: adding-capabilities-pods
     resource: gooddeployment01
     kind: Deployment
     result: pass
   - policy: disallow-capabilities
-    rule: autogen-adding-capabilities-pods
+    rule: adding-capabilities-pods
     resource: gooddeployment02
     kind: Deployment
     result: pass
   - policy: disallow-capabilities
-    rule: autogen-adding-capabilities-pods
+    rule: adding-capabilities-pods
     resource: gooddeployment03
     kind: Deployment
     result: pass
   - policy: disallow-capabilities
-    rule: autogen-adding-capabilities-pods
+    rule: adding-capabilities-pods
     resource: gooddeployment04
     kind: Deployment
     result: pass
   - policy: disallow-capabilities
-    rule: autogen-adding-capabilities-pods
+    rule: adding-capabilities-pods
     resource: gooddeployment05
     kind: Deployment
     result: pass
   - policy: disallow-capabilities
-    rule: autogen-adding-capabilities-pods
+    rule: adding-capabilities-pods
     resource: gooddeployment06
     kind: Deployment
     result: pass
 ###### CronJobs - Bad
   - policy: disallow-capabilities
-    rule: autogen-cronjob-adding-capabilities-pods
+    rule: cronjob-adding-capabilities-pods
     resource: badcronjob01
     kind: CronJob
     result: fail
   - policy: disallow-capabilities
-    rule: autogen-cronjob-adding-capabilities-pods
+    rule: cronjob-adding-capabilities-pods
     resource: badcronjob02
     kind: CronJob
     result: fail
   - policy: disallow-capabilities
-    rule: autogen-cronjob-adding-capabilities-pods
+    rule: cronjob-adding-capabilities-pods
     resource: badcronjob03
     kind: CronJob
     result: fail
   - policy: disallow-capabilities
-    rule: autogen-cronjob-adding-capabilities-pods
+    rule: cronjob-adding-capabilities-pods
     resource: badcronjob04
     kind: CronJob
     result: fail
   - policy: disallow-capabilities
-    rule: autogen-cronjob-adding-capabilities-pods
+    rule: cronjob-adding-capabilities-pods
     resource: badcronjob05
     kind: CronJob
     result: fail
   - policy: disallow-capabilities
-    rule: autogen-cronjob-adding-capabilities-pods
+    rule: cronjob-adding-capabilities-pods
     resource: badcronjob06
     kind: CronJob
     result: fail
 ###### CronJobs - Good
   - policy: disallow-capabilities
-    rule: autogen-cronjob-adding-capabilities-pods
+    rule: cronjob-adding-capabilities-pods
     resource: goodcronjob01
     kind: CronJob
     result: pass
   - policy: disallow-capabilities
-    rule: autogen-cronjob-adding-capabilities-pods
+    rule: cronjob-adding-capabilities-pods
     resource: goodcronjob02
     kind: CronJob
     result: pass
   - policy: disallow-capabilities
-    rule: autogen-cronjob-adding-capabilities-pods
+    rule: cronjob-adding-capabilities-pods
     resource: goodcronjob03
     kind: CronJob
     result: pass
   - policy: disallow-capabilities
-    rule: autogen-cronjob-adding-capabilities-pods
+    rule: cronjob-adding-capabilities-pods
     resource: goodcronjob04
     kind: CronJob
     result: pass
   - policy: disallow-capabilities
-    rule: autogen-cronjob-adding-capabilities-pods
+    rule: cronjob-adding-capabilities-pods
     resource: goodcronjob05
     kind: CronJob
     result: pass
   - policy: disallow-capabilities
-    rule: autogen-cronjob-adding-capabilities-pods
+    rule: cronjob-adding-capabilities-pods
     resource: goodcronjob06
     kind: CronJob
     result: pass

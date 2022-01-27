@@ -108,205 +108,205 @@ results:
     result: pass
 ###### Deployments - Bad
   - policy: disallow-host-ports-range
-    rule: autogen-host-port-range-pods 
+    rule: host-port-range-pods 
     resource: baddeployment01
     kind: Deployment
     result: fail
   - policy: disallow-host-ports-range
-    rule: autogen-host-port-range-pods 
+    rule: host-port-range-pods 
     resource: baddeployment02
     kind: Deployment
     result: fail
   - policy: disallow-host-ports-range
-    rule: autogen-host-port-range-pods 
+    rule: host-port-range-pods 
     resource: baddeployment03
     kind: Deployment
     result: fail
   - policy: disallow-host-ports-range
-    rule: autogen-host-port-range-pods 
+    rule: host-port-range-pods 
     resource: baddeployment04
     kind: Deployment
     result: fail
   - policy: disallow-host-ports-range
-    rule: autogen-host-port-range-pods 
+    rule: host-port-range-pods 
     resource: baddeployment05
     kind: Deployment
     result: fail
   - policy: disallow-host-ports-range
-    rule: autogen-host-port-range-pods 
+    rule: host-port-range-pods 
     resource: baddeployment06
     kind: Deployment
     result: fail
   - policy: disallow-host-ports-range
-    rule: autogen-host-port-range-pods 
+    rule: host-port-range-pods 
     resource: baddeployment07
     kind: Deployment
     result: fail
   - policy: disallow-host-ports-range
-    rule: autogen-host-port-range-pods 
+    rule: host-port-range-pods 
     resource: baddeployment08
     kind: Deployment
     result: fail
   - policy: disallow-host-ports-range
-    rule: autogen-host-port-range-pods 
+    rule: host-port-range-pods 
     resource: baddeployment09
     kind: Deployment
     result: fail
   - policy: disallow-host-ports-range
-    rule: autogen-host-port-range-pods 
+    rule: host-port-range-pods 
     resource: baddeployment10
     kind: Deployment
     result: fail
 ###### Deployments - Good
   - policy: disallow-host-ports-range
-    rule: autogen-host-port-range-pods 
+    rule: host-port-range-pods 
     resource: gooddeployment01
     kind: Deployment
     result: pass
   - policy: disallow-host-ports-range
-    rule: autogen-host-port-range-pods 
+    rule: host-port-range-pods 
     resource: gooddeployment02
     kind: Deployment
     result: pass
   - policy: disallow-host-ports-range
-    rule: autogen-host-port-range-pods 
+    rule: host-port-range-pods 
     resource: gooddeployment03
     kind: Deployment
     result: pass
   - policy: disallow-host-ports-range
-    rule: autogen-host-port-range-pods 
+    rule: host-port-range-pods 
     resource: gooddeployment04
     kind: Deployment
     result: pass
   - policy: disallow-host-ports-range
-    rule: autogen-host-port-range-pods 
+    rule: host-port-range-pods 
     resource: gooddeployment05
     kind: Deployment
     result: pass
   - policy: disallow-host-ports-range
-    rule: autogen-host-port-range-pods 
+    rule: host-port-range-pods 
     resource: gooddeployment06
     kind: Deployment
     result: pass
   - policy: disallow-host-ports-range
-    rule: autogen-host-port-range-pods 
+    rule: host-port-range-pods 
     resource: gooddeployment07
     kind: Deployment
     result: pass
   - policy: disallow-host-ports-range
-    rule: autogen-host-port-range-pods 
+    rule: host-port-range-pods 
     resource: gooddeployment08
     kind: Deployment
     result: pass
   - policy: disallow-host-ports-range
-    rule: autogen-host-port-range-pods 
+    rule: host-port-range-pods 
     resource: gooddeployment09
     kind: Deployment
     result: pass
   - policy: disallow-host-ports-range
-    rule: autogen-host-port-range-pods 
+    rule: host-port-range-pods 
     resource: gooddeployment10
     kind: Deployment
     result: pass
 ###### CronJobs - Bad
   - policy: disallow-host-ports-range
-    rule: autogen-cronjob-host-port-range-pods
+    rule: cronjob-host-port-range-pods
     resource: badcronjob01
     kind: CronJob
     result: fail
   - policy: disallow-host-ports-range
-    rule: autogen-cronjob-host-port-range-pods
+    rule: cronjob-host-port-range-pods
     resource: badcronjob02
     kind: CronJob
     result: fail
   - policy: disallow-host-ports-range
-    rule: autogen-cronjob-host-port-range-pods
+    rule: cronjob-host-port-range-pods
     resource: badcronjob03
     kind: CronJob
     result: fail
   - policy: disallow-host-ports-range
-    rule: autogen-cronjob-host-port-range-pods
+    rule: cronjob-host-port-range-pods
     resource: badcronjob04
     kind: CronJob
     result: fail
   - policy: disallow-host-ports-range
-    rule: autogen-cronjob-host-port-range-pods
+    rule: cronjob-host-port-range-pods
     resource: badcronjob05
     kind: CronJob
     result: fail
   - policy: disallow-host-ports-range
-    rule: autogen-cronjob-host-port-range-pods
+    rule: cronjob-host-port-range-pods
     resource: badcronjob06
     kind: CronJob
     result: fail
   - policy: disallow-host-ports-range
-    rule: autogen-cronjob-host-port-range-pods
+    rule: cronjob-host-port-range-pods
     resource: badcronjob07
     kind: CronJob
     result: fail
   - policy: disallow-host-ports-range
-    rule: autogen-cronjob-host-port-range-pods
+    rule: cronjob-host-port-range-pods
     resource: badcronjob08
     kind: CronJob
     result: fail
   - policy: disallow-host-ports-range
-    rule: autogen-cronjob-host-port-range-pods
+    rule: cronjob-host-port-range-pods
     resource: badcronjob09
     kind: CronJob
     result: fail
   - policy: disallow-host-ports-range
-    rule: autogen-cronjob-host-port-range-pods
+    rule: cronjob-host-port-range-pods
     resource: badcronjob10
     kind: CronJob
     result: fail
 ###### CronJobs - Good
   - policy: disallow-host-ports-range
-    rule: autogen-cronjob-host-port-range-pods
+    rule: cronjob-host-port-range-pods
     resource: goodcronjob01
     kind: CronJob
     result: pass
   - policy: disallow-host-ports-range
-    rule: autogen-cronjob-host-port-range-pods
+    rule: cronjob-host-port-range-pods
     resource: goodcronjob02
     kind: CronJob
     result: pass
   - policy: disallow-host-ports-range
-    rule: autogen-cronjob-host-port-range-pods
+    rule: cronjob-host-port-range-pods
     resource: goodcronjob03
     kind: CronJob
     result: pass
   - policy: disallow-host-ports-range
-    rule: autogen-cronjob-host-port-range-pods
+    rule: cronjob-host-port-range-pods
     resource: goodcronjob04
     kind: CronJob
     result: pass
   - policy: disallow-host-ports-range
-    rule: autogen-cronjob-host-port-range-pods
+    rule: cronjob-host-port-range-pods
     resource: goodcronjob05
     kind: CronJob
     result: pass
   - policy: disallow-host-ports-range
-    rule: autogen-cronjob-host-port-range-pods
+    rule: cronjob-host-port-range-pods
     resource: goodcronjob06
     kind: CronJob
     result: pass
   - policy: disallow-host-ports-range
-    rule: autogen-cronjob-host-port-range-pods
+    rule: cronjob-host-port-range-pods
     resource: goodcronjob07
     kind: CronJob
     result: pass
   - policy: disallow-host-ports-range
-    rule: autogen-cronjob-host-port-range-pods
+    rule: cronjob-host-port-range-pods
     resource: goodcronjob08
     kind: CronJob
     result: pass
   - policy: disallow-host-ports-range
-    rule: autogen-cronjob-host-port-range-pods
+    rule: cronjob-host-port-range-pods
     resource: goodcronjob09
     kind: CronJob
     result: pass
   - policy: disallow-host-ports-range
-    rule: autogen-cronjob-host-port-range-pods
+    rule: cronjob-host-port-range-pods
     resource: goodcronjob10
     kind: CronJob
     result: pass
