@@ -1,6 +1,6 @@
-#################################
-## Rule: require-drop-all-pods ##
-#################################
+############################
+## Rule: require-drop-all ##
+############################
 ###### Pods - Bad
 ---
 apiVersion: v1
@@ -286,9 +286,6 @@ spec:
         drop:
         - ALL
 ---
-########################################
-## Rule: require-drop-all-controllers ##
-########################################
 ###### Deployments - Bad
 apiVersion: apps/v1
 kind: Deployment
@@ -717,9 +714,6 @@ spec:
             drop:
             - ALL
 ---
-#####################################
-## Rule: require-drop-all-cronjobs ##
-#####################################
 ###### CronJobs - Bad
 apiVersion: batch/v1
 kind: CronJob
@@ -1100,9 +1094,9 @@ spec:
                 drop:
                 - ALL
 ---
-###########################################
-## Rule: adding-capabilities-strict-pods ##
-###########################################
+######################################
+## Rule: adding-capabilities-strict ##
+######################################
 ###### Pods - Bad
 ---
 apiVersion: v1

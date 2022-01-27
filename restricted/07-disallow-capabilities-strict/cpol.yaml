@@ -7,21 +7,25 @@ metadata:
     policies.kyverno.io/severity: medium
     policies.kyverno.io/minversion: 1.6.0
     kyverno.io/kyverno-version: 1.6.0
-    kyverno.io/kubernetes-version: "1.23"
+    kyverno.io/kubernetes-version: "1.22-1.23"
     policies.kyverno.io/subject: Pod
     policies.kyverno.io/description: >-
       Adding capabilities other than `NET_BIND_SERVICE` is disallowed. In addition,
-      all containers must explicitly drop `ALL` capabilities. Needs
-      Kyverno 1.6.0 for the AnyNotIn operator.
+      all containers must explicitly drop `ALL` capabilities.
 spec:
   validationFailureAction: enforce
   background: true
   rules:
-    - name: require-drop-all-pods
+    - name: require-drop-all
       match:
         resources:
           kinds:
             - Pod
+      preconditions:
+        all:
+        - key: "{{ request.operation }}"
+          operator: NotEquals
+          value: DELETE
       validate:
         message: >-
           Containers must drop `ALL` capabilities.
@@ -33,11 +37,16 @@ spec:
                 - key: ALL
                   operator: AnyNotIn
                   value: "{{ element.securityContext.capabilities.drop || '' }}"
-    - name: adding-capabilities-strict-pods
+    - name: adding-capabilities-strict
       match:
         resources:
           kinds:
             - Pod
+      preconditions:
+        all:
+        - key: "{{ request.operation }}"
+          operator: NotEquals
+          value: DELETE
       validate:
         message: >-
           Any capabilities added other than NET_BIND_SERVICE are disallowed.
