@@ -7,7 +7,7 @@ metadata:
     policies.kyverno.io/severity: medium
     policies.kyverno.io/subject: Pod
     kyverno.io/kyverno-version: 1.6.0
-    kyverno.io/kubernetes-version: "1.22"
+    kyverno.io/kubernetes-version: "1.23"
     policies.kyverno.io/description: >-
       The default /proc masks are set up to reduce attack surface and should be required. This policy
       ensures nothing but the default procMount can be specified. Note that in order for users

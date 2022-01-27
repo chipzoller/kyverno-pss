@@ -7,16 +7,15 @@ metadata:
     policies.kyverno.io/severity: medium
     kyverno.io/kyverno-version: 1.6.0
     policies.kyverno.io/minversion: 1.6.0
-    kyverno.io/kubernetes-version: "1.22"
+    kyverno.io/kubernetes-version: "1.23"
     policies.kyverno.io/subject: Pod
     policies.kyverno.io/description: >-
-      Adding capabilities beyond those listed in the policy must be disallowed. Needs
-      Kyverno 1.6.0 for the AnyNotIn operator.
+      Adding capabilities beyond those listed in the policy must be disallowed.
 spec:
   validationFailureAction: enforce
   background: true
   rules:
-    - name: adding-capabilities-pods
+    - name: adding-capabilities
       match:
         resources:
           kinds:

@@ -17,7 +17,7 @@ spec:
   validationFailureAction: enforce
   background: true
   rules:
-  - name: restricted-volumes-pods
+  - name: restricted-volumes
     match:
       resources:
         kinds:
