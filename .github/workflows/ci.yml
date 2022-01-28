@@ -31,7 +31,7 @@ jobs:
       - name: Cache Go modules
         uses: actions/cache@d9747005de0f7240e5d35a68dca96b3f41b8b340 # v1.2.0
         with:
-          path: ~/go/pkg/mod
+          path: kyverno/pkg/
           key: ${{ runner.os }}-go-${{ hashFiles('kyverno/go.sum') }}
           # restore-keys: ${{ runner.os }}-go-
 
