@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2.4.0
         with:
-          path: /policies
+          path: policies
 
       - name: Get Kyverno
         run: |
