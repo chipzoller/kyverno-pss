@@ -12,7 +12,7 @@ metadata:
     policies.kyverno.io/description: >-
       In addition to restricting HostPath volumes, the restricted pod security profile
       limits usage of non-core volume types to those defined through PersistentVolumes.
-      This policy blocks a number of different non-core volume types as named.
+      This policy blocks any other type of volume other than those in the allow list.
 spec:
   validationFailureAction: enforce
   background: true
@@ -24,33 +24,21 @@ spec:
         - Pod
     validate:
       message: >-
-        Any of the following volume types are restricted and may not be used: gcePersistentDisk,
-        awsElasticBlockStore, gitRepo, nfs, iscsi, glusterfs, rbd, flexVolume, cinder, cephfs,
-        flocker, fc, azureFile, vsphereVolume, quobyte, azureDisk, portworxVolume, scaleIO,
-        storageos, and photonPersistentDisk.
+        Only the following types of volumes may be used: configMap, csi, downwardAPI,
+        emptyDir, ephemeral, persistentVolumeClaim, projected, and secret.
       deny:
         conditions:
           all:
           - key: "{{ request.object.spec.volumes[].keys(@)[] || '' }}"
-            operator: AnyIn
+            operator: AnyNotIn
             value:
-            - gcePersistentDisk
-            - awsElasticBlockStore
-            - gitRepo
-            - nfs
-            - iscsi
-            - glusterfs
-            - rbd
-            - flexVolume
-            - cinder
-            - cephfs
-            - flocker
-            - fc
-            - azureFile
-            - vsphereVolume
-            - quobyte
-            - azureDisk
-            - portworxVolume
-            - scaleIO
-            - storageos
-            - photonPersistentDisk
+            - name
+            - configMap
+            - csi
+            - downwardAPI
+            - emptyDir
+            - ephemeral
+            - persistentVolumeClaim
+            - projected
+            - secret
+            - ''
