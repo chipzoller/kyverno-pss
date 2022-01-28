@@ -1,0 +1,34 @@
+name: Policy Test
+
+on:
+  push:
+    branches:
+      - main
+      - release*
+  pull_request:
+    branches:
+      - main
+      - release*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2.4.0
+
+      - name: Get Kyverno
+        run: |
+          git clone https://github.com/kyverno/kyverno
+      
+      - name: Set up Go
+        uses: actions/setup-go@424fc82d43fa5a37540bae62709ddcc23d9520d4 # v2.1.5
+        with:
+          go-version: 1.17
+
+      - name: Test
+        run: |
+          go run kyverno/cmd/cli/kubectl-kyverno/main.go test .
+
+      - name: Kyverno test
+        run: kyverno test .
