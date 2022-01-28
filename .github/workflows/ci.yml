@@ -32,4 +32,4 @@ jobs:
       - name: kyverno test
         run: |
           cd kyverno
-          go run kyverno/cmd/cli/kubectl-kyverno/main.go test ./policies
+          go run cmd/cli/kubectl-kyverno/main.go test ./policies
