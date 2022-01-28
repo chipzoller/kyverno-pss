@@ -36,7 +36,7 @@ jobs:
             ${{ runner.os }}-go-
 
       - name: Print dir structure
-        run: la -lahF
+        run: ls -lahF
 
       - name: Test
         run: |
