@@ -42,7 +42,7 @@ jobs:
 
       - name: Test
         run: |
-          go run kyverno/cmd/cli/kubectl-kyverno/main.go test .
+          go run kyverno/cmd/cli/kubectl-kyverno/main.go test ./policies
 
       - name: Kyverno test
         run: kyverno test .
