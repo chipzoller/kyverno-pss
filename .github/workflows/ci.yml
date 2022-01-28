@@ -35,6 +35,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-go-
 
+      - name: Print dir structure
+        run: la -lahF
+
       - name: Test
         run: |
           go run kyverno/cmd/cli/kubectl-kyverno/main.go test .
