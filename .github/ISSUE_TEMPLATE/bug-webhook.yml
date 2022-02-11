@@ -112,6 +112,7 @@ body:
         Please copy and paste any relevant log output.
         This will be automatically formatted into code, so no need for backticks.
         For help on how to view Pod logs in Kubernetes, see [here](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-running-pod/#examine-pod-logs).
+        For guidance on how to enable more verbose log output in Kyverno, see [the documentation](https://kyverno.io/docs/troubleshooting/#policies-are-partially-applied).
       render: shell
   - type: input
     id: slack
